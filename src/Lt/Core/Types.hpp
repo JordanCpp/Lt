@@ -1,11 +1,9 @@
 #ifndef Lt_Core_Types_hpp
 #define Lt_Core_Types_hpp
 
-#ifdef __cplusplus
-#define nullptr 0
-#else
-#define nullptr ((void *)0)
-#endif
+#include <Lt/Core/Config.hpp>
+
+#define nullptr (0)
 
 namespace Lt
 {
@@ -18,8 +16,13 @@ namespace Lt
 	typedef signed int i32;
 	typedef unsigned int u32;
 
-	typedef signed int isize;
+#if defined(LT_CONFIG_CPU_64)
+	typedef signed long long isize;
 	typedef unsigned long long usize;
+#else
+	typedef signed int isize;
+	typedef unsigned int usize;
+#endif
 }
 
 #endif    
