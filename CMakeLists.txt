@@ -12,7 +12,8 @@ add_library(Lt STATIC
 "src/Lt/Core/New.cpp"
 "src/Lt/Core/Assert.cpp"
 "src/Lt/Core/Chars.cpp"
-"src/Lt/Core/Convert.cpp")
+"src/Lt/Core/Convert.cpp"
+"src/Lt/Core/TestEqual.cpp")
 
 if (WIN32)
   target_sources(Lt PRIVATE 
