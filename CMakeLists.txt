@@ -30,3 +30,6 @@ target_link_libraries(Convert Lt)
 
 add_executable(Point2 "Tests/Graphics/Point2.cpp")
 target_link_libraries(Point2 Lt)
+
+add_executable(Rect2 "Tests/Graphics/Rect2.cpp")
+target_link_libraries(Rect2 Lt)
