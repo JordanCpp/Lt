@@ -10,7 +10,7 @@ namespace Lt
 		class FixedLinear : public Lt::Allocators::Allocator
 		{
 		public:
-			FixedLinear(Lt::usize bytes, Lt::Allocators::Allocator* allocator);
+			FixedLinear(Lt::usize bytes, Lt::Allocators::Allocator* allocator = nullptr);
 			~FixedLinear();
 			void* Allocate(Lt::usize bytes);
 			void Deallocate(void* ptr);

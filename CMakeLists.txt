@@ -24,3 +24,6 @@ endif()
 
 add_executable(Tests "main.cpp")
 target_link_libraries(Tests Lt)
+
+add_executable(FixedLinear "Tests/Allocators/FixedLinear.cpp")
+target_link_libraries(FixedLinear Lt)
