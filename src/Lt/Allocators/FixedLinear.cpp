@@ -38,3 +38,8 @@ void Lt::Allocators::FixedLinear::Deallocate(void* ptr)
 {
 	Lt_Core_Assert(ptr != nullptr);
 }
+
+Lt::usize Lt::Allocators::FixedLinear::UsedBytes()
+{
+	return _Position;
+}

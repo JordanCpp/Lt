@@ -18,6 +18,7 @@ namespace Lt
 			};
 			virtual void* Allocate(Lt::usize bytes) = 0;
 			virtual void Deallocate(void* ptr) = 0;
+			virtual Lt::usize UsedBytes() = 0;
 		private:
 		};
 	}

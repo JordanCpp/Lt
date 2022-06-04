@@ -14,6 +14,7 @@ namespace Lt
 			~FixedLinear();
 			void* Allocate(Lt::usize bytes);
 			void Deallocate(void* ptr);
+			Lt::usize UsedBytes();
 		private:
 			Lt::usize _Capacity;
 			Lt::usize _Position;
