@@ -2,7 +2,9 @@
 #include <Lt/Core/Chars.hpp>
 #include <Lt/Core/Assert.hpp>
 
-Lt::Core::Console::Console()
+Lt::Core::Console::Console():
+	_Input(nullptr),
+	_Output(nullptr)
 {
 	_Input = GetStdHandle(STD_INPUT_HANDLE);
 
@@ -15,8 +17,6 @@ Lt::Core::Console::Console()
 
 Lt::Core::Console::~Console()
 {
-	CloseHandle(_Input);
-	CloseHandle(_Output);
 }
 
 void Lt::Core::Console::Write(const char* source)

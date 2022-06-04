@@ -7,7 +7,5 @@ int main()
 
 	io.Write("Hello World!");
 
-	Lt_Core_Assert(1 == 7);
-
 	return 0;
 }
