@@ -1,6 +1,6 @@
 #include <Lt/Core/Convert.hpp>
 
-bool Lt::Core::Convert::IntToStr(Lt::isize num, Lt::u8 base)
+bool Lt::Core::Convert::ToString(Lt::isize num, Lt::u8 base)
 {
 
     int i = 0;

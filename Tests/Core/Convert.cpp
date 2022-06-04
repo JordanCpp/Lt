@@ -6,7 +6,7 @@ int main()
 {
 	Lt::Core::Convert convert;
 
-	Lt_TestEqual(convert.IntToStr(197456) == true);
+	Lt_TestEqual(convert.ToString(197456) == true);
 
 	Lt_TestEqual(Lt::Chars::Equal(convert.Result(), "197456"));
 
