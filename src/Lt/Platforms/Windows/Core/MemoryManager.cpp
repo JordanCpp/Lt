@@ -5,28 +5,28 @@ MemoryManager::MemoryManager()
 {
 	_Heap = HeapCreate(0, 0x01000, 0);
 
-	Lt_Core_Assert(_Heap != nullptr);
+	LT_ASSERT(_Heap != nullptr);
 }
 
 MemoryManager::~MemoryManager()
 {
-	Lt_Core_Assert(HeapDestroy(_Heap) != 0);
+	LT_ASSERT(HeapDestroy(_Heap) != 0);
 }
 
 void* MemoryManager::Allocate(Lt::usize bytes)
 {
-	Lt_Core_Assert(bytes > 0);
+	LT_ASSERT(bytes > 0);
 
 	void* result = HeapAlloc(_Heap, 0, bytes);
 
-	Lt_Core_Assert(result != nullptr);
+	LT_ASSERT(result != nullptr);
 
 	return result;
 }
 
 void MemoryManager::Deallocate(void* ptr)
 {
-	Lt_Core_Assert(ptr != nullptr);
+	LT_ASSERT(ptr != nullptr);
 
-	Lt_Core_Assert(HeapFree(_Heap, 0, ptr) != 0);
+	LT_ASSERT(HeapFree(_Heap, 0, ptr) != 0);
 }

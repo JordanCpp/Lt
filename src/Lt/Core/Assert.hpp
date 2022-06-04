@@ -11,6 +11,6 @@ namespace Lt
 	}
 }
 
-#define Lt_Core_Assert(x) Lt::Core::Assert(x, #x, __FILE__, __LINE__)
+#define LT_ASSERT(x) Lt::Core::Assert(x, #x, __FILE__, __LINE__)
 
 #endif    

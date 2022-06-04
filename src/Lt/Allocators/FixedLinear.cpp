@@ -23,9 +23,9 @@ Lt::Allocators::FixedLinear::~FixedLinear()
 
 void* Lt::Allocators::FixedLinear::Allocate(Lt::usize bytes)
 {
-	Lt_Core_Assert(bytes > 0);
+	LT_ASSERT(bytes > 0);
 
-	Lt_Core_Assert(_Position + bytes <= _Capacity);
+	LT_ASSERT(_Position + bytes <= _Capacity);
 
 	void* result = _Content + _Position;
 
@@ -36,7 +36,7 @@ void* Lt::Allocators::FixedLinear::Allocate(Lt::usize bytes)
 
 void Lt::Allocators::FixedLinear::Deallocate(void* ptr)
 {
-	Lt_Core_Assert(ptr != nullptr);
+	LT_ASSERT(ptr != nullptr);
 }
 
 Lt::usize Lt::Allocators::FixedLinear::UsedBytes()
