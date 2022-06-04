@@ -27,3 +27,6 @@ target_link_libraries(Tests Lt)
 
 add_executable(FixedLinear "Tests/Allocators/FixedLinear.cpp")
 target_link_libraries(FixedLinear Lt)
+
+add_executable(Convert "Tests/Core/Convert.cpp")
+target_link_libraries(Convert Lt)

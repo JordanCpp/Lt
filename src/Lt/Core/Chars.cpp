@@ -11,3 +11,22 @@ Lt::usize Lt::Chars::Length(const char* source)
 
 	return i;
 }
+
+Lt::isize Lt::Chars::Compare(const char* x, const char* y)
+{
+    while (*x)
+    {
+        if (*x != *y)
+            break;
+
+        x++;
+        y++;
+    }
+
+    return *(const unsigned char*)x - *(const unsigned char*)y;
+}
+
+bool Lt::Chars::Equal(const char* x, const char* y)
+{
+    return Compare(x, y) == 0;
+}
