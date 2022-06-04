@@ -7,15 +7,15 @@ int main()
 
 	Lt::Allocators::FixedLinear allocator(bytes);
 
-	Lt_TestEqual(allocator.UsedBytes() == 0);
+	LT_TEST_EQUAL(allocator.UsedBytes() == 0);
 
 	for (Lt::usize i = 0; i < bytes; i++)
 	{
 		void* p = allocator.Allocate(1);
 
-		Lt_TestEqual(p != nullptr);
+		LT_TEST_EQUAL(p != nullptr);
 
-		Lt_TestEqual(allocator.UsedBytes() == i + 1);
+		LT_TEST_EQUAL(allocator.UsedBytes() == i + 1);
 	}
 
 	return 0;

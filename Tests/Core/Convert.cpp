@@ -6,9 +6,9 @@ int main()
 {
 	Lt::Core::Convert convert;
 
-	Lt_TestEqual(convert.ToString(197456) == true);
+	LT_TEST_EQUAL(convert.ToString(197456) == true);
 
-	Lt_TestEqual(Lt::Chars::Equal(convert.Result(), "197456"));
+	LT_TEST_EQUAL(Lt::Chars::Equal(convert.Result(), "197456"));
 
 	return 0;
 }

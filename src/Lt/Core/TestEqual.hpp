@@ -11,6 +11,6 @@ namespace Lt
 	}
 }
 
-#define Lt_TestEqual(x) Lt::Core::TestEqual(x, #x, __FUNCTION__, __FILE__, __LINE__)
+#define LT_TEST_EQUAL(x) Lt::Core::TestEqual(x, #x, __FUNCTION__, __FILE__, __LINE__)
 
 #endif    
