@@ -33,3 +33,6 @@ target_link_libraries(Point2 Lt)
 
 add_executable(Rect2 "Tests/Graphics/Rect2.cpp")
 target_link_libraries(Rect2 Lt)
+
+add_executable(Vector "Tests/Containers/Vector.cpp")
+target_link_libraries(Vector Lt)

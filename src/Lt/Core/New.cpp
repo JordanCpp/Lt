@@ -1,34 +1,34 @@
 #include <Lt/Core/New.hpp>
-#include <Lt/Platforms/Windows/Core/MemoryManager.hpp>
+#include <Lt/Core/Assert.hpp>
 
-static MemoryManager memoryManager;
+#include <stdlib.h>
 
 void* operator new(Lt::usize bytes)
 {
-	return memoryManager.Allocate(bytes);
+	return malloc(bytes);
 }
 
 void operator delete(void* ptr)
 {
-	memoryManager.Deallocate(ptr);
+	free(ptr);
 }
 
 void* operator new[](Lt::usize bytes)
 {
-	return memoryManager.Allocate(bytes);
+	return malloc(bytes);
 }
 
 void operator delete[](void* ptr)
 {
-	memoryManager.Deallocate(ptr);
+	free(ptr);
 }
 
 void* operator new(Lt::usize bytes, void* ptr)
 {
-	return memoryManager.Allocate(bytes);
+	return malloc(bytes);
 }
 
 void* operator new[](Lt::usize bytes, void* ptr)
 {
-	return memoryManager.Allocate(bytes);
+	return malloc(bytes);
 }
