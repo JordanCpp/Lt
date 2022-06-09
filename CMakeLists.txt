@@ -12,8 +12,9 @@ add_library(Lt STATIC
 "src/Lt/Core/New.cpp"
 "src/Lt/Core/Assert.cpp"
 "src/Lt/Core/Chars.cpp"
-"src/Lt/Core/Convert.cpp"
-"src/Lt/Core/TestEqual.cpp")
+"src/Lt/Core/IntegerToString.cpp"
+"src/Lt/Core/TestEqual.cpp"
+"src/Lt/Core/StringToInteger.cpp")
 
 if (WIN32)
   target_sources(Lt PRIVATE 
@@ -25,8 +26,11 @@ endif()
 add_executable(FixedLinear "Tests/Allocators/FixedLinear.cpp")
 target_link_libraries(FixedLinear Lt)
 
-add_executable(Convert "Tests/Core/Convert.cpp")
-target_link_libraries(Convert Lt)
+add_executable(IntegerToString "Tests/Core/IntegerToString.cpp")
+target_link_libraries(IntegerToString Lt)
+
+add_executable(StringToInteger "Tests/Core/StringToInteger.cpp")
+target_link_libraries(StringToInteger Lt)
 
 add_executable(Point2 "Tests/Graphics/Point2.cpp")
 target_link_libraries(Point2 Lt)

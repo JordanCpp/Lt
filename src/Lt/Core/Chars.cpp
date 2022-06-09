@@ -30,3 +30,13 @@ bool Lt::Chars::Equal(const char* x, const char* y)
 {
     return Compare(x, y) == 0;
 }
+
+bool Lt::Chars::IsSpace(char symbol)
+{
+    return symbol == ' ';
+}
+
+bool Lt::Chars::IsDigit(char symbol)
+{
+    return symbol >= '0' && symbol <= '9';
+}

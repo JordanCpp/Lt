@@ -10,6 +10,8 @@ namespace Lt
 		Lt::usize Length(const char* source);
 		Lt::isize Compare(const char* x, const char* y);
 		bool Equal(const char* x, const char* y);
+		bool IsSpace(char symbol);
+		bool IsDigit(char symbol);
 	}
 }
 #endif    

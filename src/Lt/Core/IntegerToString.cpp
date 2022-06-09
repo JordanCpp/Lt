@@ -1,6 +1,6 @@
-#include <Lt/Core/Convert.hpp>
+#include <Lt/Core/IntegerToString.hpp>
 
-bool Lt::Core::Convert::ToString(Lt::isize num, Lt::u8 base)
+bool Lt::Core::IntegerToString::Convert(Lt::isize num, Lt::u8 base)
 {
 
     int i = 0;
@@ -41,19 +41,19 @@ bool Lt::Core::Convert::ToString(Lt::isize num, Lt::u8 base)
     return true;
 }
 
-const char* Lt::Core::Convert::Result()
+const char* Lt::Core::IntegerToString::Result()
 {
     return _Buffer;
 }
 
-void Lt::Core::Convert::Swap(char& t1, char& t2)
+void Lt::Core::IntegerToString::Swap(char& t1, char& t2)
 {
     char tmp = t1;
     t1 = t2;
     t2 = tmp;
 }
 
-void Lt::Core::Convert::Reverse(char* str, Lt::usize length)
+void Lt::Core::IntegerToString::Reverse(char* str, Lt::usize length)
 {
     Lt::usize start = 0;
     Lt::usize end = length - 1;

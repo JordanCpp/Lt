@@ -7,10 +7,10 @@ namespace Lt
 {
 	namespace Core
 	{
-		class Convert
+		class IntegerToString
 		{
 		public:
-			bool ToString(Lt::isize num, Lt::u8 base = 10);
+			bool Convert(Lt::isize num, Lt::u8 base = 10);
 			const char* Result();
 		private:
 			void Swap(char& t1, char& t2);
@@ -20,4 +20,5 @@ namespace Lt
 		};
 	}
 }
+
 #endif    

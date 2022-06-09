@@ -28,7 +28,7 @@ void Lt::Core::Console::Write(const char* source)
 
 void Lt::Core::Console::Write(Lt::isize source)
 {
-	if (_Convert.ToString(source))
+	if (_Convert.Convert(source))
 	{
 		Write(_Convert.Result());
 	}
