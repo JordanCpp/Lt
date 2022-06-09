@@ -2,6 +2,7 @@
 #define Lt_Containers_Vector_hpp
 
 #include <Lt/Allocators/Allocator.hpp>
+#include <Lt/Core/Assert.hpp>
 #include <Lt/Core/New.hpp>
 
 namespace Lt
@@ -90,14 +91,14 @@ namespace Lt
 				_Position = count;
 			}
 
-			TYPE& operator[](Lt::usize index)
+			const TYPE& operator[](Lt::usize index)
 			{
 				LT_ASSERT(index <= _Capacity);
 
 				return _Content[index];
 			}
 
-			void Append(TYPE& element)
+			void Append(const TYPE& element)
 			{
 				if (_Capacity == 0)
 					Reserve(2);
@@ -107,6 +108,11 @@ namespace Lt
 				_Content[_Position] = element;
 
 				_Position++;
+			}
+
+			void Clear()
+			{
+				_Position = 0;
 			}
 		private:
 			Lt::usize _Capacity;
