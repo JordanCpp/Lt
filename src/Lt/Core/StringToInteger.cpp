@@ -14,10 +14,24 @@ bool Lt::Core::StringToInteger::Convert(const char* source)
         neg = 1;
         source++;
     }
+
+    if (*source == '+')
+    {
+        neg = 0;
+        source++;
+    }
+
     while (Lt::Chars::IsDigit(*source))
     {
         _Result = 10 * _Result + (*source - '0');
         source++;
+    }
+
+    if (*source != '\0')
+    {
+        _Result = 0;
+
+        return false;
     }
 
     if (neg)
