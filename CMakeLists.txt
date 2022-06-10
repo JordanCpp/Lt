@@ -16,7 +16,9 @@ add_library(Lt STATIC
 "src/Lt/Core/TestEqual.cpp"
 "src/Lt/Core/StringToInteger.cpp"
 "src/Lt/Core/BaseConsole.cpp"
-"src/Lt/Core/Memory.cpp")
+"src/Lt/Core/Memory.cpp"
+"src/Lt/Core/DateTime.cpp"
+"src/Lt/Core/Utils.cpp")
 
 if (WIN32)
   target_sources(Lt PRIVATE 
@@ -28,6 +30,11 @@ endif()
 add_executable(Types "Tests/Core/Types.cpp")
 target_link_libraries(Types Lt)
 
+add_executable(Utils "Tests/Core/Utils.cpp")
+target_link_libraries(Utils Lt)
+
+add_executable(DateTime "Tests/Core/DateTime.cpp")
+target_link_libraries(DateTime Lt)
 
 add_executable(New "Tests/Core/New.cpp")
 target_link_libraries(New Lt)
