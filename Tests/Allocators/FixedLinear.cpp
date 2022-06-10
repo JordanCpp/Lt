@@ -1,7 +1,7 @@
 #include <Lt/Core/TestEqual.hpp>
 #include <Lt/Allocators/FixedLinear.hpp>
 
-int main()
+void TestFixedLinear()
 {
 	const size_t bytes = Lt::Allocators::Allocator::Mb * 1;
 
@@ -17,6 +17,11 @@ int main()
 
 		LT_TEST_EQUAL(allocator.UsedBytes() == i + 1);
 	}
+}
+
+int main()
+{
+	TestFixedLinear();
 
 	return 0;
 }
