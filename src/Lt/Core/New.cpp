@@ -5,30 +5,46 @@
 
 void* operator new(Lt::usize bytes)
 {
-	return malloc(bytes);
+	void* p = malloc(bytes);
+
+	LT_ASSERT(p != nullptr);
+
+	return p;
 }
 
 void operator delete(void* ptr)
 {
+	LT_ASSERT(ptr != nullptr);
+
 	free(ptr);
 }
 
 void* operator new[](Lt::usize bytes)
 {
-	return malloc(bytes);
+	void* p = malloc(bytes);
+
+	LT_ASSERT(p != nullptr);
+
+	return p;
 }
 
 void operator delete[](void* ptr)
 {
+	LT_ASSERT(ptr != nullptr);
+
 	free(ptr);
 }
 
 void* operator new(Lt::usize bytes, void* ptr)
 {
-	return malloc(bytes);
+	LT_ASSERT(ptr != nullptr);
+
+	return ptr;
 }
 
 void* operator new[](Lt::usize bytes, void* ptr)
 {
-	return malloc(bytes);
+	LT_ASSERT(ptr != nullptr);
+
+	return ptr;
 }
