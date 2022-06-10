@@ -14,7 +14,9 @@ add_library(Lt STATIC
 "src/Lt/Core/Chars.cpp"
 "src/Lt/Core/IntegerToString.cpp"
 "src/Lt/Core/TestEqual.cpp"
-"src/Lt/Core/StringToInteger.cpp")
+"src/Lt/Core/StringToInteger.cpp"
+"src/Lt/Core/BaseConsole.cpp"
+"src/Lt/Core/Memory.cpp")
 
 if (WIN32)
   target_sources(Lt PRIVATE 
@@ -22,6 +24,9 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Core/Console.cpp"
   "src/Lt/Platforms/Windows/Core/Terminate.cpp")
 endif()
+
+add_executable(Concat "Tests/Chars/Concat.cpp")
+target_link_libraries(Concat Lt)
 
 add_executable(FixedLinear "Tests/Allocators/FixedLinear.cpp")
 target_link_libraries(FixedLinear Lt)
@@ -31,6 +36,9 @@ target_link_libraries(IntegerToString Lt)
 
 add_executable(StringToInteger "Tests/Core/StringToInteger.cpp")
 target_link_libraries(StringToInteger Lt)
+
+add_executable(BaseConsole "Tests/Core/BaseConsole.cpp")
+target_link_libraries(BaseConsole Lt)
 
 add_executable(Point2 "Tests/Graphics/Point2.cpp")
 target_link_libraries(Point2 Lt)

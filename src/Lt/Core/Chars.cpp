@@ -1,4 +1,5 @@
 #include <Lt/Core/Chars.hpp>
+#include <Lt/Core/Memory.hpp>
 
 Lt::usize Lt::Chars::Length(const char* source)
 {
@@ -39,4 +40,25 @@ bool Lt::Chars::IsSpace(char symbol)
 bool Lt::Chars::IsDigit(char symbol)
 {
     return symbol >= '0' && symbol <= '9';
+}
+
+void Lt::Chars::Copy(char* dest, const char* src, Lt::usize limit)
+{
+}
+
+Lt::usize Lt::Chars::Concat(char* dst, const char* src, Lt::usize maxlen)
+{
+    const size_t srclen = Length(src);
+
+    if (srclen + 1 < maxlen)
+    {
+        Memory::Copy(dst, src, srclen + 1);
+    }
+    else if (maxlen != 0)
+    {
+        Memory::Copy(dst, src, maxlen - 1);
+        dst[maxlen - 1] = '\0';
+    }
+
+    return srclen;
 }

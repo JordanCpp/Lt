@@ -12,6 +12,9 @@ namespace Lt
 		bool Equal(const char* x, const char* y);
 		bool IsSpace(char symbol);
 		bool IsDigit(char symbol);
+		void Copy(char* dest, const char* src, Lt::usize limit);
+		Lt::usize Concat(char* dst, const char* src, Lt::usize maxlen);
 	}
 }
+
 #endif    
