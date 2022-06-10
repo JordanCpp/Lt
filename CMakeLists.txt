@@ -25,8 +25,8 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Core/Terminate.cpp")
 endif()
 
-add_executable(Concat "Tests/Chars/Concat.cpp")
-target_link_libraries(Concat Lt)
+add_executable(Chars "Tests/Core/Chars.cpp")
+target_link_libraries(Chars Lt)
 
 add_executable(FixedLinear "Tests/Allocators/FixedLinear.cpp")
 target_link_libraries(FixedLinear Lt)
