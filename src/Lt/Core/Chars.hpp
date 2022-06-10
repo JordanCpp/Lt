@@ -14,6 +14,7 @@ namespace Lt
 		bool IsDigit(char symbol);
 		Lt::usize Copy(char* dst, const char* src, Lt::usize maxlen);
 		Lt::usize Concat(char* dst, const char* src, Lt::usize maxlen);
+		void Zero(char* dst, Lt::usize maxlen);
 	}
 }
 

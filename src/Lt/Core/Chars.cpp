@@ -85,3 +85,8 @@ Lt::usize Lt::Chars::Concat(char* dst, const char* src, Lt::usize dsize)
 
 	return(dlen + (src - osrc));
 }
+
+void Lt::Chars::Zero(char* dst, Lt::usize maxlen)
+{
+	Lt::Memory::Zero(dst, maxlen);
+}
