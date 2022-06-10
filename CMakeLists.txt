@@ -40,6 +40,9 @@ target_link_libraries(StringToInteger Lt)
 add_executable(BaseConsole "Tests/Core/BaseConsole.cpp")
 target_link_libraries(BaseConsole Lt)
 
+add_executable(Memory "Tests/Core/Memory.cpp")
+target_link_libraries(Memory Lt)
+
 add_executable(Point2 "Tests/Graphics/Point2.cpp")
 target_link_libraries(Point2 Lt)
 

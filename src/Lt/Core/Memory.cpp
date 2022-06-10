@@ -7,13 +7,13 @@ void* Lt::Memory::Copy(void* dst, const void* src, Lt::usize n)
 	Lt::usize* wsrc = (Lt::usize*)src;
 	Lt::u8* cdst, * csrc;
 
-	for (i = 0, m = n / sizeof(long); i < m; i++)
+	for (i = 0, m = n / sizeof(Lt::usize); i < m; i++)
 		*(wdst++) = *(wsrc++);
 
-	cdst = (unsigned char*)wdst;
-	csrc = (unsigned char*)wsrc;
+	cdst = (Lt::u8*)wdst;
+	csrc = (Lt::u8*)wsrc;
 
-	for (i = 0, m = n % sizeof(long); i < m; i++)
+	for (i = 0, m = n % sizeof(Lt::usize); i < m; i++)
 		*(cdst++) = *(csrc++);
 
 	return dst;
