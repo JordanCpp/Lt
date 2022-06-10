@@ -19,11 +19,18 @@ Lt::Core::Console::~Console()
 {
 }
 
-void Lt::Core::Console::Write(const char* source)
+void Lt::Core::Console::Show()
 {
 	DWORD count = 0;
 
-	WriteConsole(_Output, source, (DWORD)Lt::Chars::Length(source), &count, nullptr);
+	WriteConsole(_Output, _BaseConsole.Result(), (DWORD)Lt::Chars::Length(_BaseConsole.Result()), &count, nullptr);
+
+	_BaseConsole.Clear();
+}
+
+void Lt::Core::Console::Write(const char* source)
+{
+	_BaseConsole.Append(source);
 }
 
 void Lt::Core::Console::Write(Lt::isize source)

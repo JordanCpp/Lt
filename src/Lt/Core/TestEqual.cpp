@@ -19,5 +19,7 @@ void Lt::Core::TestEqual(bool condition, const char* description, const char* fu
 
 		console.Write(", line ");
 		console.Write((Lt::isize)line);
+
+		console.Show();
 	}
 }

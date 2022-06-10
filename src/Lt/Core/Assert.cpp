@@ -15,6 +15,7 @@ void Lt::Core::Assert(bool condition, const char* error, const char* file, Lt::u
 		console.Write(file);
 		console.Write(", line ");
 		console.Write((Lt::isize)line);
+		console.Show();
 
 		Lt::Core::Terminate();
 	}
