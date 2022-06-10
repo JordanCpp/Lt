@@ -25,6 +25,10 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Core/Terminate.cpp")
 endif()
 
+add_executable(Types "Tests/Core/Types.cpp")
+target_link_libraries(Types Lt)
+
+
 add_executable(New "Tests/Core/New.cpp")
 target_link_libraries(New Lt)
 
