@@ -1,6 +1,11 @@
 #include "Lt/Core/BaseConsole.hpp"
 #include <Lt/Core/Chars.hpp>
 
+Lt::Core::BaseConsole::BaseConsole()
+{
+	Clear();
+}
+
 void Lt::Core::BaseConsole::Append(const char* source)
 {
 	Lt::Chars::Concat(_Buffer, source, BufferMax);

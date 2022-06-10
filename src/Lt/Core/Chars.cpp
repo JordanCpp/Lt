@@ -42,11 +42,7 @@ bool Lt::Chars::IsDigit(char symbol)
     return symbol >= '0' && symbol <= '9';
 }
 
-void Lt::Chars::Copy(char* dest, const char* src, Lt::usize limit)
-{
-}
-
-Lt::usize Lt::Chars::Concat(char* dst, const char* src, Lt::usize maxlen)
+Lt::usize Lt::Chars::Copy(char* dst, const char* src, Lt::usize maxlen)
 {
     const size_t srclen = Length(src);
 
@@ -61,4 +57,31 @@ Lt::usize Lt::Chars::Concat(char* dst, const char* src, Lt::usize maxlen)
     }
 
     return srclen;
+}
+
+Lt::usize Lt::Chars::Concat(char* dst, const char* src, Lt::usize dsize)
+{
+	const char* odst = dst;
+	const char* osrc = src;
+	size_t n = dsize;
+	size_t dlen;
+
+
+	while (n-- != 0 && *dst != '\0')
+		dst++;
+	dlen = dst - odst;
+	n = dsize - dlen;
+
+	if (n-- == 0)
+		return(dlen + Length(src));
+	while (*src != '\0') {
+		if (n != 0) {
+			*dst++ = *src;
+			n--;
+		}
+		src++;
+	}
+	*dst = '\0';
+
+	return(dlen + (src - osrc));
 }

@@ -3,7 +3,7 @@
 
 int main()
 {
-	const Lt::usize size = 12;
+	const Lt::usize size = 15;
 
 	char buffer[size];
 
@@ -13,8 +13,10 @@ int main()
 	}
 
 	Lt::Chars::Concat(buffer, "Hello", size);
-
 	LT_TEST_EQUAL(Lt::Chars::Equal(buffer, "Hello"));
+
+	Lt::Chars::Concat(buffer, " world!", size);
+	LT_TEST_EQUAL(Lt::Chars::Equal(buffer, "Hello world!"));
 
 	return 0;
 }

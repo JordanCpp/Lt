@@ -12,6 +12,7 @@ namespace Lt
 			{
 				BufferMax = 4096
 			};
+			BaseConsole();
 			void Append(const char * source);
 			void Clear();
 			const char* Result();
