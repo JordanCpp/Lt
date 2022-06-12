@@ -2,6 +2,7 @@
 #define Lt_Containers_BasicString_hpp
 
 #include <Lt/Allocators/Allocator.hpp>
+#include <Lt/Core/New.hpp>
 
 namespace Lt
 {
@@ -38,7 +39,7 @@ namespace Lt
 				return _Allocator;
 			}
 
-			TYPE* Content()
+			const TYPE* Content() const
 			{
 				return _Content;
 			}
@@ -71,11 +72,43 @@ namespace Lt
 						p[i] = _Content[i];
 					}
 
-					Deallocate(_Content);
+					if (_Content != nullptr)
+						Deallocate(_Content);
 
 					_Content = p;
 
 					p[_Position] = '\0';
+				}
+			}
+
+			void Append(const TYPE& element)
+			{
+				if (_Capacity == 0)
+				{
+					Reserve(2);
+				}
+				else if (_Position + 1 >= _Capacity)
+				{
+					Reserve(_Capacity * 2);
+				}
+
+				_Content[_Position] = element;
+
+				_Position++;
+
+				_Content[_Position] = '\0';
+
+			}
+
+			void Append(const TYPE* elements)
+			{
+				Lt::usize i = 0;
+
+				while (elements[i] != '\0')
+				{
+					Append(elements[i]);
+
+					i++;
 				}
 			}
 		private:
