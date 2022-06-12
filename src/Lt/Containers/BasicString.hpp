@@ -33,6 +33,16 @@ namespace Lt
 			{
 			}
 
+			Lt::Allocators::Allocator* Allocator()
+			{
+				return _Allocator;
+			}
+
+			TYPE* Content()
+			{
+				return _Content;
+			}
+
 			Lt::usize Length()
 			{
 				return _Position;
@@ -41,6 +51,11 @@ namespace Lt
 			Lt::usize Capacity()
 			{
 				return _Capacity;
+			}
+
+			void Clear()
+			{
+				_Position = 0;
 			}
 
 			void Reserve(Lt::usize count)
@@ -81,7 +96,7 @@ namespace Lt
 			}
 			Lt::usize _Capacity;
 			Lt::usize _Position;
-			TYPE _Content;
+			TYPE* _Content;
 			Lt::Allocators::Allocator* _Allocator;
 		};
 	}

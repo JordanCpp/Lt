@@ -69,3 +69,6 @@ target_link_libraries(Rect2 Lt)
 
 add_executable(Vector "Tests/Containers/Vector.cpp")
 target_link_libraries(Vector Lt)
+
+add_executable(String "Tests/Containers/String.cpp")
+target_link_libraries(String Lt)
