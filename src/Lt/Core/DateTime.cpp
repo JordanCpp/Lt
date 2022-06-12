@@ -1,7 +1,5 @@
 #include <Lt/Core/DateTime.hpp>
-
-static Lt::u8 normalYear[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-static Lt::u8 leapYear[12] = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+#include <Lt/Core/Utils.hpp>
 
 Lt::DateTime::DateTime() :
 	_Years(1900),

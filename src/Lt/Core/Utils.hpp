@@ -10,6 +10,8 @@ namespace Lt
 		namespace Utils
 		{
 			bool IsLeapYear(Lt::usize year);
+			bool DateIsValid(Lt::u16 year, Lt::u8 month, Lt::u8 day);
+			bool TimeIsValid(Lt::u8 hour, Lt::u8 minute, Lt::u8 second);
 		}
 	}
 }
