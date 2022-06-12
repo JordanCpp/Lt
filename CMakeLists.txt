@@ -25,7 +25,7 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Core/MemoryManager.cpp"
   "src/Lt/Platforms/Windows/Core/Console.cpp"
   "src/Lt/Platforms/Windows/Core/Terminate.cpp"
-  "src/Lt/Platforms/Windows/Core/File.cpp")
+  "src/Lt/Platforms/Windows/Core/BinaryFile.cpp")
 endif()
 
 add_executable(Types "Tests/Core/Types.cpp")
@@ -43,8 +43,8 @@ target_link_libraries(New Lt)
 add_executable(Chars "Tests/Core/Chars.cpp")
 target_link_libraries(Chars Lt)
 
-add_executable(File "Tests/Core/File.cpp")
-target_link_libraries(File Lt)
+add_executable(BinaryFile "Tests/Core/BinaryFile.cpp")
+target_link_libraries(BinaryFile Lt)
 
 add_executable(FixedLinear "Tests/Allocators/FixedLinear.cpp")
 target_link_libraries(FixedLinear Lt)

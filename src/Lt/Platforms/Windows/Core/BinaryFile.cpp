@@ -1,18 +1,18 @@
-#include <Lt/Platforms/Windows/Core/File.hpp>
+#include <Lt/Platforms/Windows/Core/BinaryFile.hpp>
 
-Lt::Core::File::File():
+Lt::Core::BinaryFile::BinaryFile():
 	_File(nullptr),
 	_Bytes(0),
 	_Position(0)
 {
 }
 
-Lt::Core::File::~File()
+Lt::Core::BinaryFile::~BinaryFile()
 {
 	Close();
 }
 
-bool Lt::Core::File::Eof()
+bool Lt::Core::BinaryFile::Eof()
 {
 	if (_Bytes == 0)
 		return true;
@@ -20,16 +20,16 @@ bool Lt::Core::File::Eof()
 		return _Position == _Bytes;
 }
 
-bool Lt::Core::File::Open(const char* path, Lt::usize mode)
+bool Lt::Core::BinaryFile::Open(const char* path, Lt::usize mode)
 {
 	_Bytes = 0;
 	_Position = 0;
 
-	if (mode == Lt::Core::File::Mode::Reading)
+	if (mode == Lt::Core::BinaryFile::Mode::Reading)
 		_File = CreateFile(path, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-	else if (mode == Lt::Core::File::Mode::Writing)
+	else if (mode == Lt::Core::BinaryFile::Mode::Writing)
 		_File = CreateFile(path, GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-	else if (mode == (Lt::Core::File::Mode::Reading | Lt::Core::File::Mode::Writing))
+	else if (mode == (Lt::Core::BinaryFile::Mode::Reading | Lt::Core::BinaryFile::Mode::Writing))
 		_File = CreateFile(path, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	else
 		return false;
@@ -44,7 +44,7 @@ bool Lt::Core::File::Open(const char* path, Lt::usize mode)
 	return false;
 }
 
-void Lt::Core::File::Close()
+void Lt::Core::BinaryFile::Close()
 {
 	if (_File != INVALID_HANDLE_VALUE)
 	{
@@ -52,7 +52,7 @@ void Lt::Core::File::Close()
 	}
 }
 
-Lt::usize Lt::Core::File::Read(Lt::u8* dst, Lt::usize bytes)
+Lt::usize Lt::Core::BinaryFile::Read(Lt::u8* dst, Lt::usize bytes)
 {
 	DWORD result = 0;
 

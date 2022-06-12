@@ -8,7 +8,7 @@ namespace Lt
 {
 	namespace Core
 	{
-		class File
+		class BinaryFile
 		{
 		public:
 			enum Mode
@@ -16,8 +16,8 @@ namespace Lt
 				Reading,
 				Writing
 			};
-			File();
-			~File();
+			BinaryFile();
+			~BinaryFile();
 			bool Eof();
 			bool Open(const char * path, Lt::usize mode);
 			void Close();

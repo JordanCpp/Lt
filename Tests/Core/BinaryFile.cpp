@@ -1,13 +1,13 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Core/File.hpp>
+#include <Lt/Core/BinaryFile.hpp>
 
 void TestFileReading()
 {
-	Lt::Core::File file;
+	Lt::Core::BinaryFile file;
 
 	LT_TEST_EQUAL(file.Eof() == true);
 
-	LT_TEST_EQUAL(file.Open("Test.txt", Lt::Core::File::Mode::Reading) == true);
+	LT_TEST_EQUAL(file.Open("Test.txt", Lt::Core::BinaryFile::Mode::Reading) == true);
 
 	LT_TEST_EQUAL(file.Eof() == false);
 
