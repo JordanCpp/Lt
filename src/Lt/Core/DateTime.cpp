@@ -21,32 +21,32 @@ Lt::DateTime::DateTime(Lt::u16 year, Lt::u8 month, Lt::u8 day, Lt::u8 hour, Lt::
 {
 }
 
-Lt::u16 Lt::DateTime::Years()
+Lt::u16 Lt::DateTime::Years() const
 {
 	return _Years;
 }
 
-Lt::u8 Lt::DateTime::Months()
+Lt::u8 Lt::DateTime::Months() const
 {
 	return _Months;
 }
 
-Lt::u8 Lt::DateTime::Days()
+Lt::u8 Lt::DateTime::Days() const
 {
 	return _Days;
 }
 
-Lt::u8 Lt::DateTime::Hours()
+Lt::u8 Lt::DateTime::Hours() const
 {
 	return _Hours;
 }
 
-Lt::u8 Lt::DateTime::Minutes()
+Lt::u8 Lt::DateTime::Minutes() const
 {
 	return _Minutes;
 }
 
-Lt::u8 Lt::DateTime::Seconds()
+Lt::u8 Lt::DateTime::Seconds() const
 {
 	return _Seconds;
 }

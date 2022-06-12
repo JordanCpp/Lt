@@ -29,3 +29,8 @@ bool Lt::Core::Utils::TimeIsValid(Lt::u8 hour, Lt::u8 minute, Lt::u8 second)
 {
 	return hour <= 23 && minute <= 59 && second <= 59;
 }
+
+bool Lt::Core::Utils::DateTimeIsValid(const Lt::DateTime& dateTime)
+{
+	return DateIsValid(dateTime.Years(), dateTime.Months(), dateTime.Days()) && TimeIsValid(dateTime.Hours(), dateTime.Minutes(), dateTime.Seconds());
+}
