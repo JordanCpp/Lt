@@ -1,5 +1,5 @@
-#ifndef Lt_Platforms_Windows_Core_File_hpp
-#define Lt_Platforms_Windows_Core_File_hpp
+#ifndef Lt_Platforms_Windows_Core_BinaryFile_hpp
+#define Lt_Platforms_Windows_Core_BinaryFile_hpp
 
 #include <Lt/Core/Types.hpp>
 #include <Windows.h>

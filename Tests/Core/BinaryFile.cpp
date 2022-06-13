@@ -1,7 +1,7 @@
 #include <Lt/Core/TestEqual.hpp>
 #include <Lt/Core/BinaryFile.hpp>
 
-void TestFileReading()
+void TestBinaryFileReading()
 {
 	Lt::Core::BinaryFile file;
 
@@ -28,7 +28,7 @@ void TestFileReading()
 
 int main()
 {
-	TestFileReading();
+	TestBinaryFileReading();
 
 	return 0;
 }

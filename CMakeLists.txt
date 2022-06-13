@@ -18,7 +18,8 @@ add_library(Lt STATIC
 "src/Lt/Core/BaseConsole.cpp"
 "src/Lt/Core/Memory.cpp"
 "src/Lt/Core/DateTime.cpp"
-"src/Lt/Core/Utils.cpp")
+"src/Lt/Core/Utils.cpp"
+"src/Lt/Core/TextFile.cpp")
 
 if (WIN32)
   target_sources(Lt PRIVATE 
@@ -45,6 +46,9 @@ target_link_libraries(Chars Lt)
 
 add_executable(BinaryFile "Tests/Core/BinaryFile.cpp")
 target_link_libraries(BinaryFile Lt)
+
+add_executable(TextFile "Tests/Core/TextFile.cpp")
+target_link_libraries(TextFile Lt)
 
 add_executable(FixedLinear "Tests/Allocators/FixedLinear.cpp")
 target_link_libraries(FixedLinear Lt)
