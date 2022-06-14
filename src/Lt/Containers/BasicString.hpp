@@ -111,6 +111,13 @@ namespace Lt
 					i++;
 				}
 			}
+
+			void Assign(const char * elements)
+			{
+				Clear();
+
+				Append(elements);
+			}
 		private:
 			char* Allocate(Lt::usize count)
 			{

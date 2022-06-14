@@ -39,11 +39,24 @@ void TestContainerStringAppendElements()
 	LT_TEST_EQUAL(Lt::Chars::Equal(string.Content(), "Hello!") == true);
 }
 
+void TestContainerStringAssign()
+{
+	Lt::Containers::String string;
+
+	string.Assign("Hello!");
+
+	LT_TEST_EQUAL(string.Content() != nullptr);
+	LT_TEST_EQUAL(string.Length() == 6);
+	LT_TEST_EQUAL(string.Allocator() == nullptr);
+	LT_TEST_EQUAL(Lt::Chars::Equal(string.Content(), "Hello!") == true);
+}
+
 int main()
 {
 	TestContainerStringDefault();
 	TestContainerStringAppendElement();
 	TestContainerStringAppendElements();
+	TestContainerStringAssign();
 
 	return 0;
 }
