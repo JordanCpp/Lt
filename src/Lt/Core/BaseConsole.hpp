@@ -14,6 +14,7 @@ namespace Lt
 			};
 			BaseConsole();
 			void Append(const char * source);
+			void Line();
 			void Clear();
 			const char* Result();
 		private:

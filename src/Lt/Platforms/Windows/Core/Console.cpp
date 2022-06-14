@@ -28,6 +28,11 @@ void Lt::Core::Console::Show()
 	_BaseConsole.Clear();
 }
 
+void Lt::Core::Console::Line()
+{
+	_BaseConsole.Line();
+}
+
 void Lt::Core::Console::Write(const char* source)
 {
 	_BaseConsole.Append(source);

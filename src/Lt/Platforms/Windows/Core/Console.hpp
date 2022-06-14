@@ -16,6 +16,7 @@ namespace Lt
 			Console();
 			~Console();
 			void Show();
+			void Line();
 			void Write(const char* source);
 			void Write(Lt::isize source);
 		private:

@@ -13,6 +13,9 @@ int main()
 	baseConsole.Append(" world!");
 	LT_TEST_EQUAL(Lt::Chars::Equal(baseConsole.Result(), "Hello world!"));
 
+	baseConsole.Line();
+	LT_TEST_EQUAL(Lt::Chars::Equal(baseConsole.Result(), "Hello world!\n"));
+
 	baseConsole.Clear();
 	LT_TEST_EQUAL(Lt::Chars::Equal(baseConsole.Result(), ""));
 
