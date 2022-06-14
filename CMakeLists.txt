@@ -84,3 +84,6 @@ target_link_libraries(String Lt)
 
 add_executable(Array "Tests/Containers/Array.cpp")
 target_link_libraries(Array Lt)
+
+add_executable(StaticString "Tests/Containers/StaticString.cpp")
+target_link_libraries(StaticString Lt)
