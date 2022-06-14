@@ -18,6 +18,8 @@ namespace Lt
 			};
 			BinaryFile();
 			~BinaryFile();
+			Lt::usize Position();
+			Lt::usize Size();
 			bool Eof();
 			bool Open(const char * path, Lt::usize mode);
 			void Close();

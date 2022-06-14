@@ -12,6 +12,16 @@ Lt::Core::BinaryFile::~BinaryFile()
 	Close();
 }
 
+Lt::usize Lt::Core::BinaryFile::Position()
+{
+	return _Position;
+}
+
+Lt::usize Lt::Core::BinaryFile::Size()
+{
+	return _Bytes;
+}
+
 bool Lt::Core::BinaryFile::Eof()
 {
 	if (_Bytes == 0)
@@ -46,6 +56,9 @@ bool Lt::Core::BinaryFile::Open(const char* path, Lt::usize mode)
 
 void Lt::Core::BinaryFile::Close()
 {
+	_Bytes = 0;
+	_Position = 0;
+
 	if (_File != INVALID_HANDLE_VALUE)
 	{
 		CloseHandle(_File);

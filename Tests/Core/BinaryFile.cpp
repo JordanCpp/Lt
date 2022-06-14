@@ -6,10 +6,14 @@ void TestBinaryFileReading()
 	Lt::Core::BinaryFile file;
 
 	LT_TEST_EQUAL(file.Eof() == true);
+	LT_TEST_EQUAL(file.Size() == 0);
+	LT_TEST_EQUAL(file.Position() == 0);
 
 	LT_TEST_EQUAL(file.Open("Test.txt", Lt::Core::BinaryFile::Mode::Reading) == true);
 
 	LT_TEST_EQUAL(file.Eof() == false);
+	LT_TEST_EQUAL(file.Size() == 6);
+	LT_TEST_EQUAL(file.Position() == 0);
 
 	Lt::u8 ch = 0;
 
@@ -24,6 +28,14 @@ void TestBinaryFileReading()
 
 		i++;
 	}
+
+	LT_TEST_EQUAL(file.Size() == 6);
+	LT_TEST_EQUAL(file.Position() == 6);
+
+	file.Close();
+
+	LT_TEST_EQUAL(file.Size() == 0);
+	LT_TEST_EQUAL(file.Position() == 0);
 }
 
 int main()
