@@ -1,6 +1,17 @@
 # Lt
 Free cross-platform library.
 
+# Project characteristics.
+
+1. Free for everyone.
+2. Consider and accept all ideas.
+3. We do not limit the developer.
+4. We are not waiting for new C++ standards.
+5. We support old and new platforms.
+6. Cross-platform.
+7. Independence from Libc and GLIbc.
+8. Static link.
+
 Greetings!
 
 # The main idea is to write an analogue of the Qt library. 
