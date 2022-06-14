@@ -55,12 +55,24 @@ void TestContainersStaticStringClear()
 	LT_TEST_EQUAL(string.Content() != nullptr);
 }
 
+void TestContainersStaticStringAssign()
+{
+	const Lt::usize limit = 128;
+
+	Lt::Containers::StaticString<limit> string;
+
+	string.Append("Hello!");
+
+	LT_TEST_EQUAL(Lt::Chars::Equal(string.Content(), "Hello!"));
+}
+
 int main()
 {
 	TestContainersStaticStringManual();
 	TestContainersStaticStringAppendChar();
 	TestContainersStaticStringAppendChars();
     TestContainersStaticStringClear();
+	TestContainersStaticStringAssign();
 
 	return 0;
 }

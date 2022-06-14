@@ -63,6 +63,12 @@ namespace Lt
 				}
 			}
 
+			void Assign(const char* elements)
+			{
+				Clear();
+				Append(elements);
+			}
+
 			const char& operator[](Lt::usize index) const
 			{
 				LT_ASSERT(index <= _Capacity);
