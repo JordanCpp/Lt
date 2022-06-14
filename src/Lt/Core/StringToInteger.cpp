@@ -40,6 +40,11 @@ bool Lt::Core::StringToInteger::Convert(const char* source)
     return _Result;
 }
 
+bool Lt::Core::StringToInteger::Convert(const Lt::Containers::String& source)
+{
+    return Convert(source.Content());
+}
+
 Lt::isize Lt::Core::StringToInteger::Result()
 {
 	return _Result;
