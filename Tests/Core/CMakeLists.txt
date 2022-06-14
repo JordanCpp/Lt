@@ -37,3 +37,6 @@ target_link_libraries(BaseConsole Lt)
 
 add_executable(Memory "Memory.cpp")
 target_link_libraries(Memory Lt)
+
+add_executable(FileInfo "FileInfo.cpp")
+target_link_libraries(FileInfo Lt)
