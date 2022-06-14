@@ -19,14 +19,16 @@ add_library(Lt STATIC
 "src/Lt/Core/Memory.cpp"
 "src/Lt/Core/DateTime.cpp"
 "src/Lt/Core/Utils.cpp"
-"src/Lt/Core/TextFile.cpp")
+"src/Lt/Core/TextFile.cpp"
+"src/Lt/Core/FileInfo.cpp")
 
 if (WIN32)
   target_sources(Lt PRIVATE 
   "src/Lt/Platforms/Windows/Core/MemoryManager.cpp"
   "src/Lt/Platforms/Windows/Core/Console.cpp"
   "src/Lt/Platforms/Windows/Core/Terminate.cpp"
-  "src/Lt/Platforms/Windows/Core/BinaryFile.cpp")
+  "src/Lt/Platforms/Windows/Core/BinaryFile.cpp"
+  "src/Lt/Platforms/Windows/Core/Directory.cpp")
 endif()
 
 add_executable(Types "Tests/Core/Types.cpp")
@@ -49,6 +51,9 @@ target_link_libraries(BinaryFile Lt)
 
 add_executable(TextFile "Tests/Core/TextFile.cpp")
 target_link_libraries(TextFile Lt)
+
+add_executable(Directory "Tests/Core/Directory.cpp")
+target_link_libraries(Directory Lt)
 
 add_executable(FixedLinear "Tests/Allocators/FixedLinear.cpp")
 target_link_libraries(FixedLinear Lt)
