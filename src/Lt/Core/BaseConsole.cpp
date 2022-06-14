@@ -8,12 +8,12 @@ Lt::Core::BaseConsole::BaseConsole()
 
 void Lt::Core::BaseConsole::Append(const char* source)
 {
-	Lt::Chars::Concat(_Buffer, source, BufferMax);
+	_Buffer.Append(source);
 }
 
 void Lt::Core::BaseConsole::Line()
 {
-	Lt::Chars::Concat(_Buffer, "\n", BufferMax);
+	_Buffer.Append("\n");
 }
 
 void Lt::Core::BaseConsole::Clear()
@@ -23,5 +23,5 @@ void Lt::Core::BaseConsole::Clear()
 
 const char* Lt::Core::BaseConsole::Result()
 {
-	return _Buffer;
+	return _Buffer.Content();
 }

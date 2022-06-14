@@ -1,6 +1,8 @@
 #ifndef Lt_Core_BaseConsole_hpp
 #define Lt_Core_BaseConsole_hpp
 
+#include <Lt/Containers/StaticString.hpp>
+
 namespace Lt
 {
 	namespace Core
@@ -18,7 +20,7 @@ namespace Lt
 			void Clear();
 			const char* Result();
 		private:
-			char _Buffer[BufferMax];
+			Lt::Containers::StaticString<BufferMax> _Buffer;
 		};
 	}
 }
