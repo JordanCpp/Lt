@@ -81,3 +81,6 @@ target_link_libraries(Vector Lt)
 
 add_executable(String "Tests/Containers/String.cpp")
 target_link_libraries(String Lt)
+
+add_executable(Array "Tests/Containers/Array.cpp")
+target_link_libraries(Array Lt)
