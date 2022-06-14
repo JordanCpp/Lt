@@ -2,6 +2,7 @@
 #define Lt_Core_BaseConsole_hpp
 
 #include <Lt/Containers/StaticString.hpp>
+#include <lt/Containers/String.hpp>
 
 namespace Lt
 {
@@ -16,6 +17,7 @@ namespace Lt
 			};
 			BaseConsole();
 			void Append(const char * source);
+			void Append(const Lt::Containers::String& source);
 			void Line();
 			void Clear();
 			const char* Result();

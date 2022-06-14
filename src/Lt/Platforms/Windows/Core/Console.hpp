@@ -18,6 +18,7 @@ namespace Lt
 			void Show();
 			void Line();
 			void Write(const char* source);
+			void Write(const Lt::Containers::String& source);
 			void Write(Lt::isize source);
 		private:
 			Lt::Core::BaseConsole _BaseConsole;

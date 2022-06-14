@@ -38,6 +38,11 @@ void Lt::Core::Console::Write(const char* source)
 	_BaseConsole.Append(source);
 }
 
+void Lt::Core::Console::Write(const Lt::Containers::String& source)
+{
+	_BaseConsole.Append(source);
+}
+
 void Lt::Core::Console::Write(Lt::isize source)
 {
 	if (_Convert.Convert(source))

@@ -11,6 +11,11 @@ void Lt::Core::BaseConsole::Append(const char* source)
 	_Buffer.Append(source);
 }
 
+void Lt::Core::BaseConsole::Append(const Lt::Containers::String& source)
+{
+	_Buffer.Append(source.Content());
+}
+
 void Lt::Core::BaseConsole::Line()
 {
 	_Buffer.Append("\n");
