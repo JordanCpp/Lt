@@ -13,3 +13,6 @@ target_link_libraries(BaseWindow LtCore LtGraphics)
 
 add_executable(Color "Color.cpp")
 target_link_libraries(Color LtCore LtGraphics)
+
+add_executable(CpuImage "CpuImage.cpp")
+target_link_libraries(CpuImage LtCore LtGraphics LtAllocators)
