@@ -29,7 +29,8 @@ endif()
 
 add_library(LtGraphics STATIC
 "src/Lt/Graphics/BaseRender.cpp"
-"src/Lt/Graphics/BaseWindow.cpp")
+"src/Lt/Graphics/BaseWindow.cpp"
+"src/Lt/Graphics/Color.cpp")
 
 add_library(LtAllocators STATIC
 "src/Lt/Allocators/FixedLinear.cpp")
