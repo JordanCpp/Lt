@@ -1,5 +1,13 @@
 #include <Lt/Graphics/CpuImage.hpp>
 
+Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size, Lt::u8* pixels) :
+	_Size(size),
+	_Channels(4),
+	_Allocator(nullptr),
+	_Pixels(pixels)
+{
+}
+
 Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size, Lt::Allocators::Allocator* allocator):
 	_Size(size),
 	_Channels(4),
@@ -13,7 +21,8 @@ Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size, Lt::Allocato
 
 Lt::Graphics::CpuImage::~CpuImage()
 {
-	_Allocator->Deallocate(_Pixels);
+	if (_Allocator != nullptr)
+		_Allocator->Deallocate(_Pixels);
 }
 
 const Lt::Graphics::Point2i& Lt::Graphics::CpuImage::Size()
@@ -31,7 +40,7 @@ Lt::u8* Lt::Graphics::CpuImage::Pixels()
 	return _Pixels;
 }
 
-Lt::Allocators::Allocator* Lt::Graphics::CpuImage::Allocator()
+const Lt::Allocators::Allocator* Lt::Graphics::CpuImage::Allocator()
 {
 	return _Allocator;
 }
