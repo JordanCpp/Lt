@@ -40,3 +40,6 @@ target_link_libraries(Memory LtCore)
 
 add_executable(FileInfo "FileInfo.cpp")
 target_link_libraries(FileInfo LtCore)
+
+add_executable(Limits "Limits.cpp")
+target_link_libraries(Limits LtCore)

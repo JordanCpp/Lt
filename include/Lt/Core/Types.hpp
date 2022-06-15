@@ -17,12 +17,15 @@ namespace Lt
 	typedef unsigned int u32;
 
 #if defined(LT_CONFIG_CPU_64)
-	typedef signed long long isize;
-	typedef unsigned long long usize;
+	typedef signed long long i64;
+	typedef unsigned long long u64;
 #else
-	typedef signed int isize;
-	typedef unsigned int usize;
+	typedef i32 i64;
+	typedef u32 u64;
 #endif
+
+	typedef i64 isize;
+	typedef u64 usize;
 }
 
 #endif    
