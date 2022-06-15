@@ -1,5 +1,5 @@
-#ifndef Lt_Core_Convert_hpp
-#define Lt_Core_Convert_hpp
+#ifndef Lt_Core_IntegerToString_hpp
+#define Lt_Core_IntegerToString_hpp
 
 #include <Lt/Core/Types.hpp>
 
