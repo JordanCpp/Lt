@@ -4,8 +4,7 @@ project(LiteToolkit)
 
 include_directories("src")
 
-add_library(Lt STATIC
-"src/Lt/Allocators/FixedLinear.cpp"
+add_library(LtCore STATIC
 "src/Lt/Core/New.cpp"
 "src/Lt/Core/Assert.cpp"
 "src/Lt/Core/Chars.cpp"
@@ -20,13 +19,20 @@ add_library(Lt STATIC
 "src/Lt/Core/FileInfo.cpp")
 
 if (WIN32)
-  target_sources(Lt PRIVATE 
+  target_sources(LtCore PRIVATE
   "src/Lt/Platforms/Windows/Core/MemoryManager.cpp"
   "src/Lt/Platforms/Windows/Core/Console.cpp"
   "src/Lt/Platforms/Windows/Core/Terminate.cpp"
   "src/Lt/Platforms/Windows/Core/BinaryFile.cpp"
   "src/Lt/Platforms/Windows/Core/Directory.cpp")
 endif()
+
+add_library(LtGraphics STATIC
+"src/Lt/Graphics/BaseRender.cpp"
+"src/Lt/Graphics/BaseWindow.cpp")
+
+add_library(LtAllocators STATIC
+"src/Lt/Allocators/FixedLinear.cpp")
 
 add_subdirectory("Tests/Core")
 add_subdirectory("Tests/Containers")
