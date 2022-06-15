@@ -13,3 +13,6 @@ target_link_libraries(Array Lt)
 
 add_executable(StaticString "StaticString.cpp")
 target_link_libraries(StaticString Lt)
+
+add_executable(StaticVector "StaticVector.cpp")
+target_link_libraries(StaticVector Lt)
