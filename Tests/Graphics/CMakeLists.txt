@@ -7,3 +7,6 @@ target_link_libraries(Point2 LtCore)
 
 add_executable(Rect2 "Rect2.cpp")
 target_link_libraries(Rect2 LtCore)
+
+add_executable(BaseWindow "BaseWindow.cpp")
+target_link_libraries(BaseWindow LtCore LtGraphics)

@@ -19,6 +19,15 @@ namespace Lt
 				LT_ASSERT(_Capacity >= 2);
 			}
 
+			StaticString(const char * source) :
+				_Capacity(COUNT),
+				_Position(0)
+			{
+				LT_ASSERT(_Capacity >= 2);
+
+				Assign(source);
+			}
+
 			Lt::usize Capacity()
 			{
 				return _Capacity - 1;
