@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 
 project(LiteToolkit)
 
-include_directories("src")
+include_directories("include")
 
 add_library(LtCore STATIC
 "src/Lt/Core/New.cpp"

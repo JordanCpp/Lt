@@ -1,4 +1,3 @@
-#include "StringToInteger.hpp"
 #include "Lt/Core/StringToInteger.hpp"
 #include "Lt/Core/Chars.hpp"
 
