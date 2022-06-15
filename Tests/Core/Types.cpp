@@ -35,6 +35,15 @@ void TestTypesSizeMax()
 #endif
 }
 
+void TestTypesCompare()
+{
+	LT_TEST_EQUAL(sizeof(Lt::i8) == sizeof(Lt::u8));
+	LT_TEST_EQUAL(sizeof(Lt::i16) == sizeof(Lt::u16));
+	LT_TEST_EQUAL(sizeof(Lt::i32) == sizeof(Lt::u32));
+	LT_TEST_EQUAL(sizeof(Lt::i64) == sizeof(Lt::u64));
+	LT_TEST_EQUAL(sizeof(Lt::isize) == sizeof(Lt::isize));
+}
+
 int main()
 {
 	TestTypesNullPtr();
@@ -42,6 +51,7 @@ int main()
 	TestTypesSize16();
 	TestTypesSize32();
 	TestTypesSizeMax();
+	TestTypesCompare();
 
 	return 0;
 }
