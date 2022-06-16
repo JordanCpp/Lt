@@ -17,6 +17,16 @@ const Lt::Graphics::Color& Lt::Graphics::CpuRender::Color()
 	return _BaseRender.Color();
 }
 
+void Lt::Graphics::CpuRender::Clear()
+{
+	Lt::Graphics::Color* pixels = (Lt::Graphics::Color*)_Canvas.Pixels();
+
+	for (Lt::usize i = 0; i < _Canvas.Size().PosX() * _Canvas.Size().PosY(); i++)
+	{
+		pixels[i] = Color();
+	}
+}
+
 void Lt::Graphics::CpuRender::Color(const Lt::Graphics::Color& color)
 {
 	_BaseRender.Color(color);
