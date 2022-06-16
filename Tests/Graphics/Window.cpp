@@ -21,7 +21,6 @@ void TestGraphicsWindow()
 	window.StopEvent();
 
 	LT_TEST_EQUAL(window.GetEvent(event) == false);
-
 }
 
 int main()
