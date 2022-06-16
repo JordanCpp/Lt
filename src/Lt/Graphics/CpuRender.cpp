@@ -7,6 +7,21 @@ Lt::Graphics::CpuRender::CpuRender(Lt::Graphics::CpuWindow* window) :
 {
 }
 
+const Lt::Graphics::Point2i& Lt::Graphics::CpuRender::Size()
+{
+	return _BaseRender.Size();
+}
+
+const Lt::Graphics::Color& Lt::Graphics::CpuRender::Color()
+{
+	return _BaseRender.Color();
+}
+
+void Lt::Graphics::CpuRender::Color(const Lt::Graphics::Color& color)
+{
+	_BaseRender.Color(color);
+}
+
 void Lt::Graphics::CpuRender::Present()
 {
 	_Window->Present(_Canvas.Pixels());

@@ -13,6 +13,9 @@ namespace Lt
 		{
 		public:
 			CpuRender(Lt::Graphics::CpuWindow* window);
+			const Lt::Graphics::Point2i& Size();
+			const Lt::Graphics::Color& Color();
+			void Color(const Lt::Graphics::Color& color);
 			void Present();
 			Lt::Graphics::CpuImage* Canvas();
 		private:
