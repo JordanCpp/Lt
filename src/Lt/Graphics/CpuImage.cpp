@@ -1,5 +1,16 @@
 #include <Lt/Graphics/CpuImage.hpp>
 
+Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size) :
+	_Size(size),
+	_Channels(4),
+	_Allocator(nullptr),
+	_Pixels(nullptr)
+{
+	Lt::usize bytes = Size().PosX() * Size().PosX() * Channels();
+
+	_Pixels = new Lt::u8[bytes];
+}
+
 Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size, Lt::u8* pixels) :
 	_Size(size),
 	_Channels(4),

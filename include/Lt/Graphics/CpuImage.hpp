@@ -3,6 +3,7 @@
 
 #include <Lt/Graphics/Point2i.hpp>
 #include <Lt/Allocators/Allocator.hpp>
+#include <Lt/Core/New.hpp>
 
 namespace Lt
 {
@@ -11,6 +12,7 @@ namespace Lt
 		class CpuImage
 		{
 		public:
+			CpuImage(const Lt::Graphics::Point2i& size);
 			CpuImage(const Lt::Graphics::Point2i& size, Lt::u8* pixels);
 			CpuImage(const Lt::Graphics::Point2i& size, Lt::Allocators::Allocator* allocator);
 			~CpuImage();

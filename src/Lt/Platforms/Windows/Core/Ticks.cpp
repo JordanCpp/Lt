@@ -12,5 +12,5 @@ Lt::usize Lt::Core::Ticks()
 
 void Lt::Core::Delay(Lt::usize count)
 {
-	Sleep(count);
+	Sleep((DWORD)count);
 }

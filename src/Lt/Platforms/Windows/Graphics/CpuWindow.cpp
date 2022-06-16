@@ -9,13 +9,13 @@ Lt::Graphics::CpuWindow::~CpuWindow()
 {
 }
 
-void Lt::Graphics::CpuWindow::Present(Lt::Graphics::Color* pixels)
+void Lt::Graphics::CpuWindow::Present(Lt::u8* pixels)
 {
     ZeroMemory(&_BITMAPINFO, sizeof(_BITMAPINFO));
 
     _BITMAPINFO.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-    _BITMAPINFO.bmiHeader.biWidth = _Window.Size().PosX();
-    _BITMAPINFO.bmiHeader.biHeight = -(Lt::i32)_Window.Size().PosY();
+    _BITMAPINFO.bmiHeader.biWidth = (LONG)_Window.Size().PosX();
+    _BITMAPINFO.bmiHeader.biHeight = -(LONG)_Window.Size().PosY();
     _BITMAPINFO.bmiHeader.biPlanes = 1;
     _BITMAPINFO.bmiHeader.biBitCount = 32;
     _BITMAPINFO.bmiHeader.biCompression = BI_RGB;
