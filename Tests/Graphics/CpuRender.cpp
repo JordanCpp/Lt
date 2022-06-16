@@ -21,7 +21,7 @@ void TestGraphicsCpuRender()
 	LT_TEST_EQUAL(render.Color().Alpha() == 100);
 }
 
-void TestGraphicsCpuClear()
+void TestGraphicsCpuRenderClear()
 {
 	Lt::Core::ErrorHandler errorHandler;
 	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2i(25, 50), Lt::Graphics::Point2i(800, 600), "Window!");
@@ -42,10 +42,29 @@ void TestGraphicsCpuClear()
 	}
 }
 
+void TestGraphicsCpuRenderPixel()
+{
+	Lt::Core::ErrorHandler errorHandler;
+	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2i(25, 50), Lt::Graphics::Point2i(800, 600), "Window!");
+	Lt::Graphics::CpuRender render(&window);
+
+	Lt::Graphics::Color color(15, 25, 35, 45);
+	Lt::Graphics::Point2i point(150, 235);
+
+	render.Color(color);
+	render.Pixel(point);
+
+	LT_TEST_EQUAL(render.GetPixel(point).Red() == color.Red());
+	LT_TEST_EQUAL(render.GetPixel(point).Green() == color.Green());
+	LT_TEST_EQUAL(render.GetPixel(point).Blue() == color.Blue());
+	LT_TEST_EQUAL(render.GetPixel(point).Alpha() == color.Alpha());
+}
+
 int main()
 {
 	TestGraphicsCpuRender();
-	TestGraphicsCpuClear();
+	TestGraphicsCpuRenderClear();
+	TestGraphicsCpuRenderPixel();
 
 	return 0;
 }

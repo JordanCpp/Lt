@@ -41,3 +41,21 @@ Lt::Graphics::CpuImage* Lt::Graphics::CpuRender::Canvas()
 {
 	return &_Canvas;
 }
+
+void Lt::Graphics::CpuRender::Pixel(const Lt::Graphics::Point2i& pos)
+{
+	Lt::usize i = (Size().PosX() * pos.PosY()) + pos.PosX();
+
+	Lt::Graphics::Color* pixels = (Lt::Graphics::Color*)_Canvas.Pixels();
+	
+	pixels[i] = Color();
+}
+
+const Lt::Graphics::Color& Lt::Graphics::CpuRender::GetPixel(const Lt::Graphics::Point2i& pos)
+{
+	Lt::usize i = (Size().PosX() * pos.PosY()) + pos.PosX();
+
+	Lt::Graphics::Color* pixels = (Lt::Graphics::Color*)_Canvas.Pixels();
+
+	return	pixels[i];
+}

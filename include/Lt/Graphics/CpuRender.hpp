@@ -19,6 +19,8 @@ namespace Lt
 			void Color(const Lt::Graphics::Color& color);
 			void Present();
 			Lt::Graphics::CpuImage* Canvas();
+			void Pixel(const Lt::Graphics::Point2i& pos);
+			const Lt::Graphics::Color& GetPixel(const Lt::Graphics::Point2i& pos);
 		private:
 			Lt::Graphics::CpuWindow* _Window;
 			Lt::Graphics::BaseRender _BaseRender;
