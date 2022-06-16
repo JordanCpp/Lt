@@ -1,7 +1,7 @@
 #include <Lt/Platforms/Windows/Graphics/CpuWindow.hpp>
 
-Lt::Graphics::CpuWindow::CpuWindow(const Point2i& pos, const Point2i& size, const char* title) :
-    _Window(pos, size, title)
+Lt::Graphics::CpuWindow::CpuWindow(Lt::Core::ErrorHandler& errorHandler, const Point2i& pos, const Point2i& size, const char* title) :
+    _Window(errorHandler, pos, size, title)
 {
 }
 
@@ -51,14 +51,4 @@ const char* Lt::Graphics::CpuWindow::Title()
 void Lt::Graphics::CpuWindow::Title(const char* title)
 {
     _Window.Title(title);
-}
-
-bool Lt::Graphics::CpuWindow::IsError()
-{
-    return _Window.IsError();
-}
-
-const char* Lt::Graphics::CpuWindow::Message()
-{
-    return _Window.Message();
 }

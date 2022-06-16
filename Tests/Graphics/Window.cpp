@@ -3,9 +3,11 @@
 
 void TestGraphicsWindow()
 {
-	Lt::Graphics::Window window(Lt::Graphics::Point2i(0, 0), Lt::Graphics::Point2i(800, 600), "Window!");
+	Lt::Core::ErrorHandler errorHandler;
 
-	LT_TEST_EQUAL(window.IsError() == false);
+	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2i(0, 0), Lt::Graphics::Point2i(800, 600), "Window!");
+
+	LT_TEST_EQUAL(errorHandler.IsError() == false);
 }
 int main()
 {

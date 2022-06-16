@@ -13,7 +13,7 @@ namespace Lt
 		class Window
 		{
 		public:
-			Window(const Lt::Graphics::Point2i& pos, const Lt::Graphics::Point2i& size, const char * title);
+			Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2i & pos, const Lt::Graphics::Point2i& size, const char* title);
 			~Window();
 			bool GetEvent(Lt::Events::Event& event);
 			void StopEvent();
@@ -21,8 +21,6 @@ namespace Lt
 			const char* Title();
 			const Lt::Graphics::Point2i& Size();
 			const Lt::Graphics::Point2i& Pos();
-			bool IsError();
-			const char* Message();
 		private:
 			static LRESULT CALLBACK WndProc(HWND Hwnd, UINT Message, WPARAM WParam, LPARAM LParam);
 			LRESULT CALLBACK Handler(UINT Message, WPARAM WParam, LPARAM LParam);
