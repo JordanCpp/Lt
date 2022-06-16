@@ -43,3 +43,6 @@ target_link_libraries(FileInfo LtCore)
 
 add_executable(Limits "Limits.cpp")
 target_link_libraries(Limits LtCore)
+
+add_executable(Ticks "Ticks.cpp")
+target_link_libraries(Ticks LtCore)
