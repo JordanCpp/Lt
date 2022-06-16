@@ -37,7 +37,11 @@ add_library(LtGraphics STATIC
 add_library(LtAllocators STATIC
 "src/Lt/Allocators/FixedLinear.cpp")
 
+add_library(LtEvents STATIC
+"src/Lt/Events/Eventer.cpp")
+
 add_subdirectory("Tests/Core")
 add_subdirectory("Tests/Containers")
 add_subdirectory("Tests/Allocators")
 add_subdirectory("Tests/Graphics")
+add_subdirectory("Tests/Events")

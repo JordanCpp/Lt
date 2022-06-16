@@ -13,7 +13,7 @@ namespace Lt
 		public:
 			CircularBuffer() :
 				_Capacity(COUNT),
-				_Head(_Capacity - 1),
+				_Head(-1),
 				_Tail(0),
 				_Length(0)
 			{
