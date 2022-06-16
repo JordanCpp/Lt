@@ -11,6 +11,9 @@ target_link_libraries(Rect2 LtCore)
 add_executable(BaseWindow "BaseWindow.cpp")
 target_link_libraries(BaseWindow LtCore LtGraphics)
 
+add_executable(BaseRender "BaseRender.cpp")
+target_link_libraries(BaseRender LtCore LtGraphics)
+
 add_executable(Color "Color.cpp")
 target_link_libraries(Color LtCore LtGraphics)
 
