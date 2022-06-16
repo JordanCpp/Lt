@@ -22,3 +22,6 @@ target_link_libraries(CpuImage LtCore LtGraphics LtAllocators)
 
 add_executable(Window "Window.cpp")
 target_link_libraries(Window LtCore LtGraphics LtEvents)
+
+add_executable(CpuWindow "CpuWindow.cpp")
+target_link_libraries(CpuWindow LtCore LtGraphics LtEvents)

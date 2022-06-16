@@ -27,7 +27,8 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Core/BinaryFile.cpp"
   "src/Lt/Platforms/Windows/Core/Directory.cpp"
   "src/Lt/Platforms/Windows/Core/Ticks.cpp"
-  "src/Lt/Platforms/Windows/Graphics/Window.cpp")
+  "src/Lt/Platforms/Windows/Graphics/Window.cpp"
+  "src/Lt/Platforms/Windows/Graphics/CpuWindow.cpp")
 endif()
 
 add_library(LtGraphics STATIC
