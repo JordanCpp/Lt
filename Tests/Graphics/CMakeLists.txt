@@ -19,3 +19,6 @@ target_link_libraries(Color LtCore LtGraphics)
 
 add_executable(CpuImage "CpuImage.cpp")
 target_link_libraries(CpuImage LtCore LtGraphics LtAllocators)
+
+add_executable(Window "Window.cpp")
+target_link_libraries(Window LtCore LtGraphics LtEvents)
