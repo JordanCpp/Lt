@@ -1,7 +1,7 @@
 #include <Lt/Core/TestEqual.hpp>
 #include <Lt/Graphics/CpuWindow.hpp>
 
-void TestGraphicscpuWindow()
+void TestGraphicsCpuWindow()
 {
 	Lt::Core::ErrorHandler errorHandler;
 
@@ -24,7 +24,7 @@ void TestGraphicscpuWindow()
 }
 int main()
 {
-	TestGraphicscpuWindow();
+	TestGraphicsCpuWindow();
 
 	return 0;
 }
