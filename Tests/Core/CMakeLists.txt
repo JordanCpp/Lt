@@ -46,3 +46,6 @@ target_link_libraries(Limits LtCore)
 
 add_executable(Ticks "Ticks.cpp")
 target_link_libraries(Ticks LtCore)
+
+add_executable(ErrorHandler "ErrorHandler.cpp")
+target_link_libraries(ErrorHandler LtCore)

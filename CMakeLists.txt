@@ -16,7 +16,8 @@ add_library(LtCore STATIC
 "src/Lt/Core/DateTime.cpp"
 "src/Lt/Core/Utils.cpp"
 "src/Lt/Core/TextFile.cpp"
-"src/Lt/Core/FileInfo.cpp")
+"src/Lt/Core/FileInfo.cpp"
+"src/Lt/Core/ErrorHandler.cpp")
 
 if (WIN32)
   target_sources(LtCore PRIVATE

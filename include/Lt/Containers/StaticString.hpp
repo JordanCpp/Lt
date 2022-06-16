@@ -46,6 +46,7 @@ namespace Lt
 			void Clear()
 			{
 				_Position = 0;
+				_Content[_Position] = '\0';
 			}
 
 			void Append(const char element)
