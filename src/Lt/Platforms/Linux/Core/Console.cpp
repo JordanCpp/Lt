@@ -1,6 +1,6 @@
 #include <Lt/Platforms/Linux/Core/Console.hpp>
 #include <Lt/Core/Chars.hpp>
-#include <Lt/Core/Assert.hpp>
+#include <unistd.h>
 
 Lt::Core::Linux::Console::Console()
 {
@@ -12,6 +12,8 @@ Lt::Core::Linux::Console::~Console()
 
 void Lt::Core::Linux::Console::Show()
 {
+	write(1, _BaseConsole.Result(), Lt::Chars::Length(_BaseConsole.Result())); 
+
 	_BaseConsole.Clear();
 }
 
