@@ -17,9 +17,15 @@ namespace Lt
 			Lt::u8 Blue() const;
 			Lt::u8 Alpha() const;
 		private:
+        #if defined(LT_CONFIG_OS_WINDOWS)
+			Lt::u8 _Blue;
+			Lt::u8 _Green;
+			Lt::u8 _Red;
+        #else
 			Lt::u8 _Red;
 			Lt::u8 _Green;
 			Lt::u8 _Blue;
+        #endif
 			Lt::u8 _Alpha;
 		};
 	}
