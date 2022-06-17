@@ -11,7 +11,7 @@ void TestCoreTicks()
 
 	Lt::usize finish = Lt::Core::Ticks();
 
-	LT_TEST_EQUAL(finish >= start + 100);
+	LT_TEST_EQUAL(finish >= start + 99);
 }
 
 int main()

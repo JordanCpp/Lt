@@ -9,7 +9,7 @@ void TestBinaryFileReading()
 	LT_TEST_EQUAL(file.Size() == 0);
 	LT_TEST_EQUAL(file.Position() == 0);
 
-	LT_TEST_EQUAL(file.Open("Test.txt", Lt::Core::BinaryFile::Mode::Reading) == true);
+	LT_TEST_EQUAL(file.Open("TestFiles/Test.txt", Lt::Core::BinaryFile::Mode::Reading) == true);
 
 	LT_TEST_EQUAL(file.Eof() == false);
 	LT_TEST_EQUAL(file.Size() == 6);

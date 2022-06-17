@@ -76,7 +76,8 @@ namespace Lt
 						p[i] = _Content[i];
 					}
 
-					Deallocate(_Content);
+					if (_Content != nullptr)
+						Deallocate(_Content);
 
 					_Content = p;
 
