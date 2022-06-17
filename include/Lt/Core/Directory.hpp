@@ -12,6 +12,15 @@ namespace Lt
 		typedef Lt::Core::Windows::Directory Directory;
 	}
 }
+#elif defined(LT_CONFIG_OS_LINUX)
+#include <Lt/Platforms/Linux/Core/Directory.hpp>
+namespace Lt
+{
+	namespace Core
+	{
+		typedef Lt::Core::Linux::Directory Directory;
+	}
+}
 #else
 #error Not support: Core::Directory
 #endif  

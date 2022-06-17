@@ -17,7 +17,7 @@ int main()
 	LT_TEST_EQUAL(vector.Content() != nullptr);
 	LT_TEST_EQUAL(vector.Allocator() == nullptr);
 
-	for (size_t i = 0; i < 128; i++)
+	for (Lt::usize i = 0; i < 128; i++)
 	{
 		vector.Append(i);
 		LT_TEST_EQUAL(vector[i] == i);

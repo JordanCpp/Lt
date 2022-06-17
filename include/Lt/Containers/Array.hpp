@@ -45,7 +45,6 @@ namespace Lt
 
 			void Clear()
 			{
-				_Position = 0;
 			}
 		private:
 			Lt::usize _Capacity;

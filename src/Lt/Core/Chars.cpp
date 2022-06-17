@@ -44,7 +44,7 @@ bool Lt::Chars::IsDigit(char symbol)
 
 Lt::usize Lt::Chars::Copy(char* dst, const char* src, Lt::usize maxlen)
 {
-    const size_t srclen = Length(src);
+    const Lt::usize srclen = Length(src);
 
     if (srclen + 1 < maxlen)
     {
@@ -63,8 +63,8 @@ Lt::usize Lt::Chars::Concat(char* dst, const char* src, Lt::usize dsize)
 {
 	const char* odst = dst;
 	const char* osrc = src;
-	size_t n = dsize;
-	size_t dlen;
+	Lt::usize n = dsize;
+	Lt::usize dlen;
 
 
 	while (n-- != 0 && *dst != '\0')

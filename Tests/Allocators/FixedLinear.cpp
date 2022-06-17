@@ -3,7 +3,7 @@
 
 void TestFixedLinear()
 {
-	const size_t bytes = Lt::Allocators::Allocator::Mb * 1;
+	const Lt::usize bytes = Lt::Allocators::Allocator::Mb * 1;
 
 	Lt::Allocators::FixedLinear allocator(bytes);
 

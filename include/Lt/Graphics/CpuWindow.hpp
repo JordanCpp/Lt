@@ -12,6 +12,15 @@ namespace Lt
 		typedef Lt::Graphics::Windows::CpuWindow CpuWindow;
 	}
 }
+#elif defined(LT_CONFIG_OS_LINUX)
+#include <Lt/Platforms/Linux/Graphics/CpuWindow.hpp>
+namespace Lt
+{
+	namespace Graphics
+	{
+		typedef Lt::Graphics::Linux::CpuWindow CpuWindow;
+	}
+}
 #else
 #error Not support: Graphics::CpuWindow
 #endif

@@ -12,6 +12,15 @@ namespace Lt
 		typedef Lt::Graphics::Windows::Window Window;
 	}
 }
+#elif defined(LT_CONFIG_OS_LINUX)
+#include <Lt/Platforms/Linux/Graphics/Window.hpp>
+namespace Lt
+{
+	namespace Graphics
+	{
+		typedef Lt::Graphics::Linux::Window Window;
+	}
+}
 #else
 #error Not support: Graphics::Window
 #endif

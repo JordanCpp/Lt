@@ -2,7 +2,7 @@
 #define Lt_Core_BaseConsole_hpp
 
 #include <Lt/Containers/StaticString.hpp>
-#include <lt/Containers/String.hpp>
+#include <Lt/Containers/String.hpp>
 
 namespace Lt
 {

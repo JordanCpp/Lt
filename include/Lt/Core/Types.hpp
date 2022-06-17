@@ -17,8 +17,14 @@ namespace Lt
 	typedef unsigned int u32;
 
 #if defined(LT_CONFIG_CPU_64)
+#if defined(LT_CONFIG_OS_LINUX)
+	typedef long unsigned int u64;
+	typedef long signed int i64;
+#else
 	typedef signed long long i64;
 	typedef unsigned long long u64;
+#endif
+
 #else
 	typedef i32 i64;
 	typedef u32 u64;
@@ -28,4 +34,4 @@ namespace Lt
 	typedef u64 usize;
 }
 
-#endif    
+#endif

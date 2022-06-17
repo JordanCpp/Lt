@@ -29,6 +29,15 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Core/Ticks.cpp"
   "src/Lt/Platforms/Windows/Graphics/Window.cpp"
   "src/Lt/Platforms/Windows/Graphics/CpuWindow.cpp")
+elseif(UNIX AND NOT APPLE)
+  target_sources(LtCore PRIVATE
+  "src/Lt/Platforms/Linux/Core/Console.cpp"
+  "src/Lt/Platforms/Linux/Core/Terminate.cpp"
+  "src/Lt/Platforms/Linux/Core/BinaryFile.cpp"
+  "src/Lt/Platforms/Linux/Core/Directory.cpp"
+  "src/Lt/Platforms/Linux/Core/Ticks.cpp"
+  "src/Lt/Platforms/Linux/Graphics/Window.cpp"
+  "src/Lt/Platforms/Linux/Graphics/CpuWindow.cpp")
 endif()
 
 add_library(LtGraphics STATIC

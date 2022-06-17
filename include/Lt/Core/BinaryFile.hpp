@@ -12,6 +12,15 @@ namespace Lt
 		typedef Lt::Core::Windows::BinaryFile BinaryFile;
 	}
 }
+#elif defined(LT_CONFIG_OS_LINUX)
+#include <Lt/Platforms/Linux/Core/BinaryFile.hpp>
+namespace Lt
+{
+	namespace Core
+	{
+		typedef Lt::Core::Linux::BinaryFile BinaryFile;
+	}
+}
 #else
 #error Not support: Core::BinaryFile
 #endif

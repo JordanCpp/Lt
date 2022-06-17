@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "concepts": "cpp",
+        "cstdio": "cpp",
+        "type_traits": "cpp",
+        "new": "cpp",
+        "typeinfo": "cpp"
+    }
+}

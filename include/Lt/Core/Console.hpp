@@ -12,6 +12,15 @@ namespace Lt
 		typedef Lt::Core::Windows::Console Console;
 	}
 }
+#elif defined(LT_CONFIG_OS_LINUX)
+#include <Lt/Platforms/Linux/Core/Console.hpp>
+namespace Lt
+{
+	namespace Core
+	{
+		typedef Lt::Core::Linux::Console Console;
+	}
+}
 #else
 #error Not support: Core::Console
 #endif

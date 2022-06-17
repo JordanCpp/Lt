@@ -18,7 +18,7 @@ void TestContainersStaticVectorAppend()
 
 	Lt::Containers::StaticVector<Lt::usize, count> staticVector;
 
-	for (size_t i = 0; i < count; i++)
+	for (Lt::usize i = 0; i < count; i++)
 	{
 		staticVector.Append(i + 5);
 
@@ -35,7 +35,7 @@ void TestContainersStaticVectorClear()
 
 	Lt::Containers::StaticVector<Lt::usize, count> staticVector;
 
-	for (size_t i = 0; i < count; i++)
+	for (Lt::usize i = 0; i < count; i++)
 	{
 		staticVector.Append(i);
 	}

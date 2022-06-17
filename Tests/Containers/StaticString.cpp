@@ -18,7 +18,7 @@ void TestContainersStaticStringAppendChar()
 
 	Lt::Containers::StaticString<limit> string;
 
-	for (size_t i = 0; i < string.Capacity(); i++)
+	for (Lt::usize i = 0; i < string.Capacity(); i++)
 	{
 		string.Append((char)i);
 
