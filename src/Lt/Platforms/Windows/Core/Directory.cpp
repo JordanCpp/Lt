@@ -1,18 +1,18 @@
 #include <Lt/Platforms/Windows/Core/Directory.hpp>
 
-bool Lt::Core::Directory::Open(const char* path)
+bool Lt::Core::Windows::Directory::Open(const char* path)
 {
     _File = FindFirstFile(path, &_Data);
 
     return _File != INVALID_HANDLE_VALUE;
 }
 
-void Lt::Core::Directory::Close()
+void Lt::Core::Windows::Directory::Close()
 {
     FindClose(_File);
 }
 
-bool Lt::Core::Directory::Next(Lt::Core::FileInfo& fileInfo)
+bool Lt::Core::Windows::Directory::Next(Lt::Core::FileInfo& fileInfo)
 {
 
     BOOL result = FindNextFile(_File, &_Data);

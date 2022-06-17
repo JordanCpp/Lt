@@ -1,15 +1,15 @@
 #include <Lt/Platforms/Windows/Graphics/CpuWindow.hpp>
 
-Lt::Graphics::CpuWindow::CpuWindow(Lt::Core::ErrorHandler& errorHandler, const Point2i& pos, const Point2i& size, const char* title) :
+Lt::Graphics::Windows::CpuWindow::CpuWindow(Lt::Core::ErrorHandler& errorHandler, const Point2i& pos, const Point2i& size, const char* title) :
     _Window(errorHandler, pos, size, title)
 {
 }
 
-Lt::Graphics::CpuWindow::~CpuWindow()
+Lt::Graphics::Windows::CpuWindow::~CpuWindow()
 {
 }
 
-void Lt::Graphics::CpuWindow::Present(Lt::u8* pixels)
+void Lt::Graphics::Windows::CpuWindow::Present(Lt::u8* pixels)
 {
     ZeroMemory(&_BITMAPINFO, sizeof(_BITMAPINFO));
 
@@ -23,32 +23,32 @@ void Lt::Graphics::CpuWindow::Present(Lt::u8* pixels)
     SetDIBitsToDevice(_Window._HDC, 0, 0, (DWORD)_Window.Size().PosX(), (DWORD)_Window.Size().PosY(), 0, 0, 0, (UINT)_Window.Size().PosY(), pixels, &_BITMAPINFO, DIB_RGB_COLORS);
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::CpuWindow::Size()
+const Lt::Graphics::Point2i& Lt::Graphics::Windows::CpuWindow::Size()
 {
     return _Window.Size();
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::CpuWindow::Pos()
+const Lt::Graphics::Point2i& Lt::Graphics::Windows::CpuWindow::Pos()
 {
     return _Window.Pos();
 }
 
-bool Lt::Graphics::CpuWindow::GetEvent(Lt::Events::Event& event)
+bool Lt::Graphics::Windows::CpuWindow::GetEvent(Lt::Events::Event& event)
 {
     return _Window.GetEvent(event);
 }
 
-void Lt::Graphics::CpuWindow::StopEvent()
+void Lt::Graphics::Windows::CpuWindow::StopEvent()
 {
     _Window.StopEvent();
 }
 
-const char* Lt::Graphics::CpuWindow::Title()
+const char* Lt::Graphics::Windows::CpuWindow::Title()
 {
     return _Window.Title();
 }
 
-void Lt::Graphics::CpuWindow::Title(const char* title)
+void Lt::Graphics::Windows::CpuWindow::Title(const char* title)
 {
     _Window.Title(title);
 }

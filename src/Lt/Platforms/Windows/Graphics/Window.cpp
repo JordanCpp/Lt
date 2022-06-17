@@ -3,7 +3,7 @@
 
 const char AppName[] = "Lt::Graphics::Window";
 
-LRESULT CALLBACK Lt::Graphics::Window::Handler(UINT Message, WPARAM WParam, LPARAM LParam)
+LRESULT CALLBACK Lt::Graphics::Windows::Window::Handler(UINT Message, WPARAM WParam, LPARAM LParam)
 {
     Lt::Events::Event event;
 
@@ -70,14 +70,14 @@ LRESULT CALLBACK Lt::Graphics::Window::Handler(UINT Message, WPARAM WParam, LPAR
     return DefWindowProc(_HWND, Message, WParam, LParam);
 }
 
-LRESULT CALLBACK Lt::Graphics::Window::WndProc(HWND Hwnd, UINT Message, WPARAM WParam, LPARAM LParam)
+LRESULT CALLBACK Lt::Graphics::Windows::Window::WndProc(HWND Hwnd, UINT Message, WPARAM WParam, LPARAM LParam)
 {
     LRESULT result;
 
 #ifdef _WIN64
-    Lt::Graphics::Window* This = (Lt::Graphics::Window*)GetWindowLongPtr(Hwnd, GWLP_USERDATA);
+    Lt::Graphics::Windows::Window* This = (Lt::Graphics::Windows::Window*)GetWindowLongPtr(Hwnd, GWLP_USERDATA);
 #elif _WIN32
-    Lt::Graphics::Window* This = (Lt::Graphics::Window*)GetWindowLong(Hwnd, GWL_USERDATA);
+    Lt::Graphics::Windows::Window* This = (Lt::Graphics::Windows::Window*)GetWindowLong(Hwnd, GWL_USERDATA);
 #endif  
 
     if (This != nullptr)
@@ -88,7 +88,7 @@ LRESULT CALLBACK Lt::Graphics::Window::WndProc(HWND Hwnd, UINT Message, WPARAM W
     return result;
 }
 
-Lt::Graphics::Window::Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2i& pos, const Lt::Graphics::Point2i& size, const char* title) :
+Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2i& pos, const Lt::Graphics::Point2i& size, const char* title) :
     _BaseWindow(pos, size, title)
 {
     Lt::Memory::Zero(&_WNDCLASS, sizeof(WNDCLASS));
@@ -139,7 +139,7 @@ Lt::Graphics::Window::Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Gra
     }
 }
 
-Lt::Graphics::Window::~Window()
+Lt::Graphics::Windows::Window::~Window()
 {
     if (!_ErrorHandler.IsError())
     {
@@ -149,7 +149,7 @@ Lt::Graphics::Window::~Window()
     }
 }
 
-bool Lt::Graphics::Window::GetEvent(Lt::Events::Event& event)
+bool Lt::Graphics::Windows::Window::GetEvent(Lt::Events::Event& event)
 {
     if (_Eventer.Running())
     {
@@ -165,29 +165,29 @@ bool Lt::Graphics::Window::GetEvent(Lt::Events::Event& event)
     return _Eventer.Running();
 }
 
-void Lt::Graphics::Window::StopEvent()
+void Lt::Graphics::Windows::Window::StopEvent()
 {
     _Eventer.Stop();
 }
 
-void Lt::Graphics::Window::Title(const char* title)
+void Lt::Graphics::Windows::Window::Title(const char* title)
 {
     _BaseWindow.Title(title);
 
     SetWindowText(_HWND, _BaseWindow.Title());
 }
 
-const char* Lt::Graphics::Window::Title()
+const char* Lt::Graphics::Windows::Window::Title()
 {
     return _BaseWindow.Title();
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::Window::Size()
+const Lt::Graphics::Point2i& Lt::Graphics::Windows::Window::Size()
 {
     return _BaseWindow.Size();
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::Window::Pos()
+const Lt::Graphics::Point2i& Lt::Graphics::Windows::Window::Pos()
 {
     return _BaseWindow.Pos();
 }

@@ -5,6 +5,13 @@
 
 #if defined(LT_CONFIG_OS_WINDOWS)
 #include <Lt/Platforms/Windows/Core/Console.hpp>
+namespace Lt
+{
+	namespace Core
+	{
+		typedef Lt::Core::Windows::Console Console;
+	}
+}
 #else
 #error Not support: Core::Console
 #endif

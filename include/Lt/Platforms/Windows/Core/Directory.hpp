@@ -8,16 +8,19 @@ namespace Lt
 {
 	namespace Core
 	{
-		class Directory
+		namespace Windows
 		{
-		public:
-			bool Open(const char* path);
-			void Close();
-			bool Next(Lt::Core::FileInfo& fileInfo);
-		private:
-			HANDLE _File;
-			WIN32_FIND_DATA _Data;
-		};
+			class Directory
+			{
+			public:
+				bool Open(const char* path);
+				void Close();
+				bool Next(Lt::Core::FileInfo& fileInfo);
+			private:
+				HANDLE _File;
+				WIN32_FIND_DATA _Data;
+			};
+		}
 	}
 }
 

@@ -5,6 +5,13 @@
 
 #if defined(LT_CONFIG_OS_WINDOWS)
 #include <Lt/Platforms/Windows/Core/Directory.hpp>
+namespace Lt
+{
+	namespace Core
+	{
+		typedef Lt::Core::Windows::Directory Directory;
+	}
+}
 #else
 #error Not support: Core::Directory
 #endif  

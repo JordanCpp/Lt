@@ -10,22 +10,25 @@ namespace Lt
 {
 	namespace Core
 	{
-		class Console
+		namespace Windows
 		{
-		public:
-			Console();
-			~Console();
-			void Show();
-			void Line();
-			void Write(const char* source);
-			void Write(const Lt::Containers::String& source);
-			void Write(Lt::isize source);
-		private:
-			Lt::Core::BaseConsole _BaseConsole;
-			Lt::Core::IntegerToString _Convert;
-			HANDLE _Input;
-			HANDLE _Output;
-		};
+			class Console
+			{
+			public:
+				Console();
+				~Console();
+				void Show();
+				void Line();
+				void Write(const char* source);
+				void Write(const Lt::Containers::String& source);
+				void Write(Lt::isize source);
+			private:
+				Lt::Core::BaseConsole _BaseConsole;
+				Lt::Core::IntegerToString _Convert;
+				HANDLE _Input;
+				HANDLE _Output;
+			};
+		}
 	}
 }
 

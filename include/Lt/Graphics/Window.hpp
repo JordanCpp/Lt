@@ -5,6 +5,13 @@
 
 #if defined(LT_CONFIG_OS_WINDOWS)
 #include <Lt/Platforms/Windows/Graphics/Window.hpp>
+namespace Lt
+{
+	namespace Graphics
+	{
+		typedef Lt::Graphics::Windows::Window Window;
+	}
+}
 #else
 #error Not support: Graphics::Window
 #endif

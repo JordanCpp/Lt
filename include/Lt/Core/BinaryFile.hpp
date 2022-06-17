@@ -5,6 +5,13 @@
 
 #if defined(LT_CONFIG_OS_WINDOWS)
 #include <Lt/Platforms/Windows/Core/BinaryFile.hpp>
+namespace Lt
+{
+	namespace Core
+	{
+		typedef Lt::Core::Windows::BinaryFile BinaryFile;
+	}
+}
 #else
 #error Not support: Core::BinaryFile
 #endif

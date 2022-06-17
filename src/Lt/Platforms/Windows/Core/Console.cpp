@@ -2,7 +2,7 @@
 #include <Lt/Core/Chars.hpp>
 #include <Lt/Core/Assert.hpp>
 
-Lt::Core::Console::Console():
+Lt::Core::Windows::Console::Console():
 	_Input(nullptr),
 	_Output(nullptr)
 {
@@ -15,11 +15,11 @@ Lt::Core::Console::Console():
 	LT_ASSERT(_Output != INVALID_HANDLE_VALUE);
 }
 
-Lt::Core::Console::~Console()
+Lt::Core::Windows::Console::~Console()
 {
 }
 
-void Lt::Core::Console::Show()
+void Lt::Core::Windows::Console::Show()
 {
 	DWORD count = 0;
 
@@ -28,22 +28,22 @@ void Lt::Core::Console::Show()
 	_BaseConsole.Clear();
 }
 
-void Lt::Core::Console::Line()
+void Lt::Core::Windows::Console::Line()
 {
 	_BaseConsole.Line();
 }
 
-void Lt::Core::Console::Write(const char* source)
+void Lt::Core::Windows::Console::Write(const char* source)
 {
 	_BaseConsole.Append(source);
 }
 
-void Lt::Core::Console::Write(const Lt::Containers::String& source)
+void Lt::Core::Windows::Console::Write(const Lt::Containers::String& source)
 {
 	_BaseConsole.Append(source);
 }
 
-void Lt::Core::Console::Write(Lt::isize source)
+void Lt::Core::Windows::Console::Write(Lt::isize source)
 {
 	if (_Convert.Convert(source))
 	{
