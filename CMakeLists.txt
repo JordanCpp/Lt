@@ -50,3 +50,5 @@ add_subdirectory("Tests/Containers")
 add_subdirectory("Tests/Allocators")
 add_subdirectory("Tests/Graphics")
 add_subdirectory("Tests/Events")
+
+add_subdirectory("Examples")
