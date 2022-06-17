@@ -15,14 +15,14 @@ namespace Lt
 			class Window
 			{
 			public:
-				Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2i& pos, const Lt::Graphics::Point2i& size, const char* title);
+				Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title);
 				~Window();
 				bool GetEvent(Lt::Events::Event& event);
 				void StopEvent();
 				void Title(const char* title);
 				const char* Title();
-				const Lt::Graphics::Point2i& Size();
-				const Lt::Graphics::Point2i& Pos();
+				const Lt::Graphics::Point2u& Size();
+				const Lt::Graphics::Point2u& Pos();
 			private:
 				static LRESULT CALLBACK WndProc(HWND Hwnd, UINT Message, WPARAM WParam, LPARAM LParam);
 				LRESULT CALLBACK Handler(UINT Message, WPARAM WParam, LPARAM LParam);

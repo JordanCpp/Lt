@@ -3,7 +3,7 @@
 
 void TestGraphicsBaseRenderInit()
 {
-	Lt::Graphics::BaseRender baseRender(Lt::Graphics::Point2i(800, 600));
+	Lt::Graphics::BaseRender baseRender(Lt::Graphics::Point2u(800, 600));
 
 	LT_TEST_EQUAL(baseRender.Size().PosX() == 800);
 	LT_TEST_EQUAL(baseRender.Size().PosY() == 600);
@@ -16,7 +16,7 @@ void TestGraphicsBaseRenderInit()
 
 void TestGraphicsBaseRenderColor()
 {
-	Lt::Graphics::BaseRender baseRender(Lt::Graphics::Point2i(800, 600));
+	Lt::Graphics::BaseRender baseRender(Lt::Graphics::Point2u(800, 600));
 
 	baseRender.Color(Lt::Graphics::Color(125, 175, 235));
 

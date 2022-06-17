@@ -1,7 +1,7 @@
 #ifndef Lt_Graphics_CpuImage_hpp
 #define Lt_Graphics_CpuImage_hpp
 
-#include <Lt/Graphics/Point2i.hpp>
+#include <Lt/Graphics/Point2u.hpp>
 #include <Lt/Allocators/Allocator.hpp>
 #include <Lt/Core/New.hpp>
 
@@ -12,16 +12,16 @@ namespace Lt
 		class CpuImage
 		{
 		public:
-			CpuImage(const Lt::Graphics::Point2i& size);
-			CpuImage(const Lt::Graphics::Point2i& size, Lt::u8* pixels);
-			CpuImage(const Lt::Graphics::Point2i& size, Lt::Allocators::Allocator* allocator);
+			CpuImage(const Lt::Graphics::Point2u& size);
+			CpuImage(const Lt::Graphics::Point2u& size, Lt::u8* pixels);
+			CpuImage(const Lt::Graphics::Point2u& size, Lt::Allocators::Allocator* allocator);
 			~CpuImage();
-			const Lt::Graphics::Point2i& Size();
+			const Lt::Graphics::Point2u& Size();
 			const Lt::u8 Channels();
 			Lt::u8* Pixels();
 			const Lt::Allocators::Allocator* Allocator();
 		private:
-			Lt::Graphics::Point2i _Size;
+			Lt::Graphics::Point2u _Size;
 			Lt::u8 _Channels;
 			Lt::u8* _Pixels;
 			Lt::Allocators::Allocator* _Allocator;

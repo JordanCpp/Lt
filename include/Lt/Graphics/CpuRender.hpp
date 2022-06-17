@@ -13,14 +13,14 @@ namespace Lt
 		{
 		public:
 			CpuRender(Lt::Graphics::CpuWindow* window);
-			const Lt::Graphics::Point2i& Size();
+			const Lt::Graphics::Point2u& Size();
 			const Lt::Graphics::Color& Color();
 			void Clear();
 			void Color(const Lt::Graphics::Color& color);
 			void Present();
 			Lt::Graphics::CpuImage* Canvas();
-			void Pixel(const Lt::Graphics::Point2i& pos);
-			const Lt::Graphics::Color& GetPixel(const Lt::Graphics::Point2i& pos);
+			void Pixel(const Lt::Graphics::Point2u& pos);
+			const Lt::Graphics::Color& GetPixel(const Lt::Graphics::Point2u& pos);
 		private:
 			Lt::Graphics::CpuWindow* _Window;
 			Lt::Graphics::BaseRender _BaseRender;

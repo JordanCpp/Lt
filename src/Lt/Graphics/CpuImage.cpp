@@ -1,6 +1,6 @@
 #include <Lt/Graphics/CpuImage.hpp>
 
-Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size) :
+Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size) :
 	_Size(size),
 	_Channels(4),
 	_Allocator(nullptr),
@@ -11,7 +11,7 @@ Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size) :
 	_Pixels = new Lt::u8[bytes];
 }
 
-Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size, Lt::u8* pixels) :
+Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size, Lt::u8* pixels) :
 	_Size(size),
 	_Channels(4),
 	_Allocator(nullptr),
@@ -19,7 +19,7 @@ Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size, Lt::u8* pixe
 {
 }
 
-Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2i& size, Lt::Allocators::Allocator* allocator):
+Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size, Lt::Allocators::Allocator* allocator):
 	_Size(size),
 	_Channels(4),
 	_Allocator(allocator),
@@ -36,7 +36,7 @@ Lt::Graphics::CpuImage::~CpuImage()
 		_Allocator->Deallocate(_Pixels);
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::CpuImage::Size()
+const Lt::Graphics::Point2u& Lt::Graphics::CpuImage::Size()
 {
 	return _Size;
 }

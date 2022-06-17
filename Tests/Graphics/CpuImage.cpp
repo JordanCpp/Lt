@@ -6,7 +6,7 @@ void TestGraphicsCpuImageInit()
 {
 	Lt::Allocators::FixedLinear allocator(Lt::Allocators::FixedLinear::Mb * 4);
 
-	Lt::Graphics::CpuImage cpuImage(Lt::Graphics::Point2i(800, 600), &allocator);
+	Lt::Graphics::CpuImage cpuImage(Lt::Graphics::Point2u(800, 600), &allocator);
 
 	LT_TEST_EQUAL(cpuImage.Size().PosX() == 800);
 	LT_TEST_EQUAL(cpuImage.Size().PosY() == 600);
@@ -19,9 +19,9 @@ void TestGraphicsCpuImageFrom()
 {
 	Lt::Allocators::FixedLinear allocator(Lt::Allocators::FixedLinear::Mb * 4);
 
-	Lt::Graphics::CpuImage src(Lt::Graphics::Point2i(800, 600), &allocator);
+	Lt::Graphics::CpuImage src(Lt::Graphics::Point2u(800, 600), &allocator);
 
-	Lt::Graphics::CpuImage dst(Lt::Graphics::Point2i(800, 600), src.Pixels());
+	Lt::Graphics::CpuImage dst(Lt::Graphics::Point2u(800, 600), src.Pixels());
 
 	LT_TEST_EQUAL(dst.Size().PosX() == 800);
 	LT_TEST_EQUAL(dst.Size().PosY() == 600);

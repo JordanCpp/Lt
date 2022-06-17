@@ -88,7 +88,7 @@ LRESULT CALLBACK Lt::Graphics::Windows::Window::WndProc(HWND Hwnd, UINT Message,
     return result;
 }
 
-Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2i& pos, const Lt::Graphics::Point2i& size, const char* title) :
+Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title) :
     _BaseWindow(pos, size, title)
 {
     Lt::Memory::Zero(&_WNDCLASS, sizeof(WNDCLASS));
@@ -182,12 +182,12 @@ const char* Lt::Graphics::Windows::Window::Title()
     return _BaseWindow.Title();
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::Windows::Window::Size()
+const Lt::Graphics::Point2u& Lt::Graphics::Windows::Window::Size()
 {
     return _BaseWindow.Size();
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::Windows::Window::Pos()
+const Lt::Graphics::Point2u& Lt::Graphics::Windows::Window::Pos()
 {
     return _BaseWindow.Pos();
 }

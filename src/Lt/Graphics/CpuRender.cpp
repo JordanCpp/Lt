@@ -7,7 +7,7 @@ Lt::Graphics::CpuRender::CpuRender(Lt::Graphics::CpuWindow* window) :
 {
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::CpuRender::Size()
+const Lt::Graphics::Point2u& Lt::Graphics::CpuRender::Size()
 {
 	return _BaseRender.Size();
 }
@@ -42,7 +42,7 @@ Lt::Graphics::CpuImage* Lt::Graphics::CpuRender::Canvas()
 	return &_Canvas;
 }
 
-void Lt::Graphics::CpuRender::Pixel(const Lt::Graphics::Point2i& pos)
+void Lt::Graphics::CpuRender::Pixel(const Lt::Graphics::Point2u& pos)
 {
 	Lt::usize i = (Size().PosX() * pos.PosY()) + pos.PosX();
 
@@ -51,7 +51,7 @@ void Lt::Graphics::CpuRender::Pixel(const Lt::Graphics::Point2i& pos)
 	pixels[i] = Color();
 }
 
-const Lt::Graphics::Color& Lt::Graphics::CpuRender::GetPixel(const Lt::Graphics::Point2i& pos)
+const Lt::Graphics::Color& Lt::Graphics::CpuRender::GetPixel(const Lt::Graphics::Point2u& pos)
 {
 	Lt::usize i = (Size().PosX() * pos.PosY()) + pos.PosX();
 

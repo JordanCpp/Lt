@@ -5,7 +5,7 @@ void TestGraphicsCpuRender()
 {
 	Lt::Core::ErrorHandler errorHandler;
 
-	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2i(25, 50), Lt::Graphics::Point2i(800, 600), "Window!");
+	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 
 	Lt::Graphics::CpuRender render(&window);
 
@@ -24,7 +24,7 @@ void TestGraphicsCpuRender()
 void TestGraphicsCpuRenderClear()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2i(25, 50), Lt::Graphics::Point2i(800, 600), "Window!");
+	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 	Lt::Graphics::CpuRender render(&window);
 
 	render.Clear();
@@ -45,11 +45,11 @@ void TestGraphicsCpuRenderClear()
 void TestGraphicsCpuRenderPixel()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2i(25, 50), Lt::Graphics::Point2i(800, 600), "Window!");
+	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 	Lt::Graphics::CpuRender render(&window);
 
 	Lt::Graphics::Color color(15, 25, 35, 45);
-	Lt::Graphics::Point2i point(150, 235);
+	Lt::Graphics::Point2u point(150, 235);
 
 	render.Color(color);
 	render.Pixel(point);

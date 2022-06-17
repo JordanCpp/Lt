@@ -3,7 +3,7 @@
 
 void TestGraphicsBaseWindowInit()
 {
-	Lt::Graphics::BaseWindow baseWindow(Lt::Graphics::Point2i(25, 50), Lt::Graphics::Point2i(800, 600), "Hello world!");
+	Lt::Graphics::BaseWindow baseWindow(Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Hello world!");
 
 	LT_TEST_EQUAL(baseWindow.Pos().PosX() == 25);
 	LT_TEST_EQUAL(baseWindow.Pos().PosY() == 50);
@@ -14,7 +14,7 @@ void TestGraphicsBaseWindowInit()
 
 void TestGraphicsBaseWindowTitle()
 {
-	Lt::Graphics::BaseWindow baseWindow(Lt::Graphics::Point2i(25, 50), Lt::Graphics::Point2i(800, 600), "Hello!");
+	Lt::Graphics::BaseWindow baseWindow(Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Hello!");
 
 	baseWindow.Title("World!");
 

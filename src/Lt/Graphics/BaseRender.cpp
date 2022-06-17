@@ -1,11 +1,11 @@
 #include <Lt/Graphics/BaseRender.hpp>
 
-Lt::Graphics::BaseRender::BaseRender(const Lt::Graphics::Point2i& size) :
+Lt::Graphics::BaseRender::BaseRender(const Lt::Graphics::Point2u& size) :
 	_Size(size)
 {
 }
 
-const Lt::Graphics::Point2i& Lt::Graphics::BaseRender::Size()
+const Lt::Graphics::Point2u& Lt::Graphics::BaseRender::Size()
 {
 	return _Size;
 }
