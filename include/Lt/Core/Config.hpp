@@ -12,7 +12,7 @@
 #define LT_CONFIG_CPU_64
 #elif (__linux__ && __i386__)
 #define LT_CONFIG_OS_LINUX
-#define LT_CONFIG_CPU_64
+#define LT_CONFIG_CPU_32
 #endif
 
 #endif    
