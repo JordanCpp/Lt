@@ -12,7 +12,7 @@ namespace Lt
 		class CpuRender
 		{
 		public:
-			CpuRender(Lt::Graphics::Window* window);
+			CpuRender(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window);
 			const Lt::Graphics::Point2u& Size();
 			const Lt::Graphics::Color& Color();
 			void Clear();

@@ -7,8 +7,9 @@ void TestGraphicsCpuRender()
 
 	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 
-	Lt::Graphics::Render render(&window);
+	Lt::Graphics::Render render(errorHandler, &window);
 
+	LT_TEST_EQUAL(errorHandler.IsError() == false);
 	LT_TEST_EQUAL(render.Size().PosX() == 800);
 	LT_TEST_EQUAL(render.Size().PosY() == 600);
 	LT_TEST_EQUAL(render.Canvas() != nullptr);
@@ -25,7 +26,9 @@ void TestGraphicsCpuRenderClear()
 {
 	Lt::Core::ErrorHandler errorHandler;
 	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
-	Lt::Graphics::Render render(&window);
+	Lt::Graphics::Render render(errorHandler, &window);
+
+	LT_TEST_EQUAL(errorHandler.IsError() == false);
 
 	render.Clear();
 
@@ -46,7 +49,9 @@ void TestGraphicsCpuRenderPixel()
 {
 	Lt::Core::ErrorHandler errorHandler;
 	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
-	Lt::Graphics::Render render(&window);
+	Lt::Graphics::Render render(errorHandler, &window);
+
+	LT_TEST_EQUAL(errorHandler.IsError() == false);
 
 	Lt::Graphics::Color color(15, 25, 35, 45);
 	Lt::Graphics::Point2u point(150, 235);

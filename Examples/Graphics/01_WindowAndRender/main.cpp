@@ -1,6 +1,13 @@
-#include <Lt/Core/TestEqual.hpp>
 #include <Lt/Graphics/Render.hpp>
 #include <Lt/Core/Console.hpp>
+
+void ShowError(const Lt::Core::ErrorHandler& errorHandler)
+{
+	Lt::Core::Console console;
+
+	console.Write(errorHandler.Message());
+	console.Show();
+}
 
 int main()
 {
@@ -10,26 +17,30 @@ int main()
 
 	if (errorHandler.IsError())
 	{
-		Lt::Core::Console console;
+		ShowError(errorHandler);
 
-		console.Write(errorHandler.Message());
-		console.Show();
+		return 0;
 	}
-	else
+
+	Lt::Graphics::Render render(errorHandler, &window);
+
+	if (errorHandler.IsError())
 	{
-		Lt::Graphics::Render render(&window);
+		ShowError(errorHandler);
 
-		Lt::Events::Event report;
+		return 0;
+	}
 
-		while (window.GetEvent(report))
+	Lt::Events::Event report;
+
+	while (window.GetEvent(report))
+	{
+		if (report.Type == Lt::Events::IsQuit)
 		{
-			if (report.Type == Lt::Events::IsQuit)
-			{
-				window.StopEvent();
-			}
-
-			render.Present();
+			window.StopEvent();
 		}
+
+		render.Present();
 	}
 
 	return 0;

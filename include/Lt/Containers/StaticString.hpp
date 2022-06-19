@@ -38,7 +38,7 @@ namespace Lt
 				return _Position;
 			}
 
-			const char * Content()
+			const char * Content() const
 			{
 				return _Content;
 			}

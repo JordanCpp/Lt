@@ -1,6 +1,6 @@
 #include <Lt/Graphics/CpuRender.hpp>
 
-Lt::Graphics::CpuRender::CpuRender(Lt::Graphics::Window* window) :
+Lt::Graphics::CpuRender::CpuRender(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window) :
 	_Window(window),
 	_BaseRender(_Window->Size()),
 	_Canvas(_BaseRender.Size())

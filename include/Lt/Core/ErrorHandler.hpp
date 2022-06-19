@@ -12,7 +12,7 @@ namespace Lt
 		public:
 			ErrorHandler();
 			bool IsError();
-			const char* Message();
+			const char* Message() const;
 			void Message(const char* description);
 			void Reset();
 		private:

@@ -1,7 +1,14 @@
-#include <Lt/Core/TestEqual.hpp>
 #include <Lt/Graphics/Render.hpp>
 #include <Lt/Graphics/FpsLimiter.hpp>
 #include <Lt/Core/Console.hpp>
+
+void ShowError(const Lt::Core::ErrorHandler& errorHandler)
+{
+	Lt::Core::Console console;
+
+	console.Write(errorHandler.Message());
+	console.Show();
+}
 
 int main()
 {
@@ -11,36 +18,40 @@ int main()
 
 	if (errorHandler.IsError())
 	{
-		Lt::Core::Console console;
+		ShowError(errorHandler);
 
-		console.Write(errorHandler.Message());
-		console.Show();
+		return 0;
 	}
-	else
+
+	Lt::Graphics::Render render(errorHandler, &window);
+
+	if (errorHandler.IsError())
 	{
-		Lt::Graphics::Render render(&window);
+		ShowError(errorHandler);
 
-		Lt::Events::Event report;
+		return 0;
+	}
 
-		Lt::Graphics::FpsLimiter limiter;
+	Lt::Events::Event report;
 
-		render.Color(Lt::Graphics::Color(156, 32, 78));
+	Lt::Graphics::FpsLimiter limiter;
 
-		while (window.GetEvent(report))
+	render.Color(Lt::Graphics::Color(156, 32, 78));
+
+	while (window.GetEvent(report))
+	{
+		limiter.Mark();
+
+		if (report.Type == Lt::Events::IsQuit)
 		{
-			limiter.Mark();
-
-			if (report.Type == Lt::Events::IsQuit)
-			{
-				window.StopEvent();
-			}
-
-			render.Clear();
-
-			render.Present();
-
-			limiter.Throttle();
+			window.StopEvent();
 		}
+
+		render.Clear();
+
+		render.Present();
+
+		limiter.Throttle();
 	}
 
 	return 0;
