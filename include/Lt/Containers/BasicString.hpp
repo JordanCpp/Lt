@@ -3,6 +3,7 @@
 
 #include <Lt/Allocators/Allocator.hpp>
 #include <Lt/Core/New.hpp>
+#include <Lt/Core/Chars.hpp>
 
 namespace Lt
 {
@@ -117,6 +118,28 @@ namespace Lt
 				Clear();
 
 				Append(elements);
+			}
+
+			BasicString& operator= (const char* source)
+			{
+				Assign(source);
+
+				return *this;
+			}
+
+			friend bool operator==(const BasicString& a, const BasicString& b)
+			{
+				return Lt::Chars::Equal(a.Content(), b.Content());
+			}
+
+			friend bool operator==(const BasicString& a, const char * b)
+			{
+				return Lt::Chars::Equal(a.Content(), b);
+			}
+
+			friend bool operator!=(const BasicString& a, const BasicString& b)
+			{
+				return Lt::Chars::Compare(a.Content(), b.Content());
 			}
 		private:
 			char* Allocate(Lt::usize count)
