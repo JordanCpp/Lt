@@ -21,8 +21,6 @@ namespace Lt
 				const char* Title();
 				const Lt::Graphics::Point2u& Size();
 				const Lt::Graphics::Point2u& Pos();
-				bool IsError();
-				const char* Message();
 			private:
 				Lt::Graphics::Windows::Window _Window;
 				BITMAPINFO _BITMAPINFO;
