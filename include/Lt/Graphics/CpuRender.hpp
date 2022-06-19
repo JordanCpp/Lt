@@ -2,7 +2,7 @@
 #define Lt_Graphics_CpuRender_hpp
 
 #include <Lt/Graphics/BaseRender.hpp>
-#include <Lt/Graphics/CpuWindow.hpp>
+#include <Lt/Graphics/Window.hpp>
 #include <Lt/Graphics/CpuImage.hpp>
 
 namespace Lt
@@ -12,7 +12,7 @@ namespace Lt
 		class CpuRender
 		{
 		public:
-			CpuRender(Lt::Graphics::CpuWindow* window);
+			CpuRender(Lt::Graphics::Window* window);
 			const Lt::Graphics::Point2u& Size();
 			const Lt::Graphics::Color& Color();
 			void Clear();
@@ -22,7 +22,7 @@ namespace Lt
 			void Pixel(const Lt::Graphics::Point2u& pos);
 			const Lt::Graphics::Color& GetPixel(const Lt::Graphics::Point2u& pos);
 		private:
-			Lt::Graphics::CpuWindow* _Window;
+			Lt::Graphics::Window* _Window;
 			Lt::Graphics::BaseRender _BaseRender;
 			Lt::Graphics::CpuImage _Canvas;
 		};

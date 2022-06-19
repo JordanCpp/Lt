@@ -4,12 +4,12 @@
 #include <Lt/Core/Config.hpp>
 
 #if defined(LT_CONFIG_OS_WINDOWS)
-#include <Lt/Platforms/Windows/Graphics/Window.hpp>
+#include <Lt/Platforms/Windows/Graphics/CpuWindow.hpp>
 namespace Lt
 {
 	namespace Graphics
 	{
-		typedef Lt::Graphics::Windows::Window Window;
+		typedef Lt::Graphics::Windows::CpuWindow Window;
 	}
 }
 #elif defined(LT_CONFIG_OS_LINUX)

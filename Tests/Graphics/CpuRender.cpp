@@ -1,13 +1,13 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Graphics/CpuRender.hpp>
+#include <Lt/Graphics/Render.hpp>
 
 void TestGraphicsCpuRender()
 {
 	Lt::Core::ErrorHandler errorHandler;
 
-	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 
-	Lt::Graphics::CpuRender render(&window);
+	Lt::Graphics::Render render(&window);
 
 	LT_TEST_EQUAL(render.Size().PosX() == 800);
 	LT_TEST_EQUAL(render.Size().PosY() == 600);
@@ -24,8 +24,8 @@ void TestGraphicsCpuRender()
 void TestGraphicsCpuRenderClear()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
-	Lt::Graphics::CpuRender render(&window);
+	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Render render(&window);
 
 	render.Clear();
 
@@ -45,8 +45,8 @@ void TestGraphicsCpuRenderClear()
 void TestGraphicsCpuRenderPixel()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::CpuWindow window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
-	Lt::Graphics::CpuRender render(&window);
+	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Render render(&window);
 
 	Lt::Graphics::Color color(15, 25, 35, 45);
 	Lt::Graphics::Point2u point(150, 235);

@@ -1,7 +1,7 @@
 #ifndef Lt_Platforms_Windows_Graphics_CpuWindow_hpp
 #define Lt_Platforms_Windows_Graphics_CpuWindow_hpp
 
-#include <Lt/Graphics/Window.hpp>
+#include <Lt/Platforms/Windows/Graphics/Window.hpp>
 
 namespace Lt
 {
