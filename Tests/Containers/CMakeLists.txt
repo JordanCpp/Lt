@@ -19,3 +19,6 @@ target_link_libraries(StaticVector LtCore)
 
 add_executable(CircularBuffer "CircularBuffer.cpp")
 target_link_libraries(CircularBuffer LtCore)
+
+add_executable(List "List.cpp")
+target_link_libraries(List LtCore)
