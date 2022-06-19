@@ -86,12 +86,28 @@ namespace Lt
 				return _Content[index];
 			}
 
-
 			char& operator[](Lt::usize index)
 			{
 				LT_ASSERT(index <= _Capacity);
 
 				return _Content[index];
+			}
+
+			StaticString& operator= (const char * source)
+			{
+				Assign(source);
+
+				return *this;
+			}
+
+			friend bool operator==(const StaticString& a, const StaticString& b)
+			{
+				return Lt::Chars::Equal(a.Content(), b.Content());
+			}
+
+			friend bool operator!=(const StaticString& a, const StaticString& b)
+			{
+				return Lt::Chars::Compare(a.Content(), b.Content());
 			}
 		private:
 			Lt::usize _Capacity;

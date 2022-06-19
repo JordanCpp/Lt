@@ -1,6 +1,28 @@
 #include <Lt/Core/TestEqual.hpp>
 #include <Lt/Containers/StaticString.hpp>
 
+void TestContainersStaticStringCompare()
+{
+	const Lt::usize limit = 128;
+
+	Lt::Containers::StaticString<limit> string1;
+	Lt::Containers::StaticString<limit> string2;
+
+	string1 = "Hello!";
+	LT_TEST_EQUAL(string1 == "Hello!");
+
+	string2 = "World!";
+	LT_TEST_EQUAL(string2 == "World!");
+
+	string1 = "Hello!";
+	string2 = "Hello!";
+	LT_TEST_EQUAL(string1 == string2);
+
+	string1 = "Hello!";
+	string2 = "World!";
+	LT_TEST_EQUAL(string1 != string2);
+}
+
 void TestContainersStaticStringManual()
 {
 	const Lt::usize limit = 128;
@@ -68,6 +90,7 @@ void TestContainersStaticStringAssign()
 
 int main()
 {
+	TestContainersStaticStringCompare();
 	TestContainersStaticStringManual();
 	TestContainersStaticStringAppendChar();
 	TestContainersStaticStringAppendChars();
