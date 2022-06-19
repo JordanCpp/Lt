@@ -28,3 +28,6 @@ target_link_libraries(CpuWindow LtCore LtGraphics LtEvents)
 
 add_executable(CpuRender "CpuRender.cpp")
 target_link_libraries(CpuRender LtCore LtGraphics LtEvents)
+
+add_executable(GL1Render "GL1Render.cpp")
+target_link_libraries(GL1Render LtCore LtGraphics LtEvents)

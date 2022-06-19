@@ -28,7 +28,8 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Core/Directory.cpp"
   "src/Lt/Platforms/Windows/Core/Ticks.cpp"
   "src/Lt/Platforms/Windows/Graphics/Window.cpp"
-  "src/Lt/Platforms/Windows/Graphics/CpuWindow.cpp")
+  "src/Lt/Platforms/Windows/Graphics/CpuWindow.cpp"
+  "src/Lt/Platforms/Windows/Graphics/GL1Window.cpp")
 elseif(UNIX AND NOT APPLE)
   target_sources(LtCore PRIVATE
   "src/Lt/Platforms/Linux/Core/Console.cpp"
@@ -46,7 +47,12 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/Color.cpp"
 "src/Lt/Graphics/CpuImage.cpp"
 "src/Lt/Graphics/CpuRender.cpp"
-"src/Lt/Graphics/FpsLimiter.cpp")
+"src/Lt/Graphics/FpsLimiter.cpp"
+"src/Lt/Graphics/GL1Render.cpp")
+
+if (WIN32)
+  target_link_libraries(LtGraphics opengl32)
+endif()
 
 add_library(LtAllocators STATIC
 "src/Lt/Allocators/FixedLinear.cpp")
