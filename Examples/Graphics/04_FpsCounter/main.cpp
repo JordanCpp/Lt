@@ -58,6 +58,8 @@ int main()
 
 			fpsCounter.Clear();
 		}
+
+		render.Clear();
 	}
 
 	return 0;

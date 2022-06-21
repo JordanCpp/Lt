@@ -17,6 +17,10 @@ namespace Lt
 			void Color(const Lt::Graphics::Color& color);
 		private:
 			Lt::Graphics::Point2u _Size;
+		public:
+			/// <summary>
+			/// For optimization
+			/// </summary>
 			Lt::Graphics::Color _Current;
 		};
 	}

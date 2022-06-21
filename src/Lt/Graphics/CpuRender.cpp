@@ -21,9 +21,11 @@ void Lt::Graphics::CpuRender::Clear()
 {
 	Lt::Graphics::Color* pixels = (Lt::Graphics::Color*)_Canvas.Pixels();
 
-	for (Lt::usize i = 0; i < _Canvas.Size().PosX() * _Canvas.Size().PosY(); i++)
+	Lt::usize size = _Canvas.Size().PosX() * _Canvas.Size().PosY();
+
+	for (Lt::usize i = 0; i < size; i++)
 	{
-		pixels[i] = Color();
+		pixels[i] = _BaseRender._Current;
 	}
 }
 
