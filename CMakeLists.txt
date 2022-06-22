@@ -29,7 +29,8 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Core/Ticks.cpp"
   "src/Lt/Platforms/Windows/Graphics/Window.cpp"
   "src/Lt/Platforms/Windows/Graphics/CpuWindow.cpp"
-  "src/Lt/Platforms/Windows/Graphics/GL1Window.cpp")
+  "src/Lt/Platforms/Windows/Graphics/GL1Window.cpp"
+  "src/Lt/Platforms/Windows/Graphics/Monitor.cpp")
 elseif(UNIX AND NOT APPLE)
   target_sources(LtCore PRIVATE
   "src/Lt/Platforms/Linux/Core/Console.cpp"

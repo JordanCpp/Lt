@@ -34,3 +34,6 @@ target_link_libraries(GL1Render LtCore LtGraphics LtEvents)
 
 add_executable(FpsCounter "FpsCounter.cpp")
 target_link_libraries(FpsCounter LtCore LtGraphics LtEvents)
+
+add_executable(Monitor "Monitor.cpp")
+target_link_libraries(Monitor LtCore LtGraphics LtEvents)
