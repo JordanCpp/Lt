@@ -12,5 +12,9 @@ const Lt::Graphics::Point2u& Lt::Graphics::Windows::Monitor::Resolution()
 	int w = GetDeviceCaps(hdc, HORZRES);
 	int h = GetDeviceCaps(hdc, VERTRES);
 
-	return Lt::Graphics::Point2u(w, h);
+	_Current = Lt::Graphics::Point2u(w, h);
+
+	ReleaseDC(nullptr, hdc);
+
+	return _Current;
 }

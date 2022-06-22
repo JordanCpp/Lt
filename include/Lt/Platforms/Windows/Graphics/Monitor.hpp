@@ -15,6 +15,7 @@ namespace Lt
 				Monitor();
 				const Lt::Graphics::Point2u& Resolution();
 			private:
+				Lt::Graphics::Point2u _Current;
 			};
 		}
 	}
