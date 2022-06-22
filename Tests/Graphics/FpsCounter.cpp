@@ -11,11 +11,11 @@ void TestGraphicsFpsCounter()
 	LT_TEST_EQUAL(fpsCounter.Fps() == 0);
 	LT_TEST_EQUAL(fpsCounter.Calc() == false);
 
-	Lt::Core::Delay(2000);
-
 	for (Lt::usize i = 0; i < ms; i += ms)
 	{
 		fpsCounter.Calc();
+
+		Lt::Core::Delay(ms);
 	}
 
 	LT_TEST_EQUAL(fpsCounter.Fps() > 0);
