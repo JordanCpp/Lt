@@ -62,10 +62,16 @@ add_library(LtAllocators STATIC
 add_library(LtEvents STATIC
 "src/Lt/Events/Eventer.cpp")
 
+add_library(LtWidgets STATIC
+"src/Lt/Widgets/Widget.cpp"
+"src/Lt/Widgets/Factory.cpp"
+"src/Lt/Widgets/Button.cpp")
+
 add_subdirectory("Tests/Core")
 add_subdirectory("Tests/Containers")
 add_subdirectory("Tests/Allocators")
 add_subdirectory("Tests/Graphics")
 add_subdirectory("Tests/Events")
+add_subdirectory("Tests/Widgets")
 
 add_subdirectory("Examples")
