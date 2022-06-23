@@ -103,7 +103,7 @@ Lt::usize Lt::Core::Windows::BinaryFile::Write(Lt::u8* src, Lt::usize bytes)
 {
 	DWORD result = 0;
 
-	if (WriteFile(_File, src, bytes, &result, NULL))
+	if (WriteFile(_File, src, (DWORD)bytes, &result, NULL))
 	{
 		_Position += result;
 		_Bytes += result;
