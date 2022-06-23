@@ -50,7 +50,7 @@ namespace Lt
 				return _Capacity;
 			}
 
-			Lt::usize Length()
+			Lt::usize Length() const
 			{
 				return _Position;
 			}
@@ -92,7 +92,7 @@ namespace Lt
 				_Position = count;
 			}
 
-			const TYPE& operator[](Lt::usize index)
+			const TYPE& operator[](Lt::usize index) const
 			{
 				LT_ASSERT(index <= _Capacity);
 

@@ -24,9 +24,16 @@ const Lt::Graphics::Render* Lt::Widgets::Factory::Render()
 	return _Render;
 }
 
+const Lt::Containers::Vector<Lt::Widgets::Widget*> Lt::Widgets::Factory::Widgets()
+{
+	return _Widgets;
+}
+
 Lt::Widgets::Widget* Lt::Widgets::Factory::Widget(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
 {
 	Lt::Widgets::Widget* result = new Lt::Widgets::Widget(_Window, _Render, pos, size);
+
+	_Widgets.Append(result);
 
 	return result;
 }
@@ -34,6 +41,8 @@ Lt::Widgets::Widget* Lt::Widgets::Factory::Widget(const Lt::Graphics::Point2u& p
 Lt::Widgets::Button* Lt::Widgets::Factory::Button(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
 {
 	Lt::Widgets::Button* result = new Lt::Widgets::Button(_Window, _Render, pos, size);
+
+	_Widgets.Append(result);
 
 	return result;
 }

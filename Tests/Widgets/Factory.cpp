@@ -13,6 +13,13 @@ void TestWidgetsFactory()
 
 	LT_TEST_EQUAL(factory.Window() == &window);
 	LT_TEST_EQUAL(factory.Render() == &render);
+
+	LT_TEST_EQUAL(factory.Widgets().Length() == 0);
+
+	Lt::Widgets::Widget* widget = factory.Widget(Lt::Graphics::Point2u(10, 15), Lt::Graphics::Point2u(100, 25));
+
+	LT_TEST_EQUAL(factory.Widgets().Length() == 1);
+	LT_TEST_EQUAL(factory.Widgets()[0] == widget);
 }
 
 int main()
