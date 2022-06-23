@@ -92,6 +92,7 @@ Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, cons
     _BaseWindow(pos, size, title)
 {
     Lt::Memory::Zero(&_WNDCLASS, sizeof(WNDCLASS));
+    Lt::Memory::Zero(&_MSG, sizeof(MSG));
 
     _WNDCLASS.hInstance = _HINSTANCE;
     _WNDCLASS.lpszClassName = AppName;
@@ -109,7 +110,7 @@ Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, cons
     }
     else
     {
-        _HWND = CreateWindow(AppName, "", WS_OVERLAPPEDWINDOW, _BaseWindow.Pos().PosX(), _BaseWindow.Pos().PosY(), _BaseWindow.Size().PosX(), _BaseWindow.Size().PosY(), 0, 0, _HINSTANCE, 0);
+        _HWND = CreateWindow(AppName, "", WS_OVERLAPPEDWINDOW, (int)_BaseWindow.Pos().PosX(), (int)_BaseWindow.Pos().PosY(), (int)_BaseWindow.Size().PosX(), (int)_BaseWindow.Size().PosY(), 0, 0, _HINSTANCE, 0);
 
         if (_HWND == INVALID_HANDLE_VALUE)
         {
