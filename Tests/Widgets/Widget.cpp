@@ -3,6 +3,9 @@
 
 void Click(Lt::Widgets::Widget* source, Lt::usize type, void* content)
 {
+	LT_TEST_EQUAL(source != nullptr);
+	LT_TEST_EQUAL(type > 0);
+	LT_TEST_EQUAL(content != nullptr);
 }
 
 void TestWidgetsWidget()
@@ -32,6 +35,8 @@ void TestWidgetsWidget()
 	widget->Action(Click);
 
 	LT_TEST_EQUAL(widget->Action() == Click);
+
+	widget->Action(widget, 1, (void*)42);
 }
 
 int main()
