@@ -12,6 +12,28 @@ Lt::Core::Windows::BinaryFile::~BinaryFile()
 	Close();
 }
 
+bool Lt::Core::Windows::BinaryFile::Create(const char* path)
+{
+	return CreateFile(path, 0, 0, NULL, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL) != INVALID_HANDLE_VALUE;
+}
+
+bool Lt::Core::Windows::BinaryFile::Recreate(const char* path)
+{
+	return CreateFile(path, 0, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL) != INVALID_HANDLE_VALUE;
+}
+
+bool Lt::Core::Windows::BinaryFile::Exist(const char* path)
+{
+	DWORD fileAttr = GetFileAttributes(path);
+
+	return (0xFFFFFFFF == fileAttr && GetLastError() == ERROR_FILE_NOT_FOUND) != true;
+}
+
+bool Lt::Core::Windows::BinaryFile::Delete(const char* path)
+{
+	return DeleteFile(path) != 0;
+}
+
 Lt::usize Lt::Core::Windows::BinaryFile::Position()
 {
 	return _Position;
@@ -74,5 +96,18 @@ Lt::usize Lt::Core::Windows::BinaryFile::Read(Lt::u8* dst, Lt::usize bytes)
 		_Position += result;
 	}
 
+	return result;
+}
+
+Lt::usize Lt::Core::Windows::BinaryFile::Write(Lt::u8* src, Lt::usize bytes)
+{
+	DWORD result = 0;
+
+	if (WriteFile(_File, src, bytes, &result, NULL))
+	{
+		_Position += result;
+		_Bytes += result;
+	}
+	
 	return result;
 }

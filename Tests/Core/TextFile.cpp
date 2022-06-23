@@ -7,7 +7,7 @@ void TestTextFileReading()
 
 	LT_TEST_EQUAL(file.Eof() == true);
 
-	LT_TEST_EQUAL(file.Open("TestFiles/Test.txt") == true);
+	LT_TEST_EQUAL(file.Open("TestFiles/TextFile.txt") == true);
 
 	LT_TEST_EQUAL(file.Eof() == false);
 
