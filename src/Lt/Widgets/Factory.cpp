@@ -14,6 +14,23 @@ Lt::Widgets::Factory::~Factory()
 	}
 }
 
+const Lt::Graphics::Window* Lt::Widgets::Factory::Window()
+{
+	return _Window;
+}
+
+const Lt::Graphics::Render* Lt::Widgets::Factory::Render()
+{
+	return _Render;
+}
+
+Lt::Widgets::Widget* Lt::Widgets::Factory::Widget(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
+{
+	Lt::Widgets::Widget* result = new Lt::Widgets::Widget(_Window, _Render, pos, size);
+
+	return result;
+}
+
 Lt::Widgets::Button* Lt::Widgets::Factory::Button(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
 {
 	Lt::Widgets::Button* result = new Lt::Widgets::Button(_Window, _Render, pos, size);

@@ -1,6 +1,7 @@
 #include <Lt/Widgets/Widget.hpp>
 
 Lt::Widgets::Widget::Widget(Lt::Graphics::Window* window, Lt::Graphics::Render* render, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size):
+	_Action(nullptr),
 	_Parent(nullptr),
 	_Window(window),
 	_Render(render),
@@ -47,4 +48,22 @@ void Lt::Widgets::Widget::Attach(Lt::Widgets::Widget* widget)
 	widget->Parent(this);
 
 	_Widgets.Append(widget);
+}
+
+Lt::Widgets::Widget::ActionCallback Lt::Widgets::Widget::Action()
+{
+	return _Action;
+}
+
+void Lt::Widgets::Widget::Action(Lt::Widgets::Widget::ActionCallback actionCallback)
+{
+	_Action = actionCallback;
+}
+
+void Lt::Widgets::Widget::Action(Lt::Widgets::Widget* source, Lt::usize type, void* content)
+{
+	if (_Action != nullptr)
+	{
+		_Action(source, type, content);
+	}
 }

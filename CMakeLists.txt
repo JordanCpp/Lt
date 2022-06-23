@@ -65,7 +65,8 @@ add_library(LtEvents STATIC
 add_library(LtWidgets STATIC
 "src/Lt/Widgets/Widget.cpp"
 "src/Lt/Widgets/Factory.cpp"
-"src/Lt/Widgets/Button.cpp")
+"src/Lt/Widgets/Button.cpp"
+"src/Lt/Widgets/Application.cpp")
 
 add_subdirectory("Tests/Core")
 add_subdirectory("Tests/Containers")

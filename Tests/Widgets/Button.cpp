@@ -15,7 +15,7 @@ void TestWidgetsWidget()
 
 	Lt::Widgets::Factory factory(&window, &render);
 
-	Lt::Widgets::Widget* widget = factory.Widget(Lt::Graphics::Point2u(10, 15), Lt::Graphics::Point2u(100, 25));
+	Lt::Widgets::Widget* widget = factory.Button(Lt::Graphics::Point2u(10, 15), Lt::Graphics::Point2u(100, 25));
 
 	LT_TEST_EQUAL(widget->Action() == nullptr);
 	LT_TEST_EQUAL(widget->Parent() == nullptr);

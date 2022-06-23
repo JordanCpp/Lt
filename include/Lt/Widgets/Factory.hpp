@@ -13,6 +13,9 @@ namespace Lt
 		public:
 			Factory(Lt::Graphics::Window* window, Lt::Graphics::Render* render);
 			~Factory();
+			const Lt::Graphics::Window* Window();
+			const Lt::Graphics::Render* Render();
+			Lt::Widgets::Widget* Widget(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
 			Lt::Widgets::Button* Button(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
 		private:
 			Lt::Graphics::Window* _Window;

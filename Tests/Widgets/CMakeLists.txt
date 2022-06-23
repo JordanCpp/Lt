@@ -7,3 +7,6 @@ target_link_libraries(Widget LtWidgets LtGraphics LtEvents LtCore)
 
 add_executable(Factory "Factory.cpp")
 target_link_libraries(Factory LtWidgets LtGraphics LtEvents LtCore)
+
+add_executable(Button "Button.cpp")
+target_link_libraries(Button LtWidgets LtGraphics LtEvents LtCore)

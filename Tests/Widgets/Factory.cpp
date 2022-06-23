@@ -10,6 +10,9 @@ void TestWidgetsFactory()
 	Lt::Graphics::Render render(errorHandler, &window);
 
 	Lt::Widgets::Factory factory(&window, &render);
+
+	LT_TEST_EQUAL(factory.Window() == &window);
+	LT_TEST_EQUAL(factory.Render() == &render);
 }
 
 int main()
