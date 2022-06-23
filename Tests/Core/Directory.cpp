@@ -24,10 +24,36 @@ void TestCoreDirectoryNext()
 	}
 }
 
+void TestCoreDirectoryCreate()
+{
+	Lt::Core::Directory directory;
+
+	LT_TEST_EQUAL(directory.Create("TestFiles/Test") == true);
+	LT_TEST_EQUAL(directory.Create("TestFiles/Test") == false);
+}
+
+void TestCoreDirectoryExist()
+{
+	Lt::Core::Directory directory;
+
+	LT_TEST_EQUAL(directory.Exist("TestFiles/Test") == true);
+}
+
+void TestCoreDirectoryDelete()
+{
+	Lt::Core::Directory directory;
+
+	LT_TEST_EQUAL(directory.Delete("TestFiles/Test") == true);
+	LT_TEST_EQUAL(directory.Delete("TestFiles/Test") == false);
+}
+
 int main()
 {
 	TestCoreDirectoryOpen();
 	TestCoreDirectoryNext();
+	TestCoreDirectoryCreate();
+	TestCoreDirectoryExist();
+	TestCoreDirectoryDelete();
 
 	return 0;
 }

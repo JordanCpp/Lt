@@ -13,6 +13,9 @@ namespace Lt
 			class Directory
 			{
 			public:
+				bool Create(const char* path);
+				bool Exist(const char* path);
+				bool Delete(const char* path);
 				bool Open(const char* path);
 				void Close();
 				bool Next(Lt::Core::FileInfo& fileInfo);
