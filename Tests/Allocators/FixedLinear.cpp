@@ -16,8 +16,6 @@ void TestAllocatorsFixedLinearAllocate()
 
 	Lt::Allocators::FixedLinear allocator(bytes);
 
-	LT_TEST_EQUAL(allocator.UsedBytes() == 0);
-
 	for (Lt::usize i = 0; i < bytes; i++)
 	{
 		void* p = allocator.Allocate(1);
