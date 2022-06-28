@@ -1,30 +1,34 @@
 #include <Lt/Graphics/CpuImage.hpp>
 
-Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size) :
-	_Size(size),
+Lt::Graphics::CpuImage::CpuImage() :
 	_Channels(4),
 	_Allocator(nullptr),
 	_Pixels(nullptr)
 {
+}
+
+void Lt::Graphics::CpuImage::FromNew(const Lt::Graphics::Point2u& size)
+{
+	_Size = size;
+	_Allocator = nullptr;
+	_Pixels = nullptr;
+
 	Lt::usize bytes = Size().PosX() * Size().PosX() * Channels();
 
 	_Pixels = new Lt::u8[bytes];
 }
-
-Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size, Lt::u8* pixels) :
-	_Size(size),
-	_Channels(4),
-	_Allocator(nullptr),
-	_Pixels(pixels)
+void Lt::Graphics::CpuImage::FromMemory(const Lt::Graphics::Point2u& size, Lt::u8* pixels)
 {
+	_Size = size;
+	_Allocator = nullptr;
+	_Pixels = pixels;
 }
-
-Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size, Lt::Allocators::Allocator* allocator):
-	_Size(size),
-	_Channels(4),
-	_Allocator(allocator),
-	_Pixels(nullptr)
+void Lt::Graphics::CpuImage::FromAllocator(const Lt::Graphics::Point2u& size, Lt::Allocators::Allocator* allocator)
 {
+	_Size = size;
+	_Allocator = allocator;
+	_Pixels = nullptr;
+
 	Lt::usize bytes = Size().PosX() * Size().PosX() * Channels();
 
 	_Pixels = (Lt::u8*)_Allocator->Allocate(bytes);

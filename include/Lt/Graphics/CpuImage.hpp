@@ -12,9 +12,10 @@ namespace Lt
 		class CpuImage
 		{
 		public:
-			CpuImage(const Lt::Graphics::Point2u& size);
-			CpuImage(const Lt::Graphics::Point2u& size, Lt::u8* pixels);
-			CpuImage(const Lt::Graphics::Point2u& size, Lt::Allocators::Allocator* allocator);
+			CpuImage();
+			void FromNew(const Lt::Graphics::Point2u& size);
+			void FromMemory(const Lt::Graphics::Point2u& size, Lt::u8* pixels);
+			void FromAllocator(const Lt::Graphics::Point2u& size, Lt::Allocators::Allocator* allocator);
 			~CpuImage();
 			const Lt::Graphics::Point2u& Size();
 			const Lt::u8 Channels();
