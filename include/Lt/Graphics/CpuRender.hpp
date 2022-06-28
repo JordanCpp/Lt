@@ -18,13 +18,13 @@ namespace Lt
 			void Clear();
 			void Color(const Lt::Graphics::Color& color);
 			void Present();
-			Lt::Graphics::CpuImage* Canvas();
+			Lt::Graphics::CpuImageFromNew* Canvas();
 			void Pixel(const Lt::Graphics::Point2u& pos);
 			const Lt::Graphics::Color& GetPixel(const Lt::Graphics::Point2u& pos);
 		private:
 			Lt::Graphics::Window* _Window;
 			Lt::Graphics::BaseRender _BaseRender;
-			Lt::Graphics::CpuImage _Canvas;
+			Lt::Graphics::CpuImageFromNew _Canvas;
 		};
 	}
 }

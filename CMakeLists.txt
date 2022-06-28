@@ -46,7 +46,7 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/BaseRender.cpp"
 "src/Lt/Graphics/BaseWindow.cpp"
 "src/Lt/Graphics/Color.cpp"
-"src/Lt/Graphics/CpuImage.cpp"
+
 "src/Lt/Graphics/CpuRender.cpp"
 "src/Lt/Graphics/FpsLimiter.cpp"
 "src/Lt/Graphics/GL1Render.cpp"

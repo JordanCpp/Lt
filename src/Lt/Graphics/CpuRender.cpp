@@ -2,9 +2,10 @@
 
 Lt::Graphics::CpuRender::CpuRender(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window) :
 	_Window(window),
-	_BaseRender(_Window->Size())
+	_BaseRender(_Window->Size()),
+	_Canvas(4, _BaseRender.Size())
 {
-	_Canvas.FromNew(_BaseRender.Size());
+
 }
 
 const Lt::Graphics::Point2u& Lt::Graphics::CpuRender::Size()
@@ -39,7 +40,7 @@ void Lt::Graphics::CpuRender::Present()
 	_Window->Present(_Canvas.Pixels());
 }
 
-Lt::Graphics::CpuImage* Lt::Graphics::CpuRender::Canvas()
+Lt::Graphics::CpuImageFromNew* Lt::Graphics::CpuRender::Canvas()
 {
 	return &_Canvas;
 }
