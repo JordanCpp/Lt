@@ -50,7 +50,11 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/CpuRender.cpp"
 "src/Lt/Graphics/FpsLimiter.cpp"
 "src/Lt/Graphics/GL1Render.cpp"
-"src/Lt/Graphics/FpsCounter.cpp")
+"src/Lt/Graphics/FpsCounter.cpp"
+"src/Lt/Graphics/BaseCpuImage.cpp"
+"src/Lt/Graphics/CpuImageFromAllocator.cpp"
+"src/Lt/Graphics/CpuImageFromMemory.cpp"
+"src/Lt/Graphics/CpuImageFromNew.cpp")
 
 if (WIN32)
   target_link_libraries(LtGraphics opengl32)

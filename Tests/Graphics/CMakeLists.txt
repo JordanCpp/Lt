@@ -37,3 +37,15 @@ target_link_libraries(FpsCounter LtCore LtGraphics LtEvents)
 
 add_executable(Monitor "Monitor.cpp")
 target_link_libraries(Monitor LtCore LtGraphics LtEvents)
+
+add_executable(BaseCpuImage "BaseCpuImage.cpp")
+target_link_libraries(BaseCpuImage LtCore LtAllocators LtGraphics)
+
+add_executable(CpuImageFromAllocator "CpuImageFromAllocator.cpp")
+target_link_libraries(CpuImageFromAllocator LtCore LtAllocators LtGraphics)
+
+add_executable(CpuImageFromMemory "CpuImageFromMemory.cpp")
+target_link_libraries(CpuImageFromMemory LtCore LtAllocators LtGraphics)
+
+add_executable(CpuImageFromNew "CpuImageFromNew.cpp")
+target_link_libraries(CpuImageFromNew LtCore LtGraphics)
