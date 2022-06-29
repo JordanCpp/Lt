@@ -46,7 +46,6 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/BaseRender.cpp"
 "src/Lt/Graphics/BaseWindow.cpp"
 "src/Lt/Graphics/Color.cpp"
-
 "src/Lt/Graphics/CpuRender.cpp"
 "src/Lt/Graphics/FpsLimiter.cpp"
 "src/Lt/Graphics/GL1Render.cpp"
@@ -54,7 +53,8 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/BaseCpuImage.cpp"
 "src/Lt/Graphics/CpuImageFromAllocator.cpp"
 "src/Lt/Graphics/CpuImageFromMemory.cpp"
-"src/Lt/Graphics/CpuImageFromNew.cpp")
+"src/Lt/Graphics/CpuImageFromNew.cpp"
+"src/Lt/Graphics/Screenshoter.cpp")
 
 if (WIN32)
   target_link_libraries(LtGraphics opengl32)

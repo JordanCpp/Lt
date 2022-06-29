@@ -123,3 +123,13 @@ void Lt::Graphics::CpuRender::Line(const Lt::Graphics::Point2u& pos1, const Lt::
 		}
 	}
 }
+
+Lt::u8* Lt::Graphics::CpuRender::Pixels()
+{
+	return _Canvas.Pixels();
+}
+
+Lt::u8 Lt::Graphics::CpuRender::Channels()
+{
+	return _Canvas.Channels();
+}

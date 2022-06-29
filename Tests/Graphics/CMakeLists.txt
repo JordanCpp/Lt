@@ -46,3 +46,6 @@ target_link_libraries(CpuImageFromMemory LtCore LtAllocators LtGraphics)
 
 add_executable(CpuImageFromNew "CpuImageFromNew.cpp")
 target_link_libraries(CpuImageFromNew LtCore LtGraphics)
+
+add_executable(Screenshoter "Screenshoter.cpp")
+target_link_libraries(Screenshoter LtCore LtGraphics LtEvents)
