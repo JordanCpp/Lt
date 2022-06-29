@@ -3,7 +3,7 @@
 
 #include <Lt/Graphics/BaseRender.hpp>
 #include <Lt/Graphics/Window.hpp>
-#include <Lt/Graphics/CpuImage.hpp>
+#include <Lt/Graphics/Image.hpp>
 
 namespace Lt
 {
@@ -18,13 +18,13 @@ namespace Lt
 			void Clear();
 			void Color(const Lt::Graphics::Color& color);
 			void Present();
-			Lt::Graphics::CpuImageFromNew* Canvas();
+			Lt::Graphics::ImageFromNew* Canvas();
 			void Pixel(const Lt::Graphics::Point2u& pos);
 			const Lt::Graphics::Color& GetPixel(const Lt::Graphics::Point2u& pos);
 		private:
 			Lt::Graphics::Window* _Window;
 			Lt::Graphics::BaseRender _BaseRender;
-			Lt::Graphics::CpuImageFromNew _Canvas;
+			Lt::Graphics::ImageFromNew _Canvas;
 		};
 	}
 }

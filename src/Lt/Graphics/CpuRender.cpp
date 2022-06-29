@@ -40,7 +40,7 @@ void Lt::Graphics::CpuRender::Present()
 	_Window->Present(_Canvas.Pixels());
 }
 
-Lt::Graphics::CpuImageFromNew* Lt::Graphics::CpuRender::Canvas()
+Lt::Graphics::ImageFromNew* Lt::Graphics::CpuRender::Canvas()
 {
 	return &_Canvas;
 }
