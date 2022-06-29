@@ -49,3 +49,6 @@ target_link_libraries(Ticks LtCore)
 
 add_executable(ErrorHandler "ErrorHandler.cpp")
 target_link_libraries(ErrorHandler LtCore)
+
+add_executable(GetSystemDateTime "GetSystemDateTime.cpp")
+target_link_libraries(GetSystemDateTime LtCore)
