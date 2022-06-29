@@ -62,3 +62,61 @@ const Lt::Graphics::Color& Lt::Graphics::CpuRender::GetPixel(const Lt::Graphics:
 
 	return	pixels[i];
 }
+
+void Lt::Graphics::CpuRender::FillRect(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
+{
+	Lt::usize x = pos.PosX();
+	Lt::usize y = pos.PosY();
+
+	for (Lt::usize i = 0; i < size.PosX(); i++)
+	{
+		for (Lt::usize j = 0; j < size.PosY(); j++)
+		{
+			Pixel(Lt::Graphics::Point2u(x + i, y + j));
+		}
+	}
+}
+
+void Lt::Graphics::CpuRender::Line(const Lt::Graphics::Point2u& pos1, const Lt::Graphics::Point2u& pos2)
+{
+	int x1 = pos1.PosX();
+	int y1 = pos1.PosY();
+
+	int x2 = pos2.PosX();
+	int y2 = pos2.PosY();
+
+	int deltaX;
+	int deltaY;
+	int signX;
+	int signY;
+	int error;
+	int error2;
+
+	deltaX = abs(x2 - x1);
+	deltaY = abs(y2 - y1);
+	signX = x1 < x2 ? 1 : -1;
+	signY = y1 < y2 ? 1 : -1;
+
+	error = deltaX - deltaY;
+
+	Pixel(Lt::Graphics::Point2u(x2, y2));
+
+	while (x1 != x2 || y1 != y2)
+	{
+		Pixel(Lt::Graphics::Point2u(x1, y1));
+
+		error2 = error * 2;
+
+		if (error2 > -deltaY)
+		{
+			error -= deltaY;
+			x1 += signX;
+		}
+
+		if (error2 < deltaX)
+		{
+			error += deltaX;
+			y1 += signY;
+		}
+	}
+}
