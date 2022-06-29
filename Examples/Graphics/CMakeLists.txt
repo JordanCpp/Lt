@@ -13,3 +13,9 @@ target_link_libraries(03_Color LtCore LtGraphics LtEvents)
 
 add_executable(04_FpsCounter "04_FpsCounter/main.cpp")
 target_link_libraries(04_FpsCounter LtCore LtGraphics LtEvents)
+
+add_executable(05_DrawLine "05_DrawLine/main.cpp")
+target_link_libraries(05_DrawLine LtCore LtGraphics LtEvents)
+
+add_executable(06_FillRect "06_FillRect/main.cpp")
+target_link_libraries(06_FillRect LtCore LtGraphics LtEvents)
