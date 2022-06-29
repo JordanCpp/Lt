@@ -30,18 +30,25 @@ void TestGraphicsCpuRenderClear()
 
 	LT_TEST_EQUAL(errorHandler.IsError() == false);
 
+	Lt::Graphics::Color color(15, 25, 35, 45);
+
+	render.Color(color);
 	render.Clear();
 
-	Lt::Graphics::Color* pixels = (Lt::Graphics::Color*)render.Canvas()->Pixels();
+	Lt::usize x = 0;
+	Lt::usize y = 0;
 
-	render.Color(Lt::Graphics::Color(15, 25, 35, 45));
-
-	for (Lt::usize i = 0; i < render.Size().PosX() * render.Size().PosY(); i++)
+	for (Lt::usize i = 0; i < render.Size().PosX(); i++)
 	{
-		LT_TEST_EQUAL(render.Color().Red() == 15);
-		LT_TEST_EQUAL(render.Color().Green() == 25);
-		LT_TEST_EQUAL(render.Color().Blue() == 35);
-		LT_TEST_EQUAL(render.Color().Alpha() == 45);
+		for (Lt::usize j = 0; j < render.Size().PosY(); j++)
+		{
+			Lt::Graphics::Color pixel = render.GetPixel(Lt::Graphics::Point2u(x + i, y + j));
+
+			LT_TEST_EQUAL(pixel.Red() == color.Red());
+			LT_TEST_EQUAL(pixel.Green() == color.Green());
+			LT_TEST_EQUAL(pixel.Blue() == color.Blue());
+			LT_TEST_EQUAL(pixel.Alpha() == color.Alpha());
+		}
 	}
 }
 
