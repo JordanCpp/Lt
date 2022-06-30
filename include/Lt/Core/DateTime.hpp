@@ -16,6 +16,7 @@ namespace Lt
 		Lt::u8 Hours() const;
 		Lt::u8 Minutes() const;
 		Lt::u8 Seconds() const;
+		void Now();
 	private:
 		Lt::u16 _Years;
 		Lt::u8 _Months;

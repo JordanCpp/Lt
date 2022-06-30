@@ -69,11 +69,26 @@ void TestDateTimeManual()
 	LT_TEST_EQUAL(dt6.Seconds() == 57);
 }
 
+void TestDateTimeNow()
+{
+	Lt::DateTime dt;
+
+	dt.Now();
+
+	LT_TEST_EQUAL(dt.Years() > 1900);
+	LT_TEST_EQUAL(dt.Months() > 0);
+	LT_TEST_EQUAL(dt.Days() > 0);
+	LT_TEST_EQUAL(dt.Hours() > 0);
+	LT_TEST_EQUAL(dt.Minutes() > 0);
+	LT_TEST_EQUAL(dt.Seconds() > 0);
+}
+
 int main()
 {
 	TestDateTimeSize();
 	TestDateTimeDefault();
 	TestDateTimeManual();
+	TestDateTimeNow();
 
 	return 0;
 }

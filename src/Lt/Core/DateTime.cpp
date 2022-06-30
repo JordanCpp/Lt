@@ -1,5 +1,6 @@
 #include <Lt/Core/DateTime.hpp>
 #include <Lt/Core/Utils.hpp>
+#include <Lt/Core/GetSystemDateTime.hpp>
 
 Lt::DateTime::DateTime() :
 	_Years(1900),
@@ -49,4 +50,18 @@ Lt::u8 Lt::DateTime::Minutes() const
 Lt::u8 Lt::DateTime::Seconds() const
 {
 	return _Seconds;
+}
+
+void Lt::DateTime::Now()
+{
+	Lt::Core::SystemDateTime dt;
+
+	Lt::Core::GetSystemDateTime(dt);
+
+	_Years = dt.Years;
+	_Months = dt.Months;
+	_Days = dt.Days;
+	_Hours = dt.Hours;
+	_Minutes = dt.Minutes;
+	_Seconds = dt.Seconds;
 }
