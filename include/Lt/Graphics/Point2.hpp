@@ -30,7 +30,7 @@ namespace Lt
 			{
 				return _PosY;
 			}
-		private:
+
 			TYPE _PosX;
 			TYPE _PosY;
 		};

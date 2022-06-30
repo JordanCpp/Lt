@@ -47,13 +47,13 @@ Lt::Graphics::ImageFromNew* Lt::Graphics::CpuRender::Canvas()
 
 void Lt::Graphics::CpuRender::Pixel(const Lt::Graphics::Point2u& pos)
 {
-	Lt::usize i = (Size().PosX() * pos.PosY()) + pos.PosX();
+	Lt::usize i = (_BaseRender._Size._PosX * pos._PosY) + pos._PosX;
 
-	if (i < Size().PosX() * Size().PosY())
+	if (i < _BaseRender._Size._PosX * _BaseRender._Size._PosY)
 	{
 		Lt::Graphics::Color* pixels = (Lt::Graphics::Color*)_Canvas.Pixels();
 
-		pixels[i] = Color();
+		pixels[i] = _BaseRender._Current;
 	}
 }
 
