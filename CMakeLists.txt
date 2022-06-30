@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.8)
 
 project(LiteToolkit)
 
+if (MSVC)
+    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+endif()
+
 include_directories("include")
 
 add_library(LtCore STATIC
@@ -55,7 +59,8 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/CpuImageFromAllocator.cpp"
 "src/Lt/Graphics/CpuImageFromMemory.cpp"
 "src/Lt/Graphics/CpuImageFromNew.cpp"
-"src/Lt/Graphics/Screenshoter.cpp")
+"src/Lt/Graphics/Screenshoter.cpp"
+"src/Lt/Graphics/ImageLoader.cpp")
 
 if (WIN32)
   target_link_libraries(LtGraphics opengl32)
