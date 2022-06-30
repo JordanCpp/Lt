@@ -36,7 +36,7 @@ int main()
 
 	Lt::Graphics::FpsLimiter limiter;
 
-	render.Color(Lt::Graphics::Color(156, 32, 78));
+	render.Color(Lt::Graphics::Color(237, 28, 36));
 
 	while (window.GetEvent(report))
 	{

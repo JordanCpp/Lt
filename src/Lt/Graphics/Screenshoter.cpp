@@ -1,4 +1,5 @@
 #include <Lt/Graphics/Screenshoter.hpp>
+#include <Lt/Core/Config.hpp>
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "../stb/stb_image_write.h"
@@ -11,7 +12,20 @@ Lt::Graphics::Screenshoter::Screenshoter(Lt::Graphics::Render* render, const cha
 
 void Lt::Graphics::Screenshoter::Shot(const char* path)
 {
-	stbi_write_png(path, (int)_Render->Size().PosX(), (int)_Render->Size().PosY(), 4, _Render->Pixels(), (int)_Render->Size().PosX() * (int)_Render->Channels());
+
+#if defined(LT_CONFIG_OS_WINDOWS)
+	Lt::usize bytes = _Render->Size().PosX() * _Render->Size().PosY() * 4;
+	Lt::u8* pixels = _Render->Pixels();
+
+	for (Lt::usize i = 0; i < bytes; i += 4)
+	{
+		Lt::u8 temp = pixels[i + 0];
+		pixels[i + 0] = pixels[i + 2];
+		pixels[i + 2] = temp;
+	}
+#endif
+
+	stbi_write_png(path, (int)_Render->Size().PosX(), (int)_Render->Size().PosY(), 4, _Render->Pixels(), (int)_Render->Size().PosX() * 4);
 }
 
 void Lt::Graphics::Screenshoter::Shot()

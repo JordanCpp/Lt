@@ -10,7 +10,7 @@ void TestGraphicsScreenshoter()
 	Lt::Graphics::Screenshoter screenshoter(&render, "TestFiles/");
 	Lt::Core::BinaryFile binaryFile;
 
-	render.Color(Lt::Graphics::Color(156, 32, 78));
+	render.Color(Lt::Graphics::Color(237, 28, 36));
 	render.Clear();
 
 	screenshoter.Shot();
