@@ -16,5 +16,5 @@ void Lt::Graphics::Screenshoter::Shot(const char* path)
 	_FullPath.Append(_ShortPath.Content());
 	_FullPath.Append(path);
 
-	stbi_write_png(_FullPath.Content(), (int)_Render->Size().PosX(), (int)_Render->Size().PosY(), 4, _Render->Pixels(), _Render->Size().PosX() * (int)_Render->Channels());
+	stbi_write_png(_FullPath.Content(), (int)_Render->Size().PosX(), (int)_Render->Size().PosY(), 4, _Render->Pixels(), (int)_Render->Size().PosX() * (int)_Render->Channels());
 }
