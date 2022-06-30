@@ -61,7 +61,11 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/CpuImageFromMemory.cpp"
 "src/Lt/Graphics/CpuImageFromNew.cpp"
 "src/Lt/Graphics/Screenshoter.cpp"
-"src/Lt/Loaders/Image.cpp")
+"src/Lt/Graphics/CpuImage.cpp"
+"src/Lt/Managers/ImageManager.cpp"
+"src/Lt/Loaders/ImageLoader.cpp"
+"src/Lt/Managers/PathManager.cpp"
+"src/Lt/Factories/ImageFactory.cpp")
 
 if (WIN32)
   target_link_libraries(LtGraphics opengl32)
@@ -87,5 +91,6 @@ add_subdirectory("Tests/Events")
 add_subdirectory("Tests/Widgets")
 add_subdirectory("Tests/Loaders")
 add_subdirectory("Tests/Input")
+add_subdirectory("Tests/Managers")
 
 add_subdirectory("Examples")

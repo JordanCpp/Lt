@@ -1,4 +1,4 @@
-#include <Lt/Loaders/Image.hpp>
+#include <Lt/Loaders/ImageLoader.hpp>
 
 static Lt::Allocators::Allocator* StbImageAllocator;
 

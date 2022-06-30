@@ -1,5 +1,5 @@
-#ifndef Lt_Graphics_Loaders_Image_hpp
-#define Lt_Graphics_Loaders_Image_hpp
+#ifndef Lt_Graphics_Loaders_ImageLoader_hpp
+#define Lt_Graphics_Loaders_ImageLoader_hpp
 
 #include <Lt/Graphics/Point2u.hpp>
 #include <Lt/Core/ErrorHandler.hpp>

@@ -1,7 +1,9 @@
 #ifndef Lt_Graphics_Image_hpp
 #define Lt_Graphics_Image_hpp
 
-#include <Lt/Graphics/CpuImage.hpp>
+#include <Lt/Graphics/CpuImageFromAllocator.hpp>
+#include <Lt/Graphics/CpuImageFromMemory.hpp>
+#include <Lt/Graphics/CpuImageFromNew.hpp>
 
 namespace Lt
 {

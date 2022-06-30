@@ -1,5 +1,5 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Loaders/Image.hpp>
+#include <Lt/Loaders/ImageLoader.hpp>
 #include <Lt/Allocators/FixedLinear.hpp>
 
 void TestGraphicsImageLoaderInit()
