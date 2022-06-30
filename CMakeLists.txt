@@ -35,7 +35,8 @@ if (WIN32)
   "src/Lt/Platforms/Windows/Graphics/Window.cpp"
   "src/Lt/Platforms/Windows/Graphics/CpuWindow.cpp"
   "src/Lt/Platforms/Windows/Graphics/GL1Window.cpp"
-  "src/Lt/Platforms/Windows/Graphics/Monitor.cpp")
+  "src/Lt/Platforms/Windows/Graphics/Monitor.cpp"
+  "src/Lt/Platforms/Windows/Input/Mouse.cpp")
 elseif(UNIX AND NOT APPLE)
   target_sources(LtCore PRIVATE
   "src/Lt/Platforms/Linux/Core/Console.cpp"
@@ -85,5 +86,6 @@ add_subdirectory("Tests/Graphics")
 add_subdirectory("Tests/Events")
 add_subdirectory("Tests/Widgets")
 add_subdirectory("Tests/Loaders")
+add_subdirectory("Tests/Input")
 
 add_subdirectory("Examples")
