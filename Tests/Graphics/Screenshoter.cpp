@@ -13,11 +13,10 @@ void TestGraphicsScreenshoter()
 	render.Color(Lt::Graphics::Color(156, 32, 78));
 	render.Clear();
 
-	screenshoter.Shot("screen.png");
+	screenshoter.Shot();
 
-	LT_TEST_EQUAL(binaryFile.Exist("TestFiles/screen.png") == true);
-
-	binaryFile.Delete("TestFiles/screen.png");
+	LT_TEST_EQUAL(binaryFile.Exist(screenshoter.Path()) == true);
+	LT_TEST_EQUAL(binaryFile.Delete(screenshoter.Path()) == true);
 }
 
 int main()

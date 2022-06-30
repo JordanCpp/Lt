@@ -1,5 +1,9 @@
 #include <Lt/Core/IntegerToString.hpp>
 
+Lt::Core::IntegerToString::IntegerToString()
+{
+}
+
 bool Lt::Core::IntegerToString::Convert(Lt::isize num, Lt::u8 base)
 {
 

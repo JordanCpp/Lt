@@ -3,6 +3,8 @@
 
 #include <Lt/Graphics/Render.hpp>
 #include <Lt/Containers/StaticString.hpp>
+#include <Lt/Core/DateTime.hpp>
+#include <Lt/Core/IntegerToString.hpp>
 
 namespace Lt
 {
@@ -12,11 +14,15 @@ namespace Lt
 		{
 		public:
 			Screenshoter(Lt::Graphics::Render* render, const char* path);
-			void Shot(const char* path);
+			void Shot();
+			const char* Path();
 		private:
+			void Shot(const char* path);
 			Lt::Graphics::Render* _Render;
 			Lt::Containers::StaticString<64> _ShortPath;
 			Lt::Containers::StaticString<256> _FullPath;
+			Lt::DateTime _Current;
+			Lt::Core::IntegerToString _Conv;
 		};
 	}
 }

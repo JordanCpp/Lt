@@ -10,6 +10,7 @@ namespace Lt
 		class IntegerToString
 		{
 		public:
+			IntegerToString();
 			bool Convert(Lt::isize num, Lt::u8 base = 10);
 			const char* Result();
 		private:
