@@ -1,10 +1,10 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Graphics/ImageLoader.hpp>
+#include <Lt/Loaders/Image.hpp>
 
 void TestGraphicsImageLoaderInit()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::ImageLoader imageLoader(&errorHandler);
+	Lt::Loaders::Image imageLoader(&errorHandler);
 
 	LT_TEST_EQUAL(errorHandler.IsError() == false);
 	LT_TEST_EQUAL(imageLoader.Channels() == 0);
@@ -16,7 +16,7 @@ void TestGraphicsImageLoaderInit()
 void TestGraphicsImageLoaderLoad()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::ImageLoader imageLoader(&errorHandler);
+	Lt::Loaders::Image imageLoader(&errorHandler);
 
 	imageLoader.Load("TestFiles/1182.jpg");
 

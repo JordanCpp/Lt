@@ -1,18 +1,18 @@
-#ifndef Lt_Graphics_ImageLoader_hpp
-#define Lt_Graphics_ImageLoader_hpp
+#ifndef Lt_Graphics_Loaders_Image_hpp
+#define Lt_Graphics_Loaders_Image_hpp
 
 #include <Lt/Graphics/Point2u.hpp>
 #include <Lt/Core/ErrorHandler.hpp>
 
 namespace Lt
 {
-	namespace Graphics
+	namespace Loaders
 	{
-		class ImageLoader
+		class Image
 		{
 		public:
-			ImageLoader(Lt::Core::ErrorHandler* errorHandler);
-			~ImageLoader();
+			Image(Lt::Core::ErrorHandler* errorHandler);
+			~Image();
 			void Clear();
 			const Lt::Graphics::Point2u& Size();
 			Lt::u8 Channels();

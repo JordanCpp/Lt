@@ -60,7 +60,7 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/CpuImageFromMemory.cpp"
 "src/Lt/Graphics/CpuImageFromNew.cpp"
 "src/Lt/Graphics/Screenshoter.cpp"
-"src/Lt/Graphics/ImageLoader.cpp")
+"src/Lt/Loaders/Image.cpp")
 
 if (WIN32)
   target_link_libraries(LtGraphics opengl32)
