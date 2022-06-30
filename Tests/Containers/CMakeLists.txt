@@ -24,4 +24,4 @@ add_executable(List "List.cpp")
 target_link_libraries(List LtCore)
 
 add_executable(HashMap "HashMap.cpp")
-target_link_libraries(HashMap LtCore)
+target_link_libraries(HashMap LtAllocators LtCore)

@@ -1,6 +1,7 @@
 #ifndef Lt_Containers_HashMap_hpp
 #define Lt_Containers_HashMap_hpp
 
+#include <Lt/Core/New.hpp>
 #include <Lt/Core/Assert.hpp>
 #include <Lt/Containers/StaticString.hpp>
 #include <Lt/Allocators/Allocator.hpp>
@@ -89,14 +90,25 @@ namespace Lt
 		{
 		public:
 			HashMap():
+				_Allocator(nullptr),
 				_Capacity(COUNT)
 			{
 				_List = new Lt::Containers::HashList<TYPE>[_Capacity];
 			}
 
+			HashMap(Lt::Allocators::Allocator* allocator) :
+				_Allocator(allocator),
+				_Capacity(COUNT)
+			{
+				_List = new(_Allocator->Allocate(_Capacity * sizeof(TYPE))) Lt::Containers::HashList<TYPE>[_Capacity];
+			}
+
 			~HashMap()
 			{
-				delete[] _List;
+				if (_Allocator != nullptr)
+					_Allocator->Deallocate(_List);
+				else
+					delete[] _List;
 			}
 
 			Lt::usize Jenkins(const char* key, size_t len)
@@ -142,6 +154,7 @@ namespace Lt
 				_List[h].Append(element);
 			}
 		private:
+			Lt::Allocators::Allocator* _Allocator;
 			Lt::usize _Capacity;
 			Lt::Containers::HashList<TYPE>* _List;
 		};
