@@ -13,6 +13,7 @@ namespace Lt
 			FixedLinear(Lt::usize bytes, Lt::Allocators::Allocator* allocator = nullptr);
 			~FixedLinear();
 			void* Allocate(Lt::usize bytes);
+			void* Reallocate(void* ptr, Lt::usize bytes);
 			void Deallocate(void* ptr);
 			Lt::usize UsedBytes();
 		private:

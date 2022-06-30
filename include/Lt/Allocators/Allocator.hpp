@@ -17,6 +17,7 @@ namespace Lt
 				Gb = Mb * 1024
 			};
 			virtual void* Allocate(Lt::usize bytes) = 0;
+			virtual void* Reallocate(void* ptr, Lt::usize bytes) = 0;
 			virtual void Deallocate(void* ptr) = 0;
 			virtual Lt::usize UsedBytes() = 0;
 		private:

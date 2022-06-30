@@ -26,10 +26,28 @@ void TestAllocatorsFixedLinearAllocate()
 	}
 }
 
+void TestAllocatorsFixedLinearReallocate()
+{
+	const Lt::usize bytes = Lt::Allocators::Allocator::Mb * 1;
+
+	Lt::Allocators::FixedLinear allocator(bytes);
+
+	void* ptr = allocator.Allocate(128);
+
+	LT_TEST_EQUAL(ptr != nullptr);
+	LT_TEST_EQUAL(allocator.UsedBytes() == 128);
+
+	ptr = allocator.Reallocate(ptr, 256);
+
+	LT_TEST_EQUAL(ptr != nullptr);
+	LT_TEST_EQUAL(allocator.UsedBytes() == 128 + 256);
+}
+
 int main()
 {
 	TestAllocatorsFixedLinearInitialize();
 	TestAllocatorsFixedLinearAllocate();
+	TestAllocatorsFixedLinearReallocate();
 
 	return 0;
 }

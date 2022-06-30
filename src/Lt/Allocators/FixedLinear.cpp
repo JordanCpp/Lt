@@ -34,6 +34,15 @@ void* Lt::Allocators::FixedLinear::Allocate(Lt::usize bytes)
 	return result;
 }
 
+void* Lt::Allocators::FixedLinear::Reallocate(void* ptr, Lt::usize bytes)
+{
+	Deallocate(ptr);
+
+	ptr = Allocate(bytes);
+
+	return ptr;
+}
+
 void Lt::Allocators::FixedLinear::Deallocate(void* ptr)
 {
 	LT_ASSERT(ptr != nullptr);
