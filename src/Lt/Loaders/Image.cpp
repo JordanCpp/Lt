@@ -35,12 +35,12 @@ const Lt::Graphics::Point2u& Lt::Loaders::Image::Size()
 	return _Size;
 }
 
-Lt::u8 Lt::Loaders::Image::Channels()
+const Lt::u8 Lt::Loaders::Image::Channels()
 {
 	return _Channels;
 }
 
-Lt::u8* Lt::Loaders::Image::Pixels()
+const Lt::u8* Lt::Loaders::Image::Pixels()
 {
 	return _Pixels;
 }

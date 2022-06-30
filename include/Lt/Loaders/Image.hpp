@@ -16,8 +16,8 @@ namespace Lt
 			~Image();
 			void Clear();
 			const Lt::Graphics::Point2u& Size();
-			Lt::u8 Channels();
-			Lt::u8* Pixels();
+			const Lt::u8 Channels();
+			const Lt::u8* Pixels();
 			void Load(const char* path);
 		private:
 			Lt::Core::ErrorHandler* _ErrorHandler;
