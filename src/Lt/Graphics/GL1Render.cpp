@@ -37,3 +37,22 @@ void Lt::Graphics::GL1Render::Present()
 {
 	_Window->Present();
 }
+
+void Lt::Graphics::GL1Render::Line(const Lt::Graphics::Point2u& pos1, const Lt::Graphics::Point2u& pos2)
+{
+	glBegin(GL_LINES);
+	glColor3d(1, 0, 0);
+	glVertex2i(pos1.PosX(), pos1.PosY());
+	glVertex2i(pos2.PosX(), pos2.PosY());
+	glEnd();
+}
+
+void Lt::Graphics::GL1Render::FillRect(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
+{
+	glBegin(GL_QUADS);
+	glVertex2i(pos.PosX(), pos.PosY() + size.PosY());
+	glVertex2i(pos.PosX(), pos.PosY());
+	glVertex2i(pos.PosX() + size.PosX(), pos.PosY());
+	glVertex2i(pos.PosX() + size.PosX(), pos.PosY() + size.PosY());
+	glEnd();
+}

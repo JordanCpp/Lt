@@ -17,6 +17,8 @@ namespace Lt
 			void Clear();
 			void Color(const Lt::Graphics::Color& color);
 			void Present();
+			void Line(const Lt::Graphics::Point2u& pos1, const Lt::Graphics::Point2u& pos2);
+			void FillRect(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
 		private:
 			Lt::Graphics::Window* _Window;
 			Lt::Graphics::BaseRender _BaseRender;
