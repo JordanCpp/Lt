@@ -84,5 +84,6 @@ add_subdirectory("Tests/Allocators")
 add_subdirectory("Tests/Graphics")
 add_subdirectory("Tests/Events")
 add_subdirectory("Tests/Widgets")
+add_subdirectory("Tests/Loaders")
 
 add_subdirectory("Examples")

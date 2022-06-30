@@ -20,6 +20,7 @@ namespace Lt
 			virtual void* Reallocate(void* ptr, Lt::usize bytes) = 0;
 			virtual void Deallocate(void* ptr) = 0;
 			virtual Lt::usize UsedBytes() = 0;
+			virtual void Reset() = 0;
 		private:
 		};
 	}

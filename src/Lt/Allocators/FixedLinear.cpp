@@ -52,3 +52,8 @@ Lt::usize Lt::Allocators::FixedLinear::UsedBytes()
 {
 	return _Position;
 }
+
+void Lt::Allocators::FixedLinear::Reset()
+{
+	_Position = 0;
+}

@@ -15,6 +15,7 @@ namespace Lt
 			void* Allocate(Lt::usize bytes);
 			void* Reallocate(void* ptr, Lt::usize bytes);
 			void Deallocate(void* ptr);
+			void Reset();
 			Lt::usize UsedBytes();
 		private:
 			Lt::usize _Capacity;

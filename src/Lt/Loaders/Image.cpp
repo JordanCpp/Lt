@@ -1,13 +1,21 @@
 #include <Lt/Loaders/Image.hpp>
 
+static Lt::Allocators::Allocator* StbImageAllocator;
+
+#define STBI_MALLOC(sz)        StbImageAllocator->Allocate(sz);
+#define STBI_REALLOC(p,newsz)  StbImageAllocator->Reallocate(p,newsz)
+#define STBI_FREE(p)           StbImageAllocator->Deallocate(p) 
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "../stb/stb_image.h"
 
-Lt::Loaders::Image::Image(Lt::Core::ErrorHandler* errorHandler):
+Lt::Loaders::Image::Image(Lt::Core::ErrorHandler* errorHandler, Lt::Allocators::Allocator* allocator):
 	_ErrorHandler(errorHandler),
+	_Allocator(allocator),
 	_Channels(0),
 	_Pixels(nullptr)
 {
+	StbImageAllocator = _Allocator;
 }
 
 Lt::Loaders::Image::~Image()
@@ -17,9 +25,7 @@ Lt::Loaders::Image::~Image()
 
 void Lt::Loaders::Image::Clear()
 {
-	if (_Pixels != nullptr)
-		stbi_image_free(_Pixels);
-
+	_Allocator->Reset();
 	_ErrorHandler->Reset();
 	_Pixels = nullptr;
 }

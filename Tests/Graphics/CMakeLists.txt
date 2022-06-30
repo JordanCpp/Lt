@@ -49,6 +49,3 @@ target_link_libraries(CpuImageFromNew LtCore LtGraphics)
 
 add_executable(Screenshoter "Screenshoter.cpp")
 target_link_libraries(Screenshoter LtCore LtGraphics LtEvents)
-
-add_executable(ImageLoader "ImageLoader.cpp")
-target_link_libraries(ImageLoader LtCore LtGraphics LtEvents)
