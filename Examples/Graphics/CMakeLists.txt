@@ -19,3 +19,6 @@ target_link_libraries(05_DrawLine LtCore LtGraphics LtEvents)
 
 add_executable(06_FillRect "06_FillRect/main.cpp")
 target_link_libraries(06_FillRect LtCore LtGraphics LtEvents)
+
+add_executable(07_Mouse "07_Mouse/main.cpp")
+target_link_libraries(07_Mouse LtCore LtGraphics LtEvents)
