@@ -34,7 +34,7 @@ void TestGraphicsImageLoaderLoad()
 	LT_TEST_EQUAL(imageLoader.Size().PosX() == 576);
 	LT_TEST_EQUAL(imageLoader.Size().PosY() == 324);
 	LT_TEST_EQUAL(imageLoader.Pixels() != nullptr);
-	LT_TEST_EQUAL(allocator.UsedBytes() >= 576 * 324 * 3);
+	LT_TEST_EQUAL(allocator.UsedBytes() >= 576 * 324 * 4);
 }
 
 int main()
