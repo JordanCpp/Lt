@@ -82,11 +82,11 @@ void Lt::Graphics::CpuRender::FillRect(const Lt::Graphics::Point2u& pos, const L
 
 void Lt::Graphics::CpuRender::Line(const Lt::Graphics::Point2u& pos1, const Lt::Graphics::Point2u& pos2)
 {
-	int x1 = pos1.PosX();
-	int y1 = pos1.PosY();
+	int x1 = (int)pos1.PosX();
+	int y1 = (int)pos1.PosY();
 
-	int x2 = pos2.PosX();
-	int y2 = pos2.PosY();
+	int x2 = (int)pos2.PosX();
+	int y2 = (int)pos2.PosY();
 
 	int deltaX;
 	int deltaY;
