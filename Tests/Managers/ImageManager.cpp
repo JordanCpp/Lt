@@ -13,9 +13,11 @@ void TestManagersImage()
 
 	Lt::Loaders::Image loader(&errorHandler, &forLoader);
 
-	Lt::Factories::ImageFactory Factory(&forManager, &loader);
+	Lt::Factories::ImageFactory factory(&forManager, &loader);
 
-	Lt::Graphics::CpuImage* image = Factory.Get("TestFiles/1182.jpg");
+	Lt::Managers::ImageManager manager(&path, &factory);
+
+	Lt::Graphics::CpuImage* image = manager.Get("", "1182.jpg");
 
 	LT_TEST_EQUAL(image->Channels() == 3);
 	LT_TEST_EQUAL(image->Size().PosX() == 576);
