@@ -9,7 +9,7 @@ void TestGraphicsImageLoaderInit()
 	const Lt::usize bytes = Lt::Allocators::Allocator::Mb * 1;
 	Lt::Allocators::FixedLinear allocator(bytes);
 
-	Lt::Loaders::Image imageLoader(&errorHandler, &allocator);
+	Lt::Loaders::ImageLoader imageLoader(&errorHandler, &allocator);
 
 	LT_TEST_EQUAL(errorHandler.IsError() == false);
 	LT_TEST_EQUAL(imageLoader.Channels() == 0);
@@ -25,7 +25,7 @@ void TestGraphicsImageLoaderLoad()
 	const Lt::usize bytes = Lt::Allocators::Allocator::Mb * 1;
 	Lt::Allocators::FixedLinear allocator(bytes);
 
-	Lt::Loaders::Image imageLoader(&errorHandler, &allocator);
+	Lt::Loaders::ImageLoader imageLoader(&errorHandler, &allocator);
 
 	imageLoader.Load("TestFiles/1182.jpg");
 

@@ -11,7 +11,7 @@ void TestManagersImage()
 
 	Lt::Core::ErrorHandler errorHandler;
 
-	Lt::Loaders::Image loader(&errorHandler, &forLoader);
+	Lt::Loaders::ImageLoader loader(&errorHandler, &forLoader);
 
 	Lt::Factories::ImageFactory factory(&forManager, &loader);
 

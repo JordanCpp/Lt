@@ -12,11 +12,11 @@ namespace Lt
 		class ImageFactory
 		{
 		public:
-			ImageFactory(Lt::Allocators::Allocator* allocator, Lt::Loaders::Image* loader);
+			ImageFactory(Lt::Allocators::Allocator* allocator, Lt::Loaders::ImageLoader* loader);
 			Lt::Graphics::CpuImage* Get(const char* path);
 		private:
 			Lt::Allocators::Allocator* _Allocator;
-			Lt::Loaders::Image* _Loader;
+			Lt::Loaders::ImageLoader* _Loader;
 		};
 	}
 }

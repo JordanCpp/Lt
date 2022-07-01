@@ -9,11 +9,11 @@ namespace Lt
 {
 	namespace Loaders
 	{
-		class Image
+		class ImageLoader
 		{
 		public:
-			Image(Lt::Core::ErrorHandler* errorHandler, Lt::Allocators::Allocator* allocator);
-			~Image();
+			ImageLoader(Lt::Core::ErrorHandler* errorHandler, Lt::Allocators::Allocator* allocator);
+			~ImageLoader();
 			void Clear();
 			const Lt::Graphics::Point2u& Size();
 			const Lt::u8 Channels();

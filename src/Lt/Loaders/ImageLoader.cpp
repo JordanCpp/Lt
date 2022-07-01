@@ -9,7 +9,7 @@ static Lt::Allocators::Allocator* StbImageAllocator;
 #define STB_IMAGE_IMPLEMENTATION
 #include "../stb/stb_image.h"
 
-Lt::Loaders::Image::Image(Lt::Core::ErrorHandler* errorHandler, Lt::Allocators::Allocator* allocator):
+Lt::Loaders::ImageLoader::ImageLoader(Lt::Core::ErrorHandler* errorHandler, Lt::Allocators::Allocator* allocator):
 	_ErrorHandler(errorHandler),
 	_Allocator(allocator),
 	_Channels(0),
@@ -18,34 +18,34 @@ Lt::Loaders::Image::Image(Lt::Core::ErrorHandler* errorHandler, Lt::Allocators::
 	StbImageAllocator = _Allocator;
 }
 
-Lt::Loaders::Image::~Image()
+Lt::Loaders::ImageLoader::~ImageLoader()
 {
 	Clear();
 }
 
-void Lt::Loaders::Image::Clear()
+void Lt::Loaders::ImageLoader::Clear()
 {
 	_Allocator->Reset();
 	_ErrorHandler->Reset();
 	_Pixels = nullptr;
 }
 
-const Lt::Graphics::Point2u& Lt::Loaders::Image::Size()
+const Lt::Graphics::Point2u& Lt::Loaders::ImageLoader::Size()
 {
 	return _Size;
 }
 
-const Lt::u8 Lt::Loaders::Image::Channels()
+const Lt::u8 Lt::Loaders::ImageLoader::Channels()
 {
 	return _Channels;
 }
 
-const Lt::u8* Lt::Loaders::Image::Pixels()
+const Lt::u8* Lt::Loaders::ImageLoader::Pixels()
 {
 	return _Pixels;
 }
 
-void Lt::Loaders::Image::Load(const char* path)
+void Lt::Loaders::ImageLoader::Load(const char* path)
 {
 	Clear();
 

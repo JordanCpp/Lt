@@ -1,7 +1,7 @@
 #include <Lt/Factories/ImageFactory.hpp>
 #include <Lt/Core/Memory.hpp>
 
-Lt::Factories::ImageFactory::ImageFactory(Lt::Allocators::Allocator* allocator, Lt::Loaders::Image* loader) :
+Lt::Factories::ImageFactory::ImageFactory(Lt::Allocators::Allocator* allocator, Lt::Loaders::ImageLoader* loader) :
 	_Allocator(allocator),
 	_Loader(loader)
 {
