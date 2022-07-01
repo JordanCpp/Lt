@@ -3,7 +3,7 @@
 Lt::Graphics::CpuRender::CpuRender(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window) :
 	_Window(window),
 	_BaseRender(_Window->Size()),
-	_Canvas(4, _BaseRender.Size())
+	_Canvas(_BaseRender.Size(), 4)
 {
 
 }
@@ -40,7 +40,7 @@ void Lt::Graphics::CpuRender::Present()
 	_Window->Present(_Canvas.Pixels());
 }
 
-Lt::Graphics::ImageFromNew* Lt::Graphics::CpuRender::Canvas()
+Lt::Graphics::Image* Lt::Graphics::CpuRender::Canvas()
 {
 	return &_Canvas;
 }

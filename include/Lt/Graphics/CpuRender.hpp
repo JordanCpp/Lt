@@ -18,7 +18,7 @@ namespace Lt
 			void Clear();
 			void Color(const Lt::Graphics::Color& color);
 			void Present();
-			Lt::Graphics::ImageFromNew* Canvas();
+			Lt::Graphics::Image* Canvas();
 			void Pixel(const Lt::Graphics::Point2u& pos);
 			const Lt::Graphics::Color& GetPixel(const Lt::Graphics::Point2u& pos);
 			void FillRect(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
@@ -28,7 +28,7 @@ namespace Lt
 		private:
 			Lt::Graphics::Window* _Window;
 			Lt::Graphics::BaseRender _BaseRender;
-			Lt::Graphics::ImageFromNew _Canvas;
+			Lt::Graphics::Image _Canvas;
 		};
 	}
 }
