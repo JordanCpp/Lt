@@ -1,4 +1,4 @@
-#include <Lt/Graphics/CpuImage.hpp>
+#include <Lt/Graphics/Cpu/CpuImage.hpp>
 
 Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size, const Lt::u8 channels):
 	_Source(FromNew),

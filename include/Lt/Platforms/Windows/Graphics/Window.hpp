@@ -2,7 +2,7 @@
 #define Lt_Platforms_Windows_Graphics_Window_hpp
 
 #include <Windows.h>
-#include <Lt/Graphics/BaseWindow.hpp>
+#include <Lt/Graphics/Base/BaseWindow.hpp>
 #include <Lt/Core/ErrorHandler.hpp>
 #include <Lt/Events/Eventer.hpp>
 

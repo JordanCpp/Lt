@@ -1,4 +1,4 @@
-#include <Lt/Graphics/BaseWindow.hpp>
+#include <Lt/Graphics/Base/BaseWindow.hpp>
 
 Lt::Graphics::BaseWindow::BaseWindow(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title):
     _Pos(pos),

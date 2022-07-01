@@ -1,4 +1,4 @@
-#include <Lt/Graphics/CpuRender.hpp>
+#include <Lt/Graphics/Cpu/CpuRender.hpp>
 
 Lt::Graphics::CpuRender::CpuRender(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window) :
 	_Window(window),

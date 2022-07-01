@@ -49,19 +49,19 @@ elseif(UNIX AND NOT APPLE)
 endif()
 
 add_library(LtGraphics STATIC
-"src/Lt/Graphics/BaseRender.cpp"
-"src/Lt/Graphics/BaseWindow.cpp"
+"src/Lt/Graphics/Base/BaseRender.cpp"
+"src/Lt/Graphics/Base/BaseWindow.cpp"
 "src/Lt/Graphics/Color.cpp"
-"src/Lt/Graphics/CpuRender.cpp"
+"src/Lt/Graphics/Cpu/CpuRender.cpp"
 "src/Lt/Graphics/FpsLimiter.cpp"
-"src/Lt/Graphics/GL1Render.cpp"
+"src/Lt/Graphics/GL1/GL1Render.cpp"
 "src/Lt/Graphics/FpsCounter.cpp"
 
 
 
 
 "src/Lt/Graphics/Screenshoter.cpp"
-"src/Lt/Graphics/CpuImage.cpp"
+"src/Lt/Graphics/Cpu/CpuImage.cpp"
 "src/Lt/Managers/ImageManager.cpp"
 "src/Lt/Loaders/ImageLoader.cpp"
 "src/Lt/Managers/PathManager.cpp"

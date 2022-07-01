@@ -4,7 +4,7 @@
 #include <Lt/Core/Config.hpp>
 
 #if defined(LT_CONFIG_CPU_RENDER)
-#include <Lt/Graphics/CpuImage.hpp>
+#include <Lt/Graphics/Cpu/CpuImage.hpp>
 
 namespace Lt
 {

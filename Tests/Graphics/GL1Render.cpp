@@ -1,5 +1,5 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Graphics/GL1Render.hpp>
+#include <Lt/Graphics/GL1/GL1Render.hpp>
 
 void TestGraphicsGL1Render()
 {

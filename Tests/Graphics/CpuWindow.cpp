@@ -1,5 +1,5 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Graphics/CpuWindow.hpp>
+#include <Lt/Graphics/Cpu/CpuWindow.hpp>
 
 void TestGraphicsCpuWindow()
 {

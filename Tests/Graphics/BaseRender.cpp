@@ -1,5 +1,5 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Graphics/BaseRender.hpp>
+#include <Lt/Graphics/Base/BaseRender.hpp>
 
 void TestGraphicsBaseRenderInit()
 {

@@ -1,4 +1,4 @@
-#include <Lt/Graphics/GL1Render.hpp>
+#include <Lt/Graphics/GL1/GL1Render.hpp>
 #include <gl/GL.h>
 
 Lt::Graphics::GL1Render::GL1Render(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window) :

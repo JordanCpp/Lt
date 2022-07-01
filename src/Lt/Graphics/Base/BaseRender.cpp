@@ -1,4 +1,4 @@
-#include <Lt/Graphics/BaseRender.hpp>
+#include <Lt/Graphics/Base/BaseRender.hpp>
 
 Lt::Graphics::BaseRender::BaseRender(const Lt::Graphics::Point2u& size) :
 	_Size(size)

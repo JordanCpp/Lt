@@ -1,8 +1,8 @@
 #ifndef Lt_Graphics_GL1Render_hpp
 #define Lt_Graphics_GL1Render_hpp
 
-#include <Lt/Graphics/BaseRender.hpp>
-#include <Lt/Graphics/GL1Window.hpp>
+#include <Lt/Graphics/Base/BaseRender.hpp>
+#include <Lt/Graphics/GL1/GL1Window.hpp>
 
 namespace Lt
 {

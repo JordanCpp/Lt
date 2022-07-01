@@ -3,7 +3,7 @@
 
 #include <Lt/Allocators/Allocator.hpp>
 #include <Lt/Loaders/ImageLoader.hpp>
-#include <Lt/Graphics/CpuImage.hpp>
+#include <Lt/Graphics/Cpu/CpuImage.hpp>
 
 namespace Lt
 {

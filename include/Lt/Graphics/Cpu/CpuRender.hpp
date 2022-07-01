@@ -1,7 +1,7 @@
 #ifndef Lt_Graphics_CpuRender_hpp
 #define Lt_Graphics_CpuRender_hpp
 
-#include <Lt/Graphics/BaseRender.hpp>
+#include <Lt/Graphics/Base/BaseRender.hpp>
 #include <Lt/Graphics/Window.hpp>
 #include <Lt/Graphics/Image.hpp>
 
