@@ -55,11 +55,8 @@ add_library(LtGraphics STATIC
 "src/Lt/Graphics/Cpu/CpuRender.cpp"
 "src/Lt/Graphics/FpsLimiter.cpp"
 "src/Lt/Graphics/GL1/GL1Render.cpp"
+"src/Lt/Graphics/GL1/GL1Image.cpp"
 "src/Lt/Graphics/FpsCounter.cpp"
-
-
-
-
 "src/Lt/Graphics/Screenshoter.cpp"
 "src/Lt/Graphics/Cpu/CpuImage.cpp"
 "src/Lt/Managers/ImageManager.cpp"
