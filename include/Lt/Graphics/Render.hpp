@@ -12,6 +12,17 @@ namespace Lt
 		typedef Lt::Graphics::CpuRender Render;
 	}
 }
+#elif defined(LT_CONFIG_GPU_RENDER)
+#include <Lt/Graphics/Gpu/GpuRender.hpp>
+namespace Lt
+{
+	namespace Graphics
+	{
+		typedef Lt::Graphics::GpuRender Render;
+	}
+}
+#else
+#error Not support: Graphics::Render
 #endif
 
 #endif    

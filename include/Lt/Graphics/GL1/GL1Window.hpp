@@ -18,7 +18,7 @@ namespace Lt
 {
 	namespace Graphics
 	{
-		typedef Lt::Graphics::Linux::Window Window;
+		typedef Lt::Graphics::Linux::GL1Window Window;
 	}
 }
 #else
