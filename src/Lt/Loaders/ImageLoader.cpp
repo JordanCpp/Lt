@@ -1,4 +1,5 @@
 #include <Lt/Loaders/ImageLoader.hpp>
+#include <Lt/Core/Assert.hpp>
 
 static Lt::Allocators::Allocator* StbImageAllocator;
 
@@ -15,6 +16,9 @@ Lt::Loaders::ImageLoader::ImageLoader(Lt::Core::ErrorHandler* errorHandler, Lt::
 	_Channels(0),
 	_Pixels(nullptr)
 {
+	LT_ASSERT(errorHandler != nullptr);
+	LT_ASSERT(allocator != nullptr);
+
 	StbImageAllocator = _Allocator;
 }
 
