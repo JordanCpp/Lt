@@ -9,14 +9,14 @@ namespace Lt
 {
 	namespace Managers
 	{
-		class Image
+		class ImageManager
 		{
 		public:
-			Image(Lt::Managers::Path* path, Lt::Factories::Image* factory);
+			ImageManager(Lt::Managers::PathManager* path, Lt::Factories::ImageFactory* factory);
 			Lt::Graphics::CpuImage* Get(const char* dir, const char* file);
 		private:
-			Lt::Managers::Path* _Path;
-			Lt::Factories::Image* _Factory;
+			Lt::Managers::PathManager* _Path;
+			Lt::Factories::ImageFactory* _Factory;
 			Lt::Containers::HashMap<Lt::Graphics::CpuImage*, 4096> _Images;
 		};
 	}

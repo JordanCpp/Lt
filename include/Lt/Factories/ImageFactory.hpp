@@ -9,10 +9,10 @@ namespace Lt
 {
 	namespace Factories
 	{
-		class Image
+		class ImageFactory
 		{
 		public:
-			Image(Lt::Allocators::Allocator* allocator, Lt::Loaders::Image* loader);
+			ImageFactory(Lt::Allocators::Allocator* allocator, Lt::Loaders::Image* loader);
 			Lt::Graphics::CpuImage* Get(const char* path);
 		private:
 			Lt::Allocators::Allocator* _Allocator;

@@ -1,12 +1,12 @@
 #include <Lt/Managers/ImageManager.hpp>
 
-Lt::Managers::Image::Image(Lt::Managers::Path* path, Lt::Factories::Image* factory) :
+Lt::Managers::ImageManager::ImageManager(Lt::Managers::PathManager* path, Lt::Factories::ImageFactory* factory) :
 	_Path(path),
 	_Factory(factory)
 {
 }
 
-Lt::Graphics::CpuImage* Lt::Managers::Image::Get(const char* dir, const char* file)
+Lt::Graphics::CpuImage* Lt::Managers::ImageManager::Get(const char* dir, const char* file)
 {
 	const char* path = _Path->Get(dir, file);
 

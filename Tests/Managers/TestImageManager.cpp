@@ -4,7 +4,7 @@
 
 void TestManagersImage()
 {
-	Lt::Managers::Path path("TestFiles/");
+	Lt::Managers::PathManager path("TestFiles/");
 
 	Lt::Allocators::FixedLinear forLoader(Lt::Allocators::Allocator::Mb * 1);
 	Lt::Allocators::FixedLinear forManager(Lt::Allocators::Allocator::Mb * 4);
@@ -13,7 +13,14 @@ void TestManagersImage()
 
 	Lt::Loaders::Image loader(&errorHandler, &forLoader);
 
-	//Lt::Factories::Image Factory(&forManager, &loader);
+	Lt::Factories::ImageFactory Factory(&forManager, &loader);
+
+	Lt::Graphics::CpuImage* image = Factory.Get("TestFiles/1182.jpg");
+
+	LT_TEST_EQUAL(image->Channels() == 3);
+	LT_TEST_EQUAL(image->Size().PosX() == 576);
+	LT_TEST_EQUAL(image->Size().PosY() == 324);
+	LT_TEST_EQUAL(image->Pixels() != nullptr);
 }
 
 int main()

@@ -7,10 +7,10 @@ namespace Lt
 {
 	namespace Managers
 	{
-		class Path
+		class PathManager
 		{
 		public:
-			Path(const char* path);
+			PathManager(const char* path);
 			const char* Get(const char* dir, const char* file);
 		private:
 			Lt::Containers::StaticString<64> _ShortPath;

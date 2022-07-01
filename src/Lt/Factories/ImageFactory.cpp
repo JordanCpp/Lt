@@ -1,14 +1,13 @@
 #include <Lt/Factories/ImageFactory.hpp>
-#include <Lt/Core/New.hpp>
 #include <Lt/Core/Memory.hpp>
 
-Lt::Factories::Image::Image(Lt::Allocators::Allocator* allocator, Lt::Loaders::Image* loader) :
+Lt::Factories::ImageFactory::ImageFactory(Lt::Allocators::Allocator* allocator, Lt::Loaders::Image* loader) :
 	_Allocator(allocator),
 	_Loader(loader)
 {
 }
 
-Lt::Graphics::CpuImage* Lt::Factories::Image::Get(const char* path)
+Lt::Graphics::CpuImage* Lt::Factories::ImageFactory::Get(const char* path)
 {
 	_Loader->Load(path);
 
@@ -18,7 +17,7 @@ Lt::Graphics::CpuImage* Lt::Factories::Image::Get(const char* path)
 
 	Lt::Memory::Copy(pixels, _Loader->Pixels(), bytes);
 
-	Lt::Graphics::CpuImage* result = new(_Allocator->Allocate(sizeof(Lt::Graphics::CpuImage))) Lt::Graphics::CpuImage(_Loader->Size(), _Loader->Channels(), pixels);
+	Lt::Graphics::CpuImage* result = new Lt::Graphics::CpuImage(_Loader->Size(), _Loader->Channels(), pixels);
 
 	return result;
 }

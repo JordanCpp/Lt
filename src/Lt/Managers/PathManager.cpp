@@ -1,11 +1,11 @@
 #include <Lt/Managers/PathManager.hpp>
 
-Lt::Managers::Path::Path(const char* path) :
+Lt::Managers::PathManager::PathManager(const char* path) :
 	_ShortPath(path)
 {
 }
 
-const char* Lt::Managers::Path::Get(const char* dir, const char* file)
+const char* Lt::Managers::PathManager::Get(const char* dir, const char* file)
 {
 	_FullPath.Clear();
 	_FullPath.Append(_ShortPath.Content());
