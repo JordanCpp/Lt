@@ -1,7 +1,7 @@
 #ifndef Lt_Graphics_Rect2_hpp
 #define Lt_Graphics_Rect2_hpp
 
-#include <Lt/Graphics/Point2.hpp>
+#include <Lt/Graphics/Primitives/Point2.hpp>
 
 namespace Lt
 {

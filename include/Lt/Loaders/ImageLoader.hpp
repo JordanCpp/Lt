@@ -1,7 +1,7 @@
 #ifndef Lt_Graphics_Loaders_ImageLoader_hpp
 #define Lt_Graphics_Loaders_ImageLoader_hpp
 
-#include <Lt/Graphics/Point2u.hpp>
+#include <Lt/Graphics/Primitives/Point2u.hpp>
 #include <Lt/Core/ErrorHandler.hpp>
 #include <Lt/Allocators/Allocator.hpp>
 

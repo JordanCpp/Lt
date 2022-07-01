@@ -1,8 +1,8 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Graphics/Point2i.hpp>
-#include <Lt/Graphics/Point2u.hpp>
-#include <Lt/Graphics/Rect2i.hpp>
-#include <Lt/Graphics/Rect2u.hpp>
+#include <Lt/Graphics/Primitives/Point2i.hpp>
+#include <Lt/Graphics/Primitives/Point2u.hpp>
+#include <Lt/Graphics/Primitives/Rect2i.hpp>
+#include <Lt/Graphics/Primitives/Rect2u.hpp>
 
 void TestGraphicsRect2u()
 {

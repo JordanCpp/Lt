@@ -1,6 +1,6 @@
 #include <Lt/Core/TestEqual.hpp>
-#include <Lt/Graphics/Point2u.hpp>
-#include <Lt/Graphics/Point2i.hpp>
+#include <Lt/Graphics/Primitives/Point2u.hpp>
+#include <Lt/Graphics/Primitives/Point2i.hpp>
 
 void TestGraphicsPoint2u()
 {

@@ -1,7 +1,7 @@
 #ifndef Lt_Graphics_BaseWindow_hpp
 #define Lt_Graphics_BaseWindow_hpp
 
-#include <Lt/Graphics/Point2u.hpp>
+#include <Lt/Graphics/Primitives/Point2u.hpp>
 #include <Lt/Containers/StaticString.hpp>
 
 namespace Lt

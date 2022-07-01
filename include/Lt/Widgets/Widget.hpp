@@ -1,8 +1,8 @@
 #ifndef Lt_Widgets_Widget_hpp
 #define Lt_Widgets_Widget_hpp
 
-#include <Lt/Graphics/Rect2u.hpp>
-#include <Lt/Graphics/Point2u.hpp>
+#include <Lt/Graphics/Primitives/Rect2u.hpp>
+#include <Lt/Graphics/Primitives/Point2u.hpp>
 #include <Lt/Graphics/Window.hpp>
 #include <Lt/Graphics/Render.hpp>
 #include <Lt/Containers/Vector.hpp>

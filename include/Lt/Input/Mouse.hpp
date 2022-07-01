@@ -1,7 +1,7 @@
 #ifndef Lt_Platforms_Windows_Input_Mouse_hpp
 #define Lt_Platforms_Windows_Input_Mouse_hpp
 
-#include <Lt/Graphics/Point2u.hpp>
+#include <Lt/Graphics/Primitives/Point2u.hpp>
 
 namespace Lt
 {

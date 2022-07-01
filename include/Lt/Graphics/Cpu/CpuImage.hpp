@@ -1,7 +1,7 @@
 #ifndef Lt_Graphics_CpuImage_hpp
 #define Lt_Graphics_CpuImage_hpp
 
-#include <Lt/Graphics/Point2u.hpp>
+#include <Lt/Graphics/Primitives/Point2u.hpp>
 
 namespace Lt
 {

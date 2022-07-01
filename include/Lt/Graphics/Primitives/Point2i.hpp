@@ -2,7 +2,7 @@
 #define Lt_Graphics_Point2i_hpp
 
 #include <Lt/Core/Types.hpp>
-#include <Lt/Graphics/Point2.hpp>
+#include <Lt/Graphics/Primitives/Point2.hpp>
 
 namespace Lt
 {

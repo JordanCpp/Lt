@@ -2,7 +2,7 @@
 #define Lt_Graphics_BaseRender_hpp
 
 #include <Lt/Graphics/Color.hpp>
-#include <Lt/Graphics/Point2u.hpp>
+#include <Lt/Graphics/Primitives/Point2u.hpp>
 
 namespace Lt
 {
