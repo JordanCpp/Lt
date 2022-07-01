@@ -42,9 +42,23 @@ void* operator new(Lt::usize bytes, void* ptr)
 	return ptr;
 }
 
+void operator delete(void* ptr, Lt::usize bytes)
+{
+	LT_ASSERT(ptr != nullptr);
+
+	free(ptr);
+}
+
 void* operator new[](Lt::usize bytes, void* ptr)
 {
 	LT_ASSERT(ptr != nullptr);
 
 	return ptr;
+}
+
+void operator delete[](void* ptr, Lt::usize bytes)
+{
+	LT_ASSERT(ptr != nullptr);
+
+	free(ptr);
 }
