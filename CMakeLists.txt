@@ -92,5 +92,6 @@ add_subdirectory("Tests/Widgets")
 add_subdirectory("Tests/Loaders")
 add_subdirectory("Tests/Input")
 add_subdirectory("Tests/Managers")
+add_subdirectory("Tests/Factories")
 
 add_subdirectory("Examples")

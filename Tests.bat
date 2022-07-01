@@ -7,6 +7,7 @@ for %%f in (out\build\x86-Debug\Tests\Graphics\*.exe) do call %%f
 for %%f in (out\build\x86-Debug\Tests\Loaders\*.exe) do call %%f
 for %%f in (out\build\x86-Debug\Tests\Managers\*.exe) do call %%f
 for %%f in (out\build\x86-Debug\Tests\Widgets\*.exe) do call %%f
+for %%f in (out\build\x86-Debug\Tests\Factories\*.exe) do call %%f
 
 for %%f in (out\build\x64-Debug\Tests\Allocators\*.exe) do call %%f
 for %%f in (out\build\x64-Debug\Tests\Containers\*.exe) do call %%f
@@ -16,5 +17,6 @@ for %%f in (out\build\x64-Debug\Tests\Graphics\*.exe) do call %%f
 for %%f in (out\build\x64-Debug\Tests\Loaders\*.exe) do call %%f
 for %%f in (out\build\x64-Debug\Tests\Managers\*.exe) do call %%f
 for %%f in (out\build\x64-Debug\Tests\Widgets\*.exe) do call %%f
+for %%f in (out\build\x64-Debug\Tests\Factories\*.exe) do call %%f
 
 pause
