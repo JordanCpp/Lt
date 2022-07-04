@@ -31,7 +31,7 @@ void Lt::Graphics::GL1Render::Clear()
 	GLclampf a = _BaseRender.Color().Alpha() / 255.0f;
 
 	glClearColor(r, g, b, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Lt::Graphics::GL1Render::Color(const Lt::Graphics::Color& color)
@@ -55,9 +55,8 @@ void Lt::Graphics::GL1Render::Pixel(const Lt::Graphics::Point2u& pos)
 	GLclampf g = _BaseRender.Color().Green() / 255.0f;
 	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
 
-	glColor3f(r, g, b);
-
 	glBegin(GL_POINTS);
+	glColor3f(r, g, b);
 	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY());
 	glEnd();
 }
@@ -77,9 +76,8 @@ void Lt::Graphics::GL1Render::Line(const Lt::Graphics::Point2u& pos1, const Lt::
 	GLclampf g = _BaseRender.Color().Green() / 255.0f;
 	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
 
-	glColor3f(r, g, b);
-
 	glBegin(GL_LINES);
+	glColor3f(r, g, b);
 	glVertex2i((GLint)pos1.PosX(), (GLint)pos1.PosY());
 	glVertex2i((GLint)pos2.PosX(), (GLint)pos2.PosY());
 	glEnd();
@@ -91,9 +89,8 @@ void Lt::Graphics::GL1Render::Fill(const Lt::Graphics::Point2u& pos, const Lt::G
 	GLclampf g = _BaseRender.Color().Green() / 255.0f;
 	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
 
-	glColor3f(r, g, b);
-
 	glBegin(GL_QUADS);
+	glColor3f(r, g, b);
 	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY() + (GLint)size.PosY());
 	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY());
 	glVertex2i((GLint)pos.PosX() + (GLint)size.PosX(), (GLint)pos.PosY());
@@ -112,4 +109,25 @@ Lt::u8* Lt::Graphics::GL1Render::Pixels()
 Lt::u8 Lt::Graphics::GL1Render::Channels()
 {
 	return _Canvas.Channels();
+}
+
+void Lt::Graphics::GL1Render::Draw(Lt::Graphics::GL1Image* image, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
+{
+	glBindTexture(GL_TEXTURE_2D, image->Id());
+
+	glBegin(GL_QUADS);
+	glTexCoord2i(0, 0);
+	glVertex2i(pos.PosX(), pos.PosY() + size.PosY());
+	glTexCoord2i(0, 1);
+	glVertex2i(pos.PosX(), pos.PosY());
+	glTexCoord2i(1, 1);
+	glVertex2i(pos.PosX() + size.PosX(), pos.PosY());
+	glTexCoord2i(1, 0);
+	glVertex2i(pos.PosX() + size.PosX(), pos.PosY() + size.PosY());
+	glEnd();
+}
+
+void Lt::Graphics::GL1Render::Draw(Lt::Graphics::GL1Image* image, const Lt::Graphics::Point2u& pos)
+{
+	Draw(image, pos, image->Size());
 }

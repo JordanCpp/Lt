@@ -2,6 +2,11 @@
 #include <Lt/Graphics/FpsLimiter.hpp>
 #include <Lt/Core/Console.hpp>
 #include <Lt/Graphics/FpsCounter.hpp>
+#include <Lt/Managers/PathManager.hpp>
+#include <Lt/Allocators/FixedLinear.hpp>
+#include <Lt/Loaders/ImageLoader.hpp>
+#include <Lt/Factories/ImageFactory.hpp>
+#include <Lt/Managers/ImageManager.hpp>
 
 void ShowError(const Lt::Core::ErrorHandler& errorHandler)
 {
@@ -41,24 +46,27 @@ int main()
 	Lt::usize x = 0;
 	Lt::usize y = 0;
 
+	Lt::Managers::PathManager path("TestFiles/");
+
+	Lt::Allocators::FixedLinear forLoader(Lt::Allocators::Allocator::Mb * 1);
+	Lt::Allocators::FixedLinear forManager(Lt::Allocators::Allocator::Mb * 4);
+
+	Lt::Loaders::ImageLoader loader(&errorHandler, &forLoader);
+
+	Lt::Factories::ImageFactory factory(&forManager, &loader);
+
+	Lt::Managers::ImageManager manager(&path, &factory);
+
+	Lt::Graphics::CpuImage* image = manager.Get("", "1182.jpg");
+
+	Lt::Graphics::GL1Image texture(image);
+
 	while (window.GetEvent(report))
 	{
 		render.Color(Lt::Graphics::Color(195, 195, 195));
 		render.Clear();
 
-		if (report.Type == Lt::Events::IsQuit)
-		{
-			window.StopEvent();
-		}
-
-		if (report.Type == Lt::Events::IsMouseMove)
-		{
-			x = report.Mouse.PosX;
-			y = report.Mouse.PosY;
-		}
-
-		render.Color(Lt::Graphics::Color(237, 28, 36));
-		render.Fill(Lt::Graphics::Point2u(x - 100, y - 100), Lt::Graphics::Point2u(100, 100));
+		render.Draw(&texture, Lt::Graphics::Point2u(0, 0), render.Size());
 
 		render.Present();
 

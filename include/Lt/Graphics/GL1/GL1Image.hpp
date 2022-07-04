@@ -14,6 +14,7 @@ namespace Lt
 			GL1Image(Lt::Graphics::CpuImage* cpuImage);
 			~GL1Image();
 			const Lt::Graphics::Point2u& Size();
+			const Lt::usize Id();
 		private:
 			Lt::usize _Id;
 			Lt::Graphics::Point2u _Size;

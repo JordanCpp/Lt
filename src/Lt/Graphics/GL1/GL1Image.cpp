@@ -38,3 +38,8 @@ const Lt::Graphics::Point2u& Lt::Graphics::GL1Image::Size()
 {
 	return _Size;
 }
+
+const Lt::usize Lt::Graphics::GL1Image::Id()
+{
+	return _Id;
+}

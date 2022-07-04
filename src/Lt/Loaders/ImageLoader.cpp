@@ -59,6 +59,8 @@ void Lt::Loaders::ImageLoader::Load(const char* path)
 	int height = 0;
 	int channels = 0;
 
+	stbi_set_flip_vertically_on_load(true);
+
 	_Pixels = stbi_load(path, &width, &height, &channels, 0);
 
 	_Size = Lt::Graphics::Point2u(width, height);
