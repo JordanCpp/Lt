@@ -12,7 +12,7 @@ namespace Lt
 		class GL1Render
 		{
 		public:
-			GL1Render(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window);
+			GL1Render(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::GL1Window* window);
 			const Lt::Graphics::Point2u& Size();
 			const Lt::Graphics::Color& Color();
 			void Clear();
@@ -26,7 +26,7 @@ namespace Lt
 			Lt::u8* Pixels();
 			Lt::u8 Channels();
 		private:
-			Lt::Graphics::Window* _Window;
+			Lt::Graphics::GL1Window* _Window;
 			Lt::Graphics::BaseRender _BaseRender;
 			Lt::Graphics::CpuImage _Canvas;
 		};

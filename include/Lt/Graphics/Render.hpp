@@ -10,6 +10,7 @@ namespace Lt
 	namespace Graphics
 	{
 		typedef Lt::Graphics::CpuRender Render;
+		typedef Lt::Graphics::CpuWindow Window;
 	}
 }
 #elif defined(LT_CONFIG_GPU_RENDER)
@@ -19,6 +20,7 @@ namespace Lt
 	namespace Graphics
 	{
 		typedef Lt::Graphics::GpuRender Render;
+		typedef Lt::Graphics::GpuWindow Window;
 	}
 }
 #else

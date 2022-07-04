@@ -9,7 +9,7 @@ namespace Lt
 {
 	namespace Graphics
 	{
-		typedef Lt::Graphics::Windows::GL1Window Window;
+		typedef Lt::Graphics::Windows::GL1Window GL1Window;
 	}
 }
 #elif defined(LT_CONFIG_OS_LINUX)

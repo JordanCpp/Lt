@@ -1,6 +1,6 @@
 #include <Lt/Graphics/Cpu/CpuRender.hpp>
 
-Lt::Graphics::CpuRender::CpuRender(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window) :
+Lt::Graphics::CpuRender::CpuRender(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::CpuWindow* window) :
 	_Window(window),
 	_BaseRender(_Window->Size()),
 	_Canvas(_BaseRender.Size())
@@ -39,7 +39,7 @@ void Lt::Graphics::CpuRender::Present()
 	_Window->Present(_Canvas.Pixels());
 }
 
-Lt::Graphics::Image* Lt::Graphics::CpuRender::Canvas()
+Lt::Graphics::CpuImage* Lt::Graphics::CpuRender::Canvas()
 {
 	return &_Canvas;
 }
