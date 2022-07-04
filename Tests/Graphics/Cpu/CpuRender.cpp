@@ -86,7 +86,7 @@ void TestGraphicsCpuRenderFillRect()
 	Lt::Graphics::Point2u size(250, 345);
 
 	render.Color(color);
-	render.FillRect(pos, size);
+	render.Fill(pos, size);
 
 	Lt::usize x = pos.PosX();
 	Lt::usize y = pos.PosY();

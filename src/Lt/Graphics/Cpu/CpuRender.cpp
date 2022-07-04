@@ -66,7 +66,7 @@ const Lt::Graphics::Color& Lt::Graphics::CpuRender::GetPixel(const Lt::Graphics:
 	return	pixels[i];
 }
 
-void Lt::Graphics::CpuRender::FillRect(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
+void Lt::Graphics::CpuRender::Fill(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
 {
 	Lt::usize x = pos.PosX();
 	Lt::usize y = pos.PosY();
@@ -77,6 +77,34 @@ void Lt::Graphics::CpuRender::FillRect(const Lt::Graphics::Point2u& pos, const L
 		{
 			Pixel(Lt::Graphics::Point2u(x + i, y + j));
 		}
+	}
+}
+
+void Lt::Graphics::CpuRender::Rect(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
+{
+	Lt::usize x = pos.PosX();
+	Lt::usize y = pos.PosY();
+	Lt::usize w = size.PosX();
+	Lt::usize h = size.PosY();
+
+	for (Lt::usize i = 0; i < w; i++)
+	{
+		Pixel(Lt::Graphics::Point2u(x + i, y));
+	}
+
+	for (Lt::usize i = 0; i < w; i++)
+	{
+		Pixel(Lt::Graphics::Point2u(x + i, y + h));
+	}
+
+	for (Lt::usize i = 0; i < h; i++)
+	{
+		Pixel(Lt::Graphics::Point2u(x, y + i));
+	}
+
+	for (Lt::usize i = 0; i < h; i++)
+	{
+		Pixel(Lt::Graphics::Point2u(x + w, y + i));
 	}
 }
 

@@ -49,7 +49,7 @@ int main()
 		}
 
 		render.Color(Lt::Graphics::Color(237, 28, 36));
-		render.FillRect(Lt::Graphics::Point2u(100, 100), Lt::Graphics::Point2u(300, 300));
+		render.Fill(Lt::Graphics::Point2u(100, 100), Lt::Graphics::Point2u(300, 300));
 
 		render.Present();
 
