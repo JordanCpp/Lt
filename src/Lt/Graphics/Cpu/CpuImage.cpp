@@ -11,7 +11,7 @@ Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size, const Lt::u8
 	_Pixels = new Lt::u8[bytes];
 }
 
-Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size, const Lt::u8 channels, Lt::u8* pixels):
+Lt::Graphics::CpuImage::CpuImage(const Lt::Graphics::Point2u& size, Lt::u8* pixels, const Lt::u8 channels):
 	_Source(FromMemory),
 	_Size(size),
 	_Channels(channels),

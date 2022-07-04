@@ -14,7 +14,7 @@ Lt::Graphics::GL1Image::GL1Image(Lt::Graphics::CpuImage* cpuImage):
 
 	glGenTextures(1, (GLuint*)&_Id);
 
-	glBindTexture(GL_TEXTURE_2D, _Id);
+	glBindTexture(GL_TEXTURE_2D, (GLuint)_Id);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -26,7 +26,7 @@ Lt::Graphics::GL1Image::GL1Image(Lt::Graphics::CpuImage* cpuImage):
 	else
 		format = GL_RGBA;
 
-	glTexImage2D(GL_TEXTURE_2D, 0, format, _Size.PosX(), _Size.PosY(), 0, format, GL_UNSIGNED_BYTE, cpuImage->Pixels());
+	glTexImage2D(GL_TEXTURE_2D, 0, format, (GLsizei)_Size.PosX(), (GLsizei)_Size.PosY(), 0, format, GL_UNSIGNED_BYTE, cpuImage->Pixels());
 }
 
 Lt::Graphics::GL1Image::~GL1Image()

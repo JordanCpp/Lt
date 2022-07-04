@@ -3,9 +3,8 @@
 Lt::Graphics::CpuRender::CpuRender(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window) :
 	_Window(window),
 	_BaseRender(_Window->Size()),
-	_Canvas(_BaseRender.Size(), 4)
+	_Canvas(_BaseRender.Size())
 {
-
 }
 
 const Lt::Graphics::Point2u& Lt::Graphics::CpuRender::Size()

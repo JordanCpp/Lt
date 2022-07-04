@@ -15,8 +15,8 @@ namespace Lt
 				FromNew,
 				FromMemory
 			};
-			CpuImage(const Lt::Graphics::Point2u& size, const Lt::u8 channels);
-			CpuImage(const Lt::Graphics::Point2u& size, const Lt::u8 channels, Lt::u8* pixels);
+			CpuImage(const Lt::Graphics::Point2u& size, const Lt::u8 channels = 4);
+			CpuImage(const Lt::Graphics::Point2u& size, Lt::u8* pixels, const Lt::u8 channels = 4);
 			~CpuImage();
 			const Lt::Graphics::Point2u& Size();
 			Lt::u8* Pixels();

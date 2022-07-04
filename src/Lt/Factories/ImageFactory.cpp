@@ -17,7 +17,7 @@ Lt::Graphics::CpuImage* Lt::Factories::ImageFactory::Get(const char* path)
 
 	Lt::Memory::Copy(pixels, _Loader->Pixels(), bytes);
 
-	Lt::Graphics::CpuImage* result = new Lt::Graphics::CpuImage(_Loader->Size(), _Loader->Channels(), pixels);
+	Lt::Graphics::CpuImage* result = new Lt::Graphics::CpuImage(_Loader->Size(), pixels, _Loader->Channels());
 
 	return result;
 }
