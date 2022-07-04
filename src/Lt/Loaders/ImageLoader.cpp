@@ -51,6 +51,8 @@ const Lt::u8* Lt::Loaders::ImageLoader::Pixels()
 
 void Lt::Loaders::ImageLoader::Load(const char* path)
 {
+	LT_ASSERT(path != nullptr);
+
 	Clear();
 
 	int width = 0;
