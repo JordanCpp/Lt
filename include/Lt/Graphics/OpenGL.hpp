@@ -8,8 +8,6 @@
 #include <gl/GL.h>
 #else
 #error Not support: OpenGL
-#endif
-
-#endif    
+#endif  
 
 #endif    

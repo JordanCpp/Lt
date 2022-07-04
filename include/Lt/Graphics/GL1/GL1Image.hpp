@@ -11,6 +11,7 @@ namespace Lt
 		{
 		public:
 		private:
+			Lt::usize _Id;
 		};
 	}
 }
