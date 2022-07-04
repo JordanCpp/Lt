@@ -23,6 +23,9 @@ target_link_libraries(Monitor LtCore LtGraphics LtEvents)
 add_executable(Screenshoter "Screenshoter.cpp")
 target_link_libraries(Screenshoter LtCore LtGraphics LtEvents)
 
+add_executable(PixelConverter "PixelConverter.cpp")
+target_link_libraries(PixelConverter LtCore LtGraphics LtEvents)
+
 add_subdirectory("Base")
 add_subdirectory("Cpu")
 add_subdirectory("GL1")
