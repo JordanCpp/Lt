@@ -25,7 +25,12 @@ const Lt::Graphics::Color& Lt::Graphics::GL1Render::Color()
 
 void Lt::Graphics::GL1Render::Clear()
 {
-	glClearColor(_BaseRender.Color().Red(), _BaseRender.Color().Green(), _BaseRender.Color().Blue(), _BaseRender.Color().Alpha());
+	GLclampf r = _BaseRender.Color().Red() / 255.0f;
+	GLclampf g = _BaseRender.Color().Green() / 255.0f;
+	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
+	GLclampf a = _BaseRender.Color().Alpha() / 255.0f;
+
+	glClearColor(r, g, b, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
@@ -46,8 +51,13 @@ Lt::Graphics::CpuImage* Lt::Graphics::GL1Render::Canvas()
 
 void Lt::Graphics::GL1Render::Pixel(const Lt::Graphics::Point2u& pos)
 {
+	GLclampf r = _BaseRender.Color().Red() / 255.0f;
+	GLclampf g = _BaseRender.Color().Green() / 255.0f;
+	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
+
+	glColor3f(r, g, b);
+
 	glBegin(GL_POINTS);
-	glColor3f(1, 1, 1);
 	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY());
 	glEnd();
 }
@@ -63,8 +73,13 @@ const Lt::Graphics::Color& Lt::Graphics::GL1Render::GetPixel(const Lt::Graphics:
 
 void Lt::Graphics::GL1Render::Line(const Lt::Graphics::Point2u& pos1, const Lt::Graphics::Point2u& pos2)
 {
+	GLclampf r = _BaseRender.Color().Red() / 255.0f;
+	GLclampf g = _BaseRender.Color().Green() / 255.0f;
+	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
+
+	glColor3f(r, g, b);
+
 	glBegin(GL_LINES);
-	glColor3d(1, 0, 0);
 	glVertex2i((GLint)pos1.PosX(), (GLint)pos1.PosY());
 	glVertex2i((GLint)pos2.PosX(), (GLint)pos2.PosY());
 	glEnd();
@@ -72,6 +87,12 @@ void Lt::Graphics::GL1Render::Line(const Lt::Graphics::Point2u& pos1, const Lt::
 
 void Lt::Graphics::GL1Render::Fill(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
 {
+	GLclampf r = _BaseRender.Color().Red() / 255.0f;
+	GLclampf g = _BaseRender.Color().Green() / 255.0f;
+	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
+
+	glColor3f(r, g, b);
+
 	glBegin(GL_QUADS);
 	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY() + (GLint)size.PosY());
 	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY());
