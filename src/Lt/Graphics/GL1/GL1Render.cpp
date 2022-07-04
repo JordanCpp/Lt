@@ -4,7 +4,7 @@
 Lt::Graphics::GL1Render::GL1Render(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::Window* window) :
 	_Window(window),
 	_BaseRender(_Window->Size()),
-	_Canvas(_BaseRender.Size(), 4)
+	_Canvas(_BaseRender.Size())
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -39,7 +39,7 @@ void Lt::Graphics::GL1Render::Present()
 	_Window->Present();
 }
 
-Lt::Graphics::Image* Lt::Graphics::GL1Render::Canvas()
+Lt::Graphics::CpuImage* Lt::Graphics::GL1Render::Canvas()
 {
 	return &_Canvas;
 }
@@ -70,7 +70,7 @@ void Lt::Graphics::GL1Render::Line(const Lt::Graphics::Point2u& pos1, const Lt::
 	glEnd();
 }
 
-void Lt::Graphics::GL1Render::FillRect(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
+void Lt::Graphics::GL1Render::Fill(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
 {
 	glBegin(GL_QUADS);
 	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY() + (GLint)size.PosY());
