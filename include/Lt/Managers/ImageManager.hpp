@@ -17,7 +17,7 @@ namespace Lt
 		private:
 			Lt::Managers::PathManager* _Path;
 			Lt::Factories::ImageFactory* _Factory;
-			Lt::Containers::HashMap<Lt::Graphics::CpuImage*, 4096> _Images;
+			Lt::Containers::HashMap<Lt::Graphics::CpuImage*> _Images;
 		};
 	}
 }

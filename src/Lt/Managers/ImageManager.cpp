@@ -2,7 +2,8 @@
 
 Lt::Managers::ImageManager::ImageManager(Lt::Managers::PathManager* path, Lt::Factories::ImageFactory* factory) :
 	_Path(path),
-	_Factory(factory)
+	_Factory(factory),
+	_Images(4096)
 {
 }
 

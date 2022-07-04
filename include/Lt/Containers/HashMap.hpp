@@ -85,20 +85,20 @@ namespace Lt
 			}
 		};
 
-		template<typename TYPE, Lt::usize COUNT>
+		template<typename TYPE>
 		class HashMap
 		{
 		public:
-			HashMap():
+			HashMap(Lt::usize count):
 				_Allocator(nullptr),
-				_Capacity(COUNT)
+				_Capacity(count)
 			{
 				_List = new Lt::Containers::HashList<TYPE>[_Capacity];
 			}
 
-			HashMap(Lt::Allocators::Allocator* allocator) :
+			HashMap(Lt::usize count, Lt::Allocators::Allocator* allocator) :
 				_Allocator(allocator),
-				_Capacity(COUNT)
+				_Capacity(count)
 			{
 				_List = new(_Allocator->Allocate(_Capacity * sizeof(TYPE))) Lt::Containers::HashList<TYPE>[_Capacity];
 			}
@@ -152,6 +152,38 @@ namespace Lt
 				Lt::usize h = Hashed(element->Key());
 
 				_List[h].Append(element);
+			}
+
+			void Append(const char* key, TYPE element)
+			{
+				HashNode<TYPE>* node = nullptr;
+
+				if (_Allocator != nullptr)
+					node = new(_Allocator->Allocate(sizeof(HashNode<TYPE>))) HashNode<TYPE>(key);
+				else
+					node = new HashNode<TYPE>(key);
+
+				Lt::usize h = Hashed(node->Key());
+
+				node->Content = element;
+
+				_List[h].Append(node);
+			}
+
+			void Append(const char* key, TYPE* element)
+			{
+				HashNode<TYPE>* node = nullptr;
+
+				if (_Allocator != nullptr)
+					node = new(_Allocator->Allocate(sizeof(HashNode<TYPE>))) HashNode<TYPE>(key);
+				else
+					node = new HashNode<TYPE>(key);
+
+				Lt::usize h = Hashed(node->Key());
+
+				node->Content = element;
+
+				_List[h].Append(node);
 			}
 		private:
 			Lt::Allocators::Allocator* _Allocator;
