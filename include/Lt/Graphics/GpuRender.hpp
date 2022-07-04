@@ -1,7 +1,7 @@
 #ifndef Lt_Graphics_GpuRender_hpp
 #define Lt_Graphics_GpuRender_hpp
 
-#include <Lt/Graphics/GL1Render.hpp>
+#include <Lt/Graphics/GL1/GL1Render.hpp>
 
 namespace Lt
 {

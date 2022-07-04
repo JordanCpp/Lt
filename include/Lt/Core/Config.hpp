@@ -1,7 +1,7 @@
 #ifndef Lt_Core_Config_hpp
 #define Lt_Core_Config_hpp
 
-#define LT_CONFIG_CPU_RENDER
+#define LT_CONFIG_GPU_RENDER
 
 #if (_WIN64)
 #define LT_CONFIG_OS_WINDOWS

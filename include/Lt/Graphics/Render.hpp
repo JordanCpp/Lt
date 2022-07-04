@@ -14,13 +14,13 @@ namespace Lt
 	}
 }
 #elif defined(LT_CONFIG_GPU_RENDER)
-#include <Lt/Graphics/Gpu/GpuRender.hpp>
+#include <Lt/Graphics/GL1/GL1Render.hpp>
 namespace Lt
 {
 	namespace Graphics
 	{
-		typedef Lt::Graphics::GpuRender Render;
-		typedef Lt::Graphics::GpuWindow Window;
+		typedef Lt::Graphics::GL1Render Render;
+		typedef Lt::Graphics::GL1Window Window;
 	}
 }
 #else
