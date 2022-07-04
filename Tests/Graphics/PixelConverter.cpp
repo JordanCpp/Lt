@@ -5,7 +5,7 @@
 void TestGraphicsPixelConverterFill()
 {
 	Lt::Graphics::Point2u size(800, 600);
-	Lt::usize channels = 4;
+	Lt::u8 channels = 4;
 
 	Lt::Graphics::Color* pixels = new Lt::Graphics::Color[size.PosX() * size.PosY()];
 
@@ -27,7 +27,7 @@ void TestGraphicsPixelConverterFill()
 void TestGraphicsPixelConverterBgrToRgb()
 {
 	Lt::Graphics::Point2u size(800, 600);
-	Lt::usize channels = 4;
+	Lt::u8 channels = 4;
 
 	Lt::Graphics::Color* pixels = new Lt::Graphics::Color[size.PosX() * size.PosY()];
 
@@ -51,7 +51,7 @@ void TestGraphicsPixelConverterBgrToRgb()
 void TestGraphicsPixelConverterRgbToBgr()
 {
 	Lt::Graphics::Point2u size(800, 600);
-	Lt::usize channels = 4;
+	Lt::u8 channels = 4;
 
 	Lt::Graphics::Color* pixels = new Lt::Graphics::Color[size.PosX() * size.PosY()];
 
