@@ -14,15 +14,7 @@ void Lt::Graphics::Screenshoter::Shot(const char* path)
 {
 
 #if defined(LT_CONFIG_OS_WINDOWS)
-	Lt::usize bytes = _Render->Size().PosX() * _Render->Size().PosY() * 4;
-	Lt::u8* pixels = _Render->Pixels();
-
-	for (Lt::usize i = 0; i < bytes; i += 4)
-	{
-		Lt::u8 temp = pixels[i + 0];
-		pixels[i + 0] = pixels[i + 2];
-		pixels[i + 2] = temp;
-	}
+	_PixelConverter.BgrToRgb(_Render->Pixels(), _Render->Size(), 4);
 #endif
 
 	stbi_write_png(path, (int)_Render->Size().PosX(), (int)_Render->Size().PosY(), 4, _Render->Pixels(), (int)_Render->Size().PosX() * 4);

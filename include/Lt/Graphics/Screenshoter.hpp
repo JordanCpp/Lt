@@ -5,6 +5,7 @@
 #include <Lt/Containers/StaticString.hpp>
 #include <Lt/Core/DateTime.hpp>
 #include <Lt/Core/IntegerToString.hpp>
+#include <Lt/Graphics/PixelConverter.hpp>
 
 namespace Lt
 {
@@ -23,6 +24,7 @@ namespace Lt
 			Lt::Containers::StaticString<256> _FullPath;
 			Lt::DateTime _Current;
 			Lt::Core::IntegerToString _Conv;
+			Lt::Graphics::PixelConverter _PixelConverter;
 		};
 	}
 }
