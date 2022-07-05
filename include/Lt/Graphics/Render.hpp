@@ -21,6 +21,7 @@ namespace Lt
 	{
 		typedef Lt::Graphics::GL1Render Render;
 		typedef Lt::Graphics::GL1Window Window;
+		typedef Lt::Graphics::GL1Image Image;
 	}
 }
 #else

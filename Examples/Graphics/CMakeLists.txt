@@ -23,5 +23,5 @@ target_link_libraries(06_FillRect LtCore LtGraphics LtEvents)
 add_executable(07_Mouse "07_Mouse/main.cpp")
 target_link_libraries(07_Mouse LtCore LtGraphics LtEvents)
 
-add_executable(08_GLDraw "08_GLDraw/main.cpp")
-target_link_libraries(08_GLDraw LtCore LtAllocators LtGraphics LtEvents)
+add_executable(08_Draw "08_Draw/main.cpp")
+target_link_libraries(08_Draw LtCore LtAllocators LtGraphics LtEvents)

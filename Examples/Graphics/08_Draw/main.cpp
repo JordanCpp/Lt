@@ -1,4 +1,4 @@
-#include <Lt/Graphics/GL1/GL1Render.hpp>
+#include <Lt/Graphics/Render.hpp>
 #include <Lt/Graphics/FpsLimiter.hpp>
 #include <Lt/Core/Console.hpp>
 #include <Lt/Graphics/FpsCounter.hpp>
@@ -22,7 +22,7 @@ int main()
 
 	Lt::Graphics::Point2u resolution(800, 600);
 
-	Lt::Graphics::GL1Window window(errorHandler, Lt::Graphics::Point2u(0, 0), resolution, "GLDraw");
+	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(0, 0), resolution, "GLDraw");
 
 	if (errorHandler.IsError())
 	{
@@ -31,7 +31,7 @@ int main()
 		return 0;
 	}
 
-	Lt::Graphics::GL1Render render(errorHandler, &window);
+	Lt::Graphics::Render render(errorHandler, &window);
 
 	if (errorHandler.IsError())
 	{
@@ -61,7 +61,7 @@ int main()
 
 	Lt::Graphics::CpuImage* image = manager.Get("", "1182.jpg");
 
-	Lt::Graphics::GL1Image texture(image);
+	Lt::Graphics::Image texture(image);
 
 	while (window.GetEvent(report))
 	{
