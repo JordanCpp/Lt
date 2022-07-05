@@ -20,7 +20,9 @@ int main()
 {
 	Lt::Core::ErrorHandler errorHandler;
 
-	Lt::Graphics::GL1Window window(errorHandler, Lt::Graphics::Point2u(0, 0), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Point2u resolution(800, 600);
+
+	Lt::Graphics::GL1Window window(errorHandler, Lt::Graphics::Point2u(0, 0), resolution, "GLDraw");
 
 	if (errorHandler.IsError())
 	{
@@ -63,10 +65,16 @@ int main()
 
 	while (window.GetEvent(report))
 	{
+		if (report.Type == Lt::Events::IsMouseMove)
+		{
+			x = report.Mouse.PosX;
+			y = report.Mouse.PosY;
+		}
+
 		render.Color(Lt::Graphics::Color(195, 195, 195));
 		render.Clear();
 
-		render.Draw(&texture, Lt::Graphics::Point2u(0, 0), render.Size());
+		render.Draw(&texture, Lt::Graphics::Point2u(0, 0), Lt::Graphics::Point2u(x, y));
 
 		render.Present();
 
