@@ -31,6 +31,12 @@ namespace Lt
 				return _PosY;
 			}
 
+			void Pos(const TYPE& x, const TYPE& y)
+			{
+				_PosX = x;
+				_PosY = y;
+			}
+
 			TYPE _PosX;
 			TYPE _PosY;
 		};

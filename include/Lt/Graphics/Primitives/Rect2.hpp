@@ -38,6 +38,18 @@ namespace Lt
 			{
 				return _Size;
 			}
+
+			void Pos(const TYPE& x, const TYPE& y)
+			{
+				_Pos._PosX = x;
+				_Pos._PosY = y;
+			}
+
+			void Size(const TYPE& x, const TYPE& y)
+			{
+				_Size._PosX = x;
+				_Size._PosY = y;
+			}
 		private:
 			Lt::Graphics::Point2<TYPE> _Pos;
 			Lt::Graphics::Point2<TYPE> _Size;

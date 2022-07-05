@@ -80,6 +80,7 @@ add_library(LtWidgets STATIC
 "src/Lt/Widgets/Factory.cpp"
 "src/Lt/Widgets/Button.cpp"
 "src/Lt/Widgets/Application.cpp"
+"src/Lt/Widgets/Container.cpp"
 "src/Lt/View/ColorRect.cpp"
 "src/Lt/View/Button.cpp")
 
