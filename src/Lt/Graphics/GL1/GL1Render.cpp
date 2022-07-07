@@ -76,10 +76,15 @@ void Lt::Graphics::GL1Render::Line(const Lt::Graphics::Point2u& pos1, const Lt::
 	GLclampf g = _BaseRender.Color().Green() / 255.0f;
 	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
 
+	GLint x1 = (GLint)pos1.PosX();
+	GLint y1 = (GLint)pos1.PosY();
+	GLint x2 = (GLint)pos2.PosX();
+	GLint y2 = (GLint)pos2.PosY();
+
 	glBegin(GL_LINES);
 	glColor3f(r, g, b);
-	glVertex2i((GLint)pos1.PosX(), (GLint)pos1.PosY());
-	glVertex2i((GLint)pos2.PosX(), (GLint)pos2.PosY());
+	glVertex2i(x1, y1);
+	glVertex2i(x2, y2);
 	glEnd();
 }
 
