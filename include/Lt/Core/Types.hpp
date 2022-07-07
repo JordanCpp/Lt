@@ -3,6 +3,8 @@
 
 #include <Lt/Core/Config.hpp>
 
+#include <new>
+
 #define nullptr (0)
 
 namespace Lt

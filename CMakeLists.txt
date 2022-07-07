@@ -9,7 +9,6 @@ endif()
 include_directories("include")
 
 add_library(LtCore STATIC
-"src/Lt/Core/New.cpp"
 "src/Lt/Core/Assert.cpp"
 "src/Lt/Core/Chars.cpp"
 "src/Lt/Core/IntegerToString.cpp"

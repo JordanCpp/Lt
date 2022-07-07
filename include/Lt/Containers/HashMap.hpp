@@ -1,7 +1,6 @@
 #ifndef Lt_Containers_HashMap_hpp
 #define Lt_Containers_HashMap_hpp
 
-#include <Lt/Core/New.hpp>
 #include <Lt/Core/Assert.hpp>
 #include <Lt/Containers/StaticString.hpp>
 #include <Lt/Allocators/Allocator.hpp>

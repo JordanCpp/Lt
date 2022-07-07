@@ -3,7 +3,6 @@
 
 #include <Lt/Allocators/Allocator.hpp>
 #include <Lt/Core/Assert.hpp>
-#include <Lt/Core/New.hpp>
 
 namespace Lt
 {

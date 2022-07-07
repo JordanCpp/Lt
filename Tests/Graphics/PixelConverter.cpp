@@ -1,6 +1,5 @@
 #include <Lt/Core/TestEqual.hpp>
 #include <Lt/Graphics/PixelConverter.hpp>
-#include <Lt/Core/New.hpp>
 
 void TestGraphicsPixelConverterFill()
 {

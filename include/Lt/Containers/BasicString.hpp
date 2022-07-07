@@ -2,7 +2,6 @@
 #define Lt_Containers_BasicString_hpp
 
 #include <Lt/Allocators/Allocator.hpp>
-#include <Lt/Core/New.hpp>
 #include <Lt/Core/Chars.hpp>
 
 namespace Lt
