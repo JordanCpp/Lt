@@ -89,12 +89,17 @@ void Lt::Graphics::GL1Render::Fill(const Lt::Graphics::Point2u& pos, const Lt::G
 	GLclampf g = _BaseRender.Color().Green() / 255.0f;
 	GLclampf b = _BaseRender.Color().Blue() / 255.0f;
 
+	GLint x = (GLint)pos.PosX();
+	GLint y = (GLint)pos.PosY();
+	GLint w = (GLint)size.PosX();
+	GLint h = (GLint)size.PosY();
+
 	glBegin(GL_QUADS);
 	glColor3f(r, g, b);
-	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY() + (GLint)size.PosY());
-	glVertex2i((GLint)pos.PosX(), (GLint)pos.PosY());
-	glVertex2i((GLint)pos.PosX() + (GLint)size.PosX(), (GLint)pos.PosY());
-	glVertex2i((GLint)pos.PosX() + (GLint)size.PosX(), (GLint)pos.PosY() + (GLint)size.PosY());
+	glVertex2i(x, y + h);
+	glVertex2i(x, y);
+	glVertex2i(x + w, y);
+	glVertex2i(x + w, y + h);
 	glEnd();
 }
 
@@ -113,17 +118,22 @@ Lt::u8 Lt::Graphics::GL1Render::Channels()
 
 void Lt::Graphics::GL1Render::Draw(Lt::Graphics::GL1Image* image, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
 {
-	glBindTexture(GL_TEXTURE_2D, image->Id());
+	glBindTexture(GL_TEXTURE_2D, (GLuint)image->Id());
+
+	GLint x = (GLint)pos.PosX();
+	GLint y = (GLint)pos.PosY();
+	GLint w = (GLint)size.PosX();
+	GLint h = (GLint)size.PosY();
 
 	glBegin(GL_QUADS);
 	glTexCoord2i(0, 0);
-	glVertex2i(pos.PosX(), pos.PosY() + size.PosY());
+	glVertex2i(x, y + h);
 	glTexCoord2i(0, 1);
-	glVertex2i(pos.PosX(), pos.PosY());
+	glVertex2i(x, y);
 	glTexCoord2i(1, 1);
-	glVertex2i(pos.PosX() + size.PosX(), pos.PosY());
+	glVertex2i(x + w, y);
 	glTexCoord2i(1, 0);
-	glVertex2i(pos.PosX() + size.PosX(), pos.PosY() + size.PosY());
+	glVertex2i(x + w, y + h);
 	glEnd();
 }
 
