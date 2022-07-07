@@ -10,12 +10,12 @@ namespace Lt
 		class Application
 		{
 		public:
-			Application();
+			Application(Lt::Graphics::Window* window, Lt::Graphics::Render* render);
 			void Run();
 		private:
 			Lt::Core::ErrorHandler _ErrorHandler;
-			Lt::Graphics::Window _Window;
-			Lt::Graphics::Render _Render;
+			Lt::Graphics::Window* _Window;
+			Lt::Graphics::Render* _Render;
 		};
 	}
 }
