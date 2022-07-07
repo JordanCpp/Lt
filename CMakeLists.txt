@@ -80,7 +80,8 @@ add_library(LtWidgets STATIC
 "src/Lt/Widgets/Button.cpp"
 "src/Lt/Widgets/Application.cpp"
 "src/Lt/Widgets/Container.cpp"
-"src/Lt/View/ColorRect.cpp"
+"src/Lt/View/Rect.cpp"
+"src/Lt/View/Line.cpp"
 "src/Lt/View/Button.cpp")
 
 add_subdirectory("Tests/Core")

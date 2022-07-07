@@ -4,3 +4,9 @@ Lt::Widgets::Button::Button(Lt::Graphics::Window* window, Lt::Graphics::Render* 
 	Lt::Widgets::Widget(window, render, pos, size)
 {
 }
+
+void Lt::Widgets::Button::Draw()
+{
+	Render()->Color(Lt::Graphics::Color(244, 244, 244));
+	Render()->Fill(Pos(), Size());
+}

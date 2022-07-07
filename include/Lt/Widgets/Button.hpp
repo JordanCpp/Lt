@@ -11,6 +11,7 @@ namespace Lt
 		{
 		public:
 			Button(Lt::Graphics::Window* window, Lt::Graphics::Render* render, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
+			void Draw();
 		private:
 		};
 	}

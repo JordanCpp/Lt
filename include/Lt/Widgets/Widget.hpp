@@ -19,14 +19,16 @@ namespace Lt
 			virtual ~Widget();
 			const Lt::Graphics::Point2u& Pos();
 			const Lt::Graphics::Point2u& Size();
-			const Lt::Graphics::Window* Window();
-			const Lt::Graphics::Render* Render();
+			Lt::Graphics::Window* Window();
+			Lt::Graphics::Render* Render();
 			const Lt::Widgets::Widget* Parent();
 			void Parent(Lt::Widgets::Widget* widget);
 			void Attach(Lt::Widgets::Widget* widget);
 			Lt::Widgets::Widget::ActionCallback Action();
 			void Action(Lt::Widgets::Widget::ActionCallback actionCallback);
 			void Action(Lt::Widgets::Widget* source, Lt::usize type, void* content);
+			Lt::Containers::Vector<Widget*>& Widgets();
+			virtual void Draw() = 0;
 		private:
 			Lt::Widgets::Widget::ActionCallback _Action;
 			Lt::Widgets::Widget* _Parent;

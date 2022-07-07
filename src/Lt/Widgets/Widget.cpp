@@ -23,12 +23,12 @@ const Lt::Graphics::Point2u& Lt::Widgets::Widget::Size()
 	return _Area.Size();
 }
 
-const Lt::Graphics::Window* Lt::Widgets::Widget::Window()
+Lt::Graphics::Window* Lt::Widgets::Widget::Window()
 {
 	return _Window;
 }
 
-const Lt::Graphics::Render* Lt::Widgets::Widget::Render()
+Lt::Graphics::Render* Lt::Widgets::Widget::Render()
 {
 	return _Render;
 }
@@ -66,4 +66,9 @@ void Lt::Widgets::Widget::Action(Lt::Widgets::Widget* source, Lt::usize type, vo
 	{
 		_Action(source, type, content);
 	}
+}
+
+Lt::Containers::Vector<Lt::Widgets::Widget*>& Lt::Widgets::Widget::Widgets()
+{
+	return _Widgets;
 }

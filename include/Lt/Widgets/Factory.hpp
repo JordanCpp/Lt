@@ -16,7 +16,6 @@ namespace Lt
 			const Lt::Graphics::Window* Window();
 			const Lt::Graphics::Render* Render();
 			const Lt::Containers::Vector<Lt::Widgets::Widget*> Widgets();
-			Lt::Widgets::Widget* Widget(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
 			Lt::Widgets::Button* Button(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
 		private:
 			Lt::Graphics::Window* _Window;
