@@ -1,4 +1,5 @@
 #include <Lt/Widgets/Application.hpp>
+#include <Lt/Core/Ticks.hpp>
 
 Lt::Widgets::Application::Application(Lt::Graphics::Window* window, Lt::Graphics::Render* render):
 	Lt::Widgets::Widget(window, render, window->Pos(), window->Size()),
@@ -9,6 +10,10 @@ Lt::Widgets::Application::Application(Lt::Graphics::Window* window, Lt::Graphics
 
 void Lt::Widgets::Application::Draw()
 {
+	for (Lt::usize i = 0; i < Widgets().Length(); i++)
+	{
+		Widgets()[i]->Draw();
+	}
 }
 
 void Lt::Widgets::Application::Run()
@@ -17,11 +22,10 @@ void Lt::Widgets::Application::Run()
 
 	while (_Window->GetEvent(event))
 	{
-		for (Lt::usize i = 0; i < Widgets().Length(); i++)
-		{
-			Widgets()[i]->Draw();
-		}
+		Draw();
 
 		_Render->Present();
+
+		Lt::Core::Delay(5);
 	}
 }

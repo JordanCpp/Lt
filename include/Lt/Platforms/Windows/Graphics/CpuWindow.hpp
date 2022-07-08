@@ -12,7 +12,7 @@ namespace Lt
 			class CpuWindow
 			{
 			public:
-				CpuWindow(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title);
+				CpuWindow(Lt::Core::ErrorHandler* errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title);
 				~CpuWindow();
 				void Present(Lt::u8* pixels);
 				bool GetEvent(Lt::Events::Event& event);

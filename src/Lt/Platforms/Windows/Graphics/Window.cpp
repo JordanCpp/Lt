@@ -88,8 +88,9 @@ LRESULT CALLBACK Lt::Graphics::Windows::Window::WndProc(HWND Hwnd, UINT Message,
     return result;
 }
 
-Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title) :
-    _BaseWindow(pos, size, title)
+Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler* errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title) :
+    _BaseWindow(pos, size, title),
+    _ErrorHandler(errorHandler)
 {
     Lt::Memory::Zero(&_WNDCLASS, sizeof(WNDCLASS));
     Lt::Memory::Zero(&_MSG, sizeof(MSG));
@@ -106,7 +107,7 @@ Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, cons
 
     if (_ATOM == INVALID_ATOM)
     {
-        _ErrorHandler.Message("ATOM == INVALID_ATOM");
+        _ErrorHandler->Message("ATOM == INVALID_ATOM");
     }
     else
     {
@@ -114,7 +115,7 @@ Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, cons
 
         if (_HWND == INVALID_HANDLE_VALUE)
         {
-            _ErrorHandler.Message("HWND == INVALID_HANDLE_VALUE");
+            _ErrorHandler->Message("HWND == INVALID_HANDLE_VALUE");
         }
         else
         {
@@ -130,7 +131,7 @@ Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, cons
 
             if (_HDC == INVALID_HANDLE_VALUE)
             {
-                _ErrorHandler.Message("HDC == INVALID_HANDLE_VALUE");
+                _ErrorHandler->Message("HDC == INVALID_HANDLE_VALUE");
             }
             else
             {
@@ -142,7 +143,7 @@ Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler& errorHandler, cons
 
 Lt::Graphics::Windows::Window::~Window()
 {
-    if (!_ErrorHandler.IsError())
+    if (!_ErrorHandler->IsError())
     {
         UnregisterClass(AppName, _HINSTANCE);
         ReleaseDC(_HWND, _HDC);

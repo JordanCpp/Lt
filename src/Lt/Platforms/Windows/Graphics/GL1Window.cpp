@@ -1,6 +1,6 @@
 #include <Lt/Platforms/Windows/Graphics/GL1Window.hpp>
 
-Lt::Graphics::Windows::GL1Window::GL1Window(Lt::Core::ErrorHandler& errorHandler, const Point2u& pos, const Point2u& size, const char* title) :
+Lt::Graphics::Windows::GL1Window::GL1Window(Lt::Core::ErrorHandler* errorHandler, const Point2u& pos, const Point2u& size, const char* title) :
     _Window(errorHandler, pos, size, title)
 {
     PIXELFORMATDESCRIPTOR pfd = { 0 };
@@ -21,7 +21,7 @@ Lt::Graphics::Windows::GL1Window::GL1Window(Lt::Core::ErrorHandler& errorHandler
 
     if (format == 0)
     {
-        errorHandler.Message("ChoosePixelFormat");
+        errorHandler->Message("ChoosePixelFormat");
     }
     else
     {

@@ -13,7 +13,7 @@ namespace Lt
 		class GL1Render
 		{
 		public:
-			GL1Render(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::GL1Window* window);
+			GL1Render(Lt::Core::ErrorHandler* errorHandler, Lt::Graphics::GL1Window* window);
 			const Lt::Graphics::Point2u& Size();
 			const Lt::Graphics::Color& Color();
 			void Clear();
@@ -29,6 +29,7 @@ namespace Lt
 			void Draw(Lt::Graphics::GL1Image* image, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
 			void Draw(Lt::Graphics::GL1Image* image, const Lt::Graphics::Point2u& pos);
 		private:
+			Lt::Core::ErrorHandler* _ErrorHandler;
 			Lt::Graphics::GL1Window* _Window;
 			Lt::Graphics::BaseRender _BaseRender;
 			Lt::Graphics::CpuImage _Canvas;

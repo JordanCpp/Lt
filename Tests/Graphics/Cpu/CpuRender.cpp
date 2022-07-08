@@ -5,9 +5,9 @@ void TestGraphicsCpuRender()
 {
 	Lt::Core::ErrorHandler errorHandler;
 
-	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 
-	Lt::Graphics::Render render(errorHandler, &window);
+	Lt::Graphics::Render render(&errorHandler, &window);
 
 	LT_TEST_EQUAL(errorHandler.IsError() == false);
 	LT_TEST_EQUAL(render.Size().PosX() == 800);
@@ -25,8 +25,8 @@ void TestGraphicsCpuRender()
 void TestGraphicsCpuRenderClear()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
-	Lt::Graphics::Render render(errorHandler, &window);
+	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Render render(&errorHandler, &window);
 
 	LT_TEST_EQUAL(errorHandler.IsError() == false);
 
@@ -55,8 +55,8 @@ void TestGraphicsCpuRenderClear()
 void TestGraphicsCpuRenderPixel()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
-	Lt::Graphics::Render render(errorHandler, &window);
+	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Render render(&errorHandler, &window);
 
 	LT_TEST_EQUAL(errorHandler.IsError() == false);
 
@@ -75,8 +75,8 @@ void TestGraphicsCpuRenderPixel()
 void TestGraphicsCpuRenderFillRect()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(800, 600), Lt::Graphics::Point2u(800, 600), "Window!");
-	Lt::Graphics::Render render(errorHandler, &window);
+	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(800, 600), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Render render(&errorHandler, &window);
 
 	LT_TEST_EQUAL(errorHandler.IsError() == false);
 
@@ -108,8 +108,8 @@ void TestGraphicsCpuRenderFillRect()
 void TestGraphicsCpuRenderLine()
 {
 	Lt::Core::ErrorHandler errorHandler;
-	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(800, 600), Lt::Graphics::Point2u(800, 600), "Window!");
-	Lt::Graphics::Render render(errorHandler, &window);
+	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(800, 600), Lt::Graphics::Point2u(800, 600), "Window!");
+	Lt::Graphics::Render render(&errorHandler, &window);
 
 	LT_TEST_EQUAL(errorHandler.IsError() == false);
 

@@ -15,7 +15,7 @@ namespace Lt
 			class Window
 			{
 			public:
-				Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title);
+				Window(Lt::Core::ErrorHandler* errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title);
 				~Window();
 				bool GetEvent(Lt::Events::Event& event);
 				void StopEvent();
@@ -28,7 +28,7 @@ namespace Lt
 				LRESULT CALLBACK Handler(UINT Message, WPARAM WParam, LPARAM LParam);
 				Lt::Graphics::BaseWindow _BaseWindow;
 				Lt::Events::Eventer _Eventer;
-				Lt::Core::ErrorHandler _ErrorHandler;
+				Lt::Core::ErrorHandler* _ErrorHandler;
 				WNDCLASS  _WNDCLASS;
 				HINSTANCE _HINSTANCE;
 				MSG       _MSG;

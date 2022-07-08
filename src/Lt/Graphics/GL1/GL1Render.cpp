@@ -1,7 +1,8 @@
 #include <Lt/Graphics/GL1/GL1Render.hpp>
 #include <gl/GL.h>
 
-Lt::Graphics::GL1Render::GL1Render(Lt::Core::ErrorHandler& errorHandler, Lt::Graphics::GL1Window* window) :
+Lt::Graphics::GL1Render::GL1Render(Lt::Core::ErrorHandler* errorHandler, Lt::Graphics::GL1Window* window) :
+	_ErrorHandler(errorHandler),
 	_Window(window),
 	_BaseRender(_Window->Size()),
 	_Canvas(_BaseRender.Size())

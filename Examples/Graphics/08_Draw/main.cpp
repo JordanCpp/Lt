@@ -22,7 +22,7 @@ int main()
 
 	Lt::Graphics::Point2u resolution(800, 600);
 
-	Lt::Graphics::Window window(errorHandler, Lt::Graphics::Point2u(0, 0), resolution, "GLDraw");
+	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(0, 0), resolution, "GLDraw");
 
 	if (errorHandler.IsError())
 	{
@@ -31,7 +31,7 @@ int main()
 		return 0;
 	}
 
-	Lt::Graphics::Render render(errorHandler, &window);
+	Lt::Graphics::Render render(&errorHandler, &window);
 
 	if (errorHandler.IsError())
 	{

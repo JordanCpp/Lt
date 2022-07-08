@@ -12,7 +12,7 @@ namespace Lt
 			class GL1Window
 			{
 			public:
-				GL1Window(Lt::Core::ErrorHandler& errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title);
+				GL1Window(Lt::Core::ErrorHandler* errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title);
 				~GL1Window();
 				void Present();
 				bool GetEvent(Lt::Events::Event& event);

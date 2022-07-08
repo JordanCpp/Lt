@@ -1,6 +1,6 @@
 #include <Lt/Platforms/Windows/Graphics/CpuWindow.hpp>
 
-Lt::Graphics::Windows::CpuWindow::CpuWindow(Lt::Core::ErrorHandler& errorHandler, const Point2u& pos, const Point2u& size, const char* title) :
+Lt::Graphics::Windows::CpuWindow::CpuWindow(Lt::Core::ErrorHandler* errorHandler, const Point2u& pos, const Point2u& size, const char* title) :
     _Window(errorHandler, pos, size, title)
 {
 }
