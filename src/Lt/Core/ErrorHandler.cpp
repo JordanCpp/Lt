@@ -10,6 +10,11 @@ bool Lt::Core::ErrorHandler::IsError()
 	return _IsError;
 }
 
+bool Lt::Core::ErrorHandler::IsOk()
+{
+	return !IsError();
+}
+
 const char* Lt::Core::ErrorHandler::Message() const
 {
 	return _Message.Content();
