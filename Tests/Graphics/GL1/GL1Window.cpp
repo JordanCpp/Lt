@@ -7,7 +7,7 @@ void TestGraphicsGL1WindowInit()
 
 	Lt::Graphics::GL1Window window(&errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "GL1Window!");
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 
 	LT_TEST_EQUAL(window.Pos().PosX() == 25);
 	LT_TEST_EQUAL(window.Pos().PosY() == 50);

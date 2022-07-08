@@ -6,10 +6,10 @@ void TestGraphicsGL1Render()
 	Lt::Core::ErrorHandler errorHandler;
 
 	Lt::Graphics::GL1Window window(&errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 
 	Lt::Graphics::GL1Render render(&errorHandler, &window);
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 
 	LT_TEST_EQUAL(render.Size().PosX() == 800);
 	LT_TEST_EQUAL(render.Size().PosY() == 600);

@@ -10,11 +10,11 @@ int main()
 
 	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(0, 0), Lt::Graphics::Point2u(800, 600), "Window!");
 	
-	if (errorHandler.IsOk())
+	if (errorHandler.Ok())
 	{
 		Lt::Graphics::Render render(&errorHandler, &window);
 
-		if (errorHandler.IsOk())
+		if (errorHandler.Ok())
 		{
 			Lt::Widgets::Factory factory(&window, &render);
 
@@ -28,7 +28,7 @@ int main()
 		}
 	}
 	
-	if (errorHandler.IsError())
+	if (errorHandler.Error())
 	{
 		io.Write(errorHandler.Message());
 		io.Show();

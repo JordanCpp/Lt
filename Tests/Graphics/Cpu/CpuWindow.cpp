@@ -7,7 +7,7 @@ void TestGraphicsCpuWindow()
 
 	Lt::Graphics::CpuWindow window(&errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 	LT_TEST_EQUAL(window.Pos().PosX() == 25);
 	LT_TEST_EQUAL(window.Pos().PosY() == 50);
 	LT_TEST_EQUAL(window.Size().PosX() == 800);

@@ -15,7 +15,7 @@ int main()
 
 	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(0, 0), Lt::Graphics::Point2u(800, 600), "Window!");
 
-	if (errorHandler.IsError())
+	if (errorHandler.Error())
 	{
 		ShowError(errorHandler);
 
@@ -24,7 +24,7 @@ int main()
 
 	Lt::Graphics::Render render(&errorHandler, &window);
 
-	if (errorHandler.IsError())
+	if (errorHandler.Error())
 	{
 		ShowError(errorHandler);
 

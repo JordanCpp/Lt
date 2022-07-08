@@ -1,18 +1,18 @@
 #include <Lt/Core/ErrorHandler.hpp>
 
 Lt::Core::ErrorHandler::ErrorHandler() :
-	_IsError(false)
+	_Error(false)
 {
 }
 
-bool Lt::Core::ErrorHandler::IsError()
+bool Lt::Core::ErrorHandler::Error()
 {
-	return _IsError;
+	return _Error;
 }
 
-bool Lt::Core::ErrorHandler::IsOk()
+bool Lt::Core::ErrorHandler::Ok()
 {
-	return !IsError();
+	return !Error();
 }
 
 const char* Lt::Core::ErrorHandler::Message() const
@@ -22,14 +22,14 @@ const char* Lt::Core::ErrorHandler::Message() const
 
 void Lt::Core::ErrorHandler::Message(const char* description)
 {
-	_IsError = true;
+	_Error = true;
 
 	_Message.Assign(description);
 }
 
 void Lt::Core::ErrorHandler::Reset()
 {
-	_IsError = false;
+	_Error = false;
 
 	_Message.Clear();
 }

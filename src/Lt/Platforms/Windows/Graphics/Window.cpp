@@ -143,7 +143,7 @@ Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler* errorHandler, cons
 
 Lt::Graphics::Windows::Window::~Window()
 {
-    if (!_ErrorHandler->IsError())
+    if (!_ErrorHandler->Error())
     {
         UnregisterClass(AppName, _HINSTANCE);
         ReleaseDC(_HWND, _HDC);

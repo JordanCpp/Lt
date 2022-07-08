@@ -11,13 +11,13 @@ namespace Lt
 		{
 		public:
 			ErrorHandler();
-			bool IsError();
-			bool IsOk();
+			bool Error();
+			bool Ok();
 			const char* Message() const;
 			void Message(const char* description);
 			void Reset();
 		private:
-			bool _IsError;
+			bool _Error;
 			Lt::Containers::StaticString<128> _Message;
 		};
 	}

@@ -9,7 +9,7 @@ void TestGraphicsCpuRender()
 
 	Lt::Graphics::Render render(&errorHandler, &window);
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 	LT_TEST_EQUAL(render.Size().PosX() == 800);
 	LT_TEST_EQUAL(render.Size().PosY() == 600);
 	LT_TEST_EQUAL(render.Canvas() != nullptr);
@@ -28,7 +28,7 @@ void TestGraphicsCpuRenderClear()
 	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 	Lt::Graphics::Render render(&errorHandler, &window);
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 
 	Lt::Graphics::Color color(15, 25, 35, 45);
 
@@ -58,7 +58,7 @@ void TestGraphicsCpuRenderPixel()
 	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(25, 50), Lt::Graphics::Point2u(800, 600), "Window!");
 	Lt::Graphics::Render render(&errorHandler, &window);
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 
 	Lt::Graphics::Color color(15, 25, 35, 45);
 	Lt::Graphics::Point2u point(150, 235);
@@ -78,7 +78,7 @@ void TestGraphicsCpuRenderFillRect()
 	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(800, 600), Lt::Graphics::Point2u(800, 600), "Window!");
 	Lt::Graphics::Render render(&errorHandler, &window);
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 
 	Lt::Graphics::Color color(15, 25, 35, 45);
 
@@ -111,7 +111,7 @@ void TestGraphicsCpuRenderLine()
 	Lt::Graphics::Window window(&errorHandler, Lt::Graphics::Point2u(800, 600), Lt::Graphics::Point2u(800, 600), "Window!");
 	Lt::Graphics::Render render(&errorHandler, &window);
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 
 	Lt::Graphics::Color color(15, 25, 35, 45);
 

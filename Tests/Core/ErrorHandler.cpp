@@ -5,16 +5,16 @@ void TestCoreErrorHandler()
 {
 	Lt::Core::ErrorHandler errorHandler;
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 
 	errorHandler.Message("Error!");
 
-	LT_TEST_EQUAL(errorHandler.IsError() == true);
+	LT_TEST_EQUAL(errorHandler.Error() == true);
 	LT_TEST_EQUAL(Lt::Chars::Equal(errorHandler.Message(), "Error!") == true);
 
 	errorHandler.Reset();
 
-	LT_TEST_EQUAL(errorHandler.IsError() == false);
+	LT_TEST_EQUAL(errorHandler.Error() == false);
 	LT_TEST_EQUAL(Lt::Chars::Equal(errorHandler.Message(), "") == true);
 }
 
