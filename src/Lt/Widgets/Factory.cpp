@@ -10,8 +10,10 @@ Lt::Widgets::Factory::Factory(Lt::Graphics::Window* window, Lt::Graphics::Render
 Lt::Widgets::Factory::Factory(Lt::Graphics::Window* window, Lt::Graphics::Render* render, Lt::Allocators::Allocator* allocator) :
 	_Window(window),
 	_Render(render),
-	_Allocator(allocator)
+	_Allocator(allocator),
+	_Widgets(allocator)
 {
+	_Widgets.Reserve(1024);
 }
 
 Lt::Widgets::Factory::~Factory()
