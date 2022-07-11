@@ -1,8 +1,16 @@
 #include <Lt/Widgets/Factory.hpp>
 
-Lt::Widgets::Factory::Factory(Lt::Graphics::Window* window, Lt::Graphics::Render* render):
+Lt::Widgets::Factory::Factory(Lt::Graphics::Window* window, Lt::Graphics::Render* render) :
 	_Window(window),
-	_Render(render)
+	_Render(render),
+	_Allocator(nullptr)
+{
+}
+
+Lt::Widgets::Factory::Factory(Lt::Graphics::Window* window, Lt::Graphics::Render* render, Lt::Allocators::Allocator* allocator) :
+	_Window(window),
+	_Render(render),
+	_Allocator(allocator)
 {
 }
 
@@ -31,7 +39,12 @@ const Lt::Containers::Vector<Lt::Widgets::Widget*> Lt::Widgets::Factory::Widgets
 
 Lt::Widgets::Button* Lt::Widgets::Factory::Button(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)
 {
-	Lt::Widgets::Button* result = new Lt::Widgets::Button(_Window, _Render, pos, size);
+	Lt::Widgets::Button* result = nullptr;
+
+	if (_Allocator != nullptr)
+		result = new(_Allocator->Allocate(sizeof(Lt::Widgets::Button))) Lt::Widgets::Button(_Allocator, _Window, _Render, pos, size);
+	else
+		result = new Lt::Widgets::Button(_Window, _Render, pos, size);
 
 	_Widgets.Append(result);
 

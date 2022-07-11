@@ -1,6 +1,7 @@
 #include <Lt/Widgets/Application.hpp>
 #include <Lt/Widgets/Factory.hpp>
 #include <Lt/Core/Console.hpp>
+#include <Lt/Allocators/FixedLinear.hpp>
 
 int main()
 {
@@ -16,13 +17,29 @@ int main()
 
 		if (errorHandler.Ok())
 		{
-			Lt::Widgets::Factory factory(&window, &render);
+			Lt::Allocators::FixedLinear allocator(Lt::Allocators::Allocator::Mb * 1);
+
+			Lt::Widgets::Factory factory(&window, &render, &allocator);
 
 			Lt::Widgets::Application application(&window, &render);
 
-			Lt::Widgets::Button* button = factory.Button(Lt::Graphics::Point2u(5, 5), Lt::Graphics::Point2u(145, 35));
+			Lt::usize x = 5;
+			Lt::usize y = 5;
+			Lt::usize w = 145;
+			Lt::usize h = 35;
 
-			application.Attach(button);
+			for (Lt::usize i = 0; i < 5; i++)
+			{
+				Lt::Widgets::Button* button = factory.Button(Lt::Graphics::Point2u(x, y), Lt::Graphics::Point2u(w, h));
+
+				application.Attach(button);
+
+				y += h + 10;
+			}
+
+			io.Write(allocator.UsedBytes());
+			io.Line();
+			io.Show();
 
 			application.Run();
 		}
