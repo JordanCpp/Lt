@@ -2,8 +2,8 @@
 
 const Lt::Graphics::Point2u& Lt::Graphics::Isometric::CartesianToIsometric(const Lt::Graphics::Point2u& pt)
 {
-	size_t x = pt.PosX() - pt.PosY();
-	size_t y = (pt.PosX() + pt.PosY()) / 2;
+	Lt::usize x = pt.PosX() - pt.PosY();
+	Lt::usize y = (pt.PosX() + pt.PosY()) / 2;
 
 	_Current.Pos(x, y);
 
@@ -12,8 +12,8 @@ const Lt::Graphics::Point2u& Lt::Graphics::Isometric::CartesianToIsometric(const
 
 const Lt::Graphics::Point2u& Lt::Graphics::Isometric::IsometricToCartesian(const Lt::Graphics::Point2u& pt)
 {
-	size_t x = (2 * pt.PosY() + pt.PosX()) / 2;
-	size_t y = (2 * pt.PosY() - pt.PosX()) / 2;
+	Lt::usize x = (2 * pt.PosY() + pt.PosX()) / 2;
+	Lt::usize y = (2 * pt.PosY() - pt.PosX()) / 2;
 
 	_Current.Pos(x, y);
 
