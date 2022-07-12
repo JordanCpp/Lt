@@ -62,7 +62,8 @@ add_library(LtGraphics STATIC
 "src/Lt/Loaders/ImageLoader.cpp"
 "src/Lt/Managers/PathManager.cpp"
 "src/Lt/Factories/ImageFactory.cpp"
-"src/Lt/Graphics/PixelConverter.cpp")
+"src/Lt/Graphics/PixelConverter.cpp"
+"src/Lt/Graphics/Isometric.cpp")
 
 if (WIN32)
   target_link_libraries(LtGraphics opengl32)
