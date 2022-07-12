@@ -155,13 +155,13 @@ bool Lt::Graphics::Windows::Window::GetEvent(Lt::Events::Event& event)
 {
     if (_Eventer.Running())
     {
-        while (PeekMessage(&_MSG, _HWND, 0, 0, PM_REMOVE))
+        if (PeekMessage(&_MSG, _HWND, 0, 0, PM_REMOVE))
         {
             TranslateMessage(&_MSG);
             DispatchMessage(&_MSG);
-        }
 
-        _Eventer.Pop(event);
+            _Eventer.Pop(event);
+        }
     }
 
     return _Eventer.Running();

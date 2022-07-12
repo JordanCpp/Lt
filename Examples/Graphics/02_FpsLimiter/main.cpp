@@ -1,6 +1,7 @@
 #include <Lt/Graphics/Render.hpp>
 #include <Lt/Graphics/FpsLimiter.hpp>
 #include <Lt/Core/Console.hpp>
+#include <Lt/Graphics/FpsCounter.hpp>
 
 void ShowError(const Lt::Core::ErrorHandler& errorHandler)
 {
@@ -35,6 +36,8 @@ int main()
 	Lt::Events::Event report;
 
 	Lt::Graphics::FpsLimiter limiter;
+	Lt::Graphics::FpsCounter fpsCounter;
+	Lt::Core::IntegerToString integerToString;
 
 	while (window.GetEvent(report))
 	{
@@ -45,9 +48,19 @@ int main()
 			window.StopEvent();
 		}
 
-		render.Present();
+		if (fpsCounter.Calc())
+		{
+			if (integerToString.Convert(fpsCounter.Fps()))
+			{
+				window.Title(integerToString.Result());
+			}
+
+			fpsCounter.Clear();
+		}
 
 		limiter.Throttle();
+
+		render.Present();
 	}
 
 	return 0;
