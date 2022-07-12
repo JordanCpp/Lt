@@ -135,6 +135,8 @@ Lt::Graphics::Windows::Window::Window(Lt::Core::ErrorHandler* errorHandler, cons
             }
             else
             {
+                Title(title);
+
                 ShowWindow(_HWND, SW_SHOW);
             }
         }
