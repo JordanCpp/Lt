@@ -39,6 +39,9 @@ int main()
 
 	while (window.WaitEvent(report))
 	{
+		if (errorHandler.Error())
+			window.StopEvent();
+
 		render.Color(Lt::Graphics::Color(237, 28, 36));
 		render.Clear();
 
@@ -47,7 +50,7 @@ int main()
 			window.StopEvent();
 		}
 
-		if (report.Type == Lt::Events::IsMouseMove)
+		if (report.Type == Lt::Events::IsMouseClick)
 		{
 			x = report.Mouse.PosX;
 			y = report.Mouse.PosY;

@@ -169,14 +169,23 @@ bool Lt::Graphics::Windows::Window::GetEvent(Lt::Events::Event& event)
 
 bool Lt::Graphics::Windows::Window::WaitEvent(Lt::Events::Event& event)
 {
+    BOOL result;
+
     if (_Eventer.Running())
     {
-        if (GetMessage(&_MSG, nullptr, nullptr, nullptr))
+        if ((result = GetMessage(&_MSG, _HWND, nullptr, nullptr)) != 0)
         {
-            TranslateMessage(&_MSG);
-            DispatchMessage(&_MSG);
+            if (result == -1)
+            {
+                _ErrorHandler->Message("GetMessage");
+            }
+            else
+            {
+                _Eventer.Pop(event);
 
-            _Eventer.Pop(event);
+                TranslateMessage(&_MSG);
+                DispatchMessage(&_MSG);
+            }
         }
     }
 
