@@ -25,3 +25,6 @@ target_link_libraries(07_Mouse LtCore LtGraphics LtEvents)
 
 add_executable(08_Draw "08_Draw/main.cpp")
 target_link_libraries(08_Draw LtCore LtAllocators LtGraphics LtEvents)
+
+add_executable(09_WaitEvent "09_WaitEvent/main.cpp")
+target_link_libraries(09_WaitEvent LtCore LtAllocators LtGraphics LtEvents)

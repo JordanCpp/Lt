@@ -167,6 +167,22 @@ bool Lt::Graphics::Windows::Window::GetEvent(Lt::Events::Event& event)
     return _Eventer.Running();
 }
 
+bool Lt::Graphics::Windows::Window::WaitEvent(Lt::Events::Event& event)
+{
+    if (_Eventer.Running())
+    {
+        if (GetMessage(&_MSG, nullptr, nullptr, nullptr))
+        {
+            TranslateMessage(&_MSG);
+            DispatchMessage(&_MSG);
+
+            _Eventer.Pop(event);
+        }
+    }
+
+    return _Eventer.Running();
+}
+
 void Lt::Graphics::Windows::Window::StopEvent()
 {
     _Eventer.Stop();

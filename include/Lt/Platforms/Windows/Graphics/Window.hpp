@@ -18,6 +18,7 @@ namespace Lt
 				Window(Lt::Core::ErrorHandler* errorHandler, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size, const char* title);
 				~Window();
 				bool GetEvent(Lt::Events::Event& event);
+				bool WaitEvent(Lt::Events::Event& event);
 				void StopEvent();
 				void Title(const char* title);
 				const char* Title();

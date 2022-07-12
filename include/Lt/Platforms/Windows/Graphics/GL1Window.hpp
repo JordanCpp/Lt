@@ -16,6 +16,7 @@ namespace Lt
 				~GL1Window();
 				void Present();
 				bool GetEvent(Lt::Events::Event& event);
+				bool WaitEvent(Lt::Events::Event& event);
 				void StopEvent();
 				void Title(const char* title);
 				const char* Title();

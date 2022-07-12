@@ -60,6 +60,11 @@ bool Lt::Graphics::Windows::GL1Window::GetEvent(Lt::Events::Event& event)
     return _Window.GetEvent(event);
 }
 
+bool Lt::Graphics::Windows::GL1Window::WaitEvent(Lt::Events::Event& event)
+{
+    return _Window.WaitEvent(event);
+}
+
 void Lt::Graphics::Windows::GL1Window::StopEvent()
 {
     _Window.StopEvent();
