@@ -37,13 +37,14 @@ int main()
 	Lt::usize x = 0;
 	Lt::usize y = 0;
 
+	render.Color(Lt::Graphics::Color(237, 28, 36));
+	render.Clear();
+	render.Present();
+
 	while (window.WaitEvent(report))
 	{
 		if (errorHandler.Error())
 			window.StopEvent();
-
-		render.Color(Lt::Graphics::Color(237, 28, 36));
-		render.Clear();
 
 		if (report.Type == Lt::Events::IsQuit)
 		{
@@ -54,12 +55,15 @@ int main()
 		{
 			x = report.Mouse.PosX;
 			y = report.Mouse.PosY;
+
+			render.Color(Lt::Graphics::Color(237, 28, 36));
+			render.Clear();
+
+			render.Color(Lt::Graphics::Color(34, 177, 76));
+			render.Fill(Lt::Graphics::Point2u(x, y), Lt::Graphics::Point2u(100, 100));
+
+			render.Present();
 		}
-
-		render.Color(Lt::Graphics::Color(34, 177, 76));
-		render.Fill(Lt::Graphics::Point2u(x, y), Lt::Graphics::Point2u(100, 100));
-
-		render.Present();
 	}
 
 	return 0;
