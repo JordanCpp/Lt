@@ -1,6 +1,8 @@
 #include <Lt/Graphics/Render.hpp>
 #include <Lt/Graphics/FpsLimiter.hpp>
 #include <Lt/Core/Console.hpp>
+#include <Lt/Graphics/Primitives/Rect2u.hpp>
+#include <Lt/Containers/Vector.hpp>
 
 void ShowError(const Lt::Core::ErrorHandler& errorHandler)
 {
@@ -10,6 +12,11 @@ void ShowError(const Lt::Core::ErrorHandler& errorHandler)
 	console.Show();
 }
 
+struct Rect
+{
+	Lt::Graphics::Rect2u size;
+	Lt::Graphics::Color color;
+};
 int main()
 {
 	Lt::Core::ErrorHandler errorHandler;
@@ -41,6 +48,9 @@ int main()
 	render.Clear();
 	render.Present();
 
+
+	Lt::Containers::Vector<Rect> rects;
+
 	while (window.WaitEvent(report))
 	{
 		if (errorHandler.Error())
@@ -56,11 +66,21 @@ int main()
 			x = report.Mouse.PosX;
 			y = report.Mouse.PosY;
 
+			Rect rect;
+			rect.color = Lt::Graphics::Color(34, 177, 76);
+			rect.size.Pos(x, y);
+			rect.size.Size(50, 50);
+			rects.Append(rect);
+
 			render.Color(Lt::Graphics::Color(237, 28, 36));
 			render.Clear();
 
-			render.Color(Lt::Graphics::Color(34, 177, 76));
-			render.Fill(Lt::Graphics::Point2u(x, y), Lt::Graphics::Point2u(100, 100));
+
+			for (Lt::usize i = 0; i < rects.Length(); i++)
+			{
+				render.Color(rects[i].color);
+				render.Fill(rects[i].size.Pos(), rects[i].size.Size());
+			}
 
 			render.Present();
 		}
