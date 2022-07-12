@@ -7,3 +7,6 @@ target_link_libraries(CpuWindow LtCore LtGraphics LtEvents)
 
 add_executable(CpuRender "CpuRender.cpp")
 target_link_libraries(CpuRender LtCore LtGraphics LtEvents)
+
+add_executable(CpuImage "CpuImage.cpp")
+target_link_libraries(CpuImage LtCore LtGraphics LtEvents)
