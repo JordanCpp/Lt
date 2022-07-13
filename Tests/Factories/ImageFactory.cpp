@@ -15,7 +15,7 @@ void TestFactoriesImageFactory()
 
 	Lt::Graphics::CpuImage* image = factory.Get("TestFiles/1182.jpg");
 
-	LT_TEST_EQUAL(image->Channels() == 3);
+	LT_TEST_EQUAL(image->BytesPerPixel() == 3);
 	LT_TEST_EQUAL(image->Size().PosX() == 576);
 	LT_TEST_EQUAL(image->Size().PosY() == 324);
 	LT_TEST_EQUAL(image->Pixels() != nullptr);

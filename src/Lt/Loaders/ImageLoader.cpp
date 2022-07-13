@@ -13,7 +13,7 @@ static Lt::Allocators::Allocator* StbImageAllocator;
 Lt::Loaders::ImageLoader::ImageLoader(Lt::Core::ErrorHandler* errorHandler, Lt::Allocators::Allocator* allocator):
 	_ErrorHandler(errorHandler),
 	_Allocator(allocator),
-	_Channels(0),
+	_BytesPerPixel(0),
 	_Pixels(nullptr)
 {
 	LT_ASSERT(errorHandler != nullptr);
@@ -39,9 +39,9 @@ const Lt::Graphics::Point2u& Lt::Loaders::ImageLoader::Size()
 	return _Size;
 }
 
-const Lt::u8 Lt::Loaders::ImageLoader::Channels()
+const Lt::u8 Lt::Loaders::ImageLoader::BytesPerPixel()
 {
-	return _Channels;
+	return _BytesPerPixel;
 }
 
 const Lt::u8* Lt::Loaders::ImageLoader::Pixels()
@@ -57,14 +57,14 @@ void Lt::Loaders::ImageLoader::Load(const char* path)
 
 	int width = 0;
 	int height = 0;
-	int channels = 0;
+	int bytesPerPixel = 0;
 
 	stbi_set_flip_vertically_on_load(true);
 
-	_Pixels = stbi_load(path, &width, &height, &channels, 0);
+	_Pixels = stbi_load(path, &width, &height, &bytesPerPixel, 0);
 
 	_Size = Lt::Graphics::Point2u(width, height);
-	_Channels = channels;
+	_BytesPerPixel = bytesPerPixel;
 
 	if (_Pixels == nullptr)
 		_ErrorHandler->Message("stbi_load");

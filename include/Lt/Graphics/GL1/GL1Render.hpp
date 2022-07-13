@@ -25,7 +25,7 @@ namespace Lt
 			void Fill(const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
 			void Line(const Lt::Graphics::Point2u& pos1, const Lt::Graphics::Point2u& pos2);
 			Lt::u8* Pixels();
-			Lt::u8 Channels();
+			Lt::u8 BytesPerPixel();
 			void Draw(Lt::Graphics::GL1Image* image, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size);
 			void Draw(Lt::Graphics::GL1Image* image, const Lt::Graphics::Point2u& pos);
 		private:

@@ -16,14 +16,14 @@ namespace Lt
 			~ImageLoader();
 			void Clear();
 			const Lt::Graphics::Point2u& Size();
-			const Lt::u8 Channels();
+			const Lt::u8 BytesPerPixel();
 			const Lt::u8* Pixels();
 			void Load(const char* path);
 		private:
 			Lt::Core::ErrorHandler* _ErrorHandler;
 			Lt::Allocators::Allocator* _Allocator;
 			Lt::Graphics::Point2u _Size;
-			Lt::u8 _Channels;
+			Lt::u8 _BytesPerPixel;
 			Lt::u8* _Pixels;
 		};
 	}

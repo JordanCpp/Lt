@@ -117,9 +117,9 @@ Lt::u8* Lt::Graphics::GL1Render::Pixels()
 	return _Canvas.Pixels();
 }
 
-Lt::u8 Lt::Graphics::GL1Render::Channels()
+Lt::u8 Lt::Graphics::GL1Render::BytesPerPixel()
 {
-	return _Canvas.Channels();
+	return _Canvas.BytesPerPixel();
 }
 
 void Lt::Graphics::GL1Render::Draw(Lt::Graphics::GL1Image* image, const Lt::Graphics::Point2u& pos, const Lt::Graphics::Point2u& size)

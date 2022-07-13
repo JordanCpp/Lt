@@ -21,7 +21,7 @@ Lt::Graphics::GL1Image::GL1Image(Lt::Graphics::CpuImage* cpuImage):
 
 	int format = 0;
 
-	if (cpuImage->Channels() == 3)
+	if (cpuImage->BytesPerPixel() == 3)
 		format = GL_RGB;
 	else
 		format = GL_RGBA;

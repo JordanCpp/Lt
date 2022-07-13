@@ -15,17 +15,17 @@ namespace Lt
 				FromNew,
 				FromMemory
 			};
-			CpuImage(const Lt::Graphics::Point2u& size, const Lt::u8 channels = 4);
-			CpuImage(const Lt::Graphics::Point2u& size, Lt::u8* pixels, const Lt::u8 channels = 4);
+			CpuImage(const Lt::Graphics::Point2u& size, const Lt::u8 bytesPerPixel = 4);
+			CpuImage(const Lt::Graphics::Point2u& size, Lt::u8* pixels, const Lt::u8 bytesPerPixel = 4);
 			~CpuImage();
 			const Lt::Graphics::Point2u& Size();
 			Lt::u8* Pixels();
-			const Lt::u8 Channels();
+			const Lt::u8 BytesPerPixel();
 		private:
 			Lt::u8 _Source;
 			Lt::Graphics::Point2u _Size;
 			Lt::u8* _Pixels;
-			Lt::u8 _Channels;
+			Lt::u8 _BytesPerPixel;
 		};
 	}
 }

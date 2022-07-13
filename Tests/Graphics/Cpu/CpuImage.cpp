@@ -7,7 +7,7 @@ void TestGraphicsCpuImageInitNew()
 
 	LT_TEST_EQUAL(image.Size().PosX() == 800);
 	LT_TEST_EQUAL(image.Size().PosY() == 600);
-	LT_TEST_EQUAL(image.Channels() == 4);
+	LT_TEST_EQUAL(image.BytesPerPixel() == 4);
 	LT_TEST_EQUAL(image.Pixels() != nullptr);
 }
 
@@ -21,7 +21,7 @@ void TestGraphicsCpuImageInitPixels()
 
 	LT_TEST_EQUAL(image.Size().PosX() == 800);
 	LT_TEST_EQUAL(image.Size().PosY() == 600);
-	LT_TEST_EQUAL(image.Channels() == 4);
+	LT_TEST_EQUAL(image.BytesPerPixel() == 4);
 	LT_TEST_EQUAL(image.Pixels() != nullptr);
 	LT_TEST_EQUAL(image.Pixels() == bytes);
 

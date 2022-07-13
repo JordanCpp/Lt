@@ -4,13 +4,13 @@
 void TestGraphicsPixelConverterFill()
 {
 	Lt::Graphics::Point2u size(800, 600);
-	Lt::u8 channels = 4;
+	Lt::u8 bytesPerPixel = 4;
 
 	Lt::Graphics::Color* pixels = new Lt::Graphics::Color[size.PosX() * size.PosY()];
 
 	Lt::Graphics::PixelConverter pixelConverter;
 
-	pixelConverter.Fill((Lt::u8*)pixels, size, channels, Lt::Graphics::Color(1, 2, 3, 4));
+	pixelConverter.Fill((Lt::u8*)pixels, size, bytesPerPixel, Lt::Graphics::Color(1, 2, 3, 4));
 
 	for (Lt::usize i = 0; i < size.PosX() * size.PosY(); i++)
 	{
@@ -26,15 +26,15 @@ void TestGraphicsPixelConverterFill()
 void TestGraphicsPixelConverterBgrToRgb()
 {
 	Lt::Graphics::Point2u size(800, 600);
-	Lt::u8 channels = 4;
+	Lt::u8 bytesPerPixel = 4;
 
 	Lt::Graphics::Color* pixels = new Lt::Graphics::Color[size.PosX() * size.PosY()];
 
 	Lt::Graphics::PixelConverter pixelConverter;
 
-	pixelConverter.Fill((Lt::u8*)pixels, size, channels, Lt::Graphics::Color(1, 2, 3, 4));
+	pixelConverter.Fill((Lt::u8*)pixels, size, bytesPerPixel, Lt::Graphics::Color(1, 2, 3, 4));
 
-	pixelConverter.BgrToRgb((Lt::u8*)pixels, size, channels);
+	pixelConverter.BgrToRgb((Lt::u8*)pixels, size, bytesPerPixel);
 
 	for (Lt::usize i = 0; i < size.PosX() * size.PosY(); i++)
 	{
@@ -50,15 +50,15 @@ void TestGraphicsPixelConverterBgrToRgb()
 void TestGraphicsPixelConverterRgbToBgr()
 {
 	Lt::Graphics::Point2u size(800, 600);
-	Lt::u8 channels = 4;
+	Lt::u8 bytesPerPixel = 4;
 
 	Lt::Graphics::Color* pixels = new Lt::Graphics::Color[size.PosX() * size.PosY()];
 
 	Lt::Graphics::PixelConverter pixelConverter;
 
-	pixelConverter.Fill((Lt::u8*)pixels, size, channels, Lt::Graphics::Color(1, 2, 3, 4));
+	pixelConverter.Fill((Lt::u8*)pixels, size, bytesPerPixel, Lt::Graphics::Color(1, 2, 3, 4));
 
-	pixelConverter.BgrToRgb((Lt::u8*)pixels, size, channels);
+	pixelConverter.BgrToRgb((Lt::u8*)pixels, size, bytesPerPixel);
 
 	for (Lt::usize i = 0; i < size.PosX() * size.PosY(); i++)
 	{

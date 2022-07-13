@@ -12,7 +12,7 @@ void TestGraphicsImageLoaderInit()
 	Lt::Loaders::ImageLoader imageLoader(&errorHandler, &allocator);
 
 	LT_TEST_EQUAL(errorHandler.Error() == false);
-	LT_TEST_EQUAL(imageLoader.Channels() == 0);
+	LT_TEST_EQUAL(imageLoader.BytesPerPixel() == 0);
 	LT_TEST_EQUAL(imageLoader.Size().PosX() == 0);
 	LT_TEST_EQUAL(imageLoader.Size().PosY() == 0);
 	LT_TEST_EQUAL(imageLoader.Pixels() == nullptr);
@@ -30,7 +30,7 @@ void TestGraphicsImageLoaderLoad()
 	imageLoader.Load("TestFiles/1182.jpg");
 
 	LT_TEST_EQUAL(errorHandler.Error() == false);
-	LT_TEST_EQUAL(imageLoader.Channels() == 3);
+	LT_TEST_EQUAL(imageLoader.BytesPerPixel() == 3);
 	LT_TEST_EQUAL(imageLoader.Size().PosX() == 576);
 	LT_TEST_EQUAL(imageLoader.Size().PosY() == 324);
 	LT_TEST_EQUAL(imageLoader.Pixels() != nullptr);

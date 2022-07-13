@@ -1,11 +1,11 @@
 #include <Lt/Graphics/PixelConverter.hpp>
 
-void Lt::Graphics::PixelConverter::Fill(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 channels, const Lt::Graphics::Color& color)
+void Lt::Graphics::PixelConverter::Fill(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 bytesPerPixel, const Lt::Graphics::Color& color)
 {
-	Lt::usize bytes = size.PosX() * size.PosY() * channels;
+	Lt::usize bytes = size.PosX() * size.PosY() * bytesPerPixel;
 
 #if defined(LT_CONFIG_OS_WINDOWS)
-	for (Lt::usize i = 0; i < bytes; i += channels)
+	for (Lt::usize i = 0; i < bytes; i += bytesPerPixel)
 	{
 		pixels[i + 0] = color.Blue();
 		pixels[i + 1] = color.Green();
@@ -13,9 +13,9 @@ void Lt::Graphics::PixelConverter::Fill(Lt::u8* pixels, const Lt::Graphics::Poin
 		pixels[i + 3] = color.Alpha();
 	}
 #else
-	Lt::usize bytes = size.PosX() * size.PosY() * channels;
+	Lt::usize bytes = size.PosX() * size.PosY() * BytesPerPixel;
 
-	for (Lt::usize i = 0; i < bytes; i += channels)
+	for (Lt::usize i = 0; i < bytes; i += BytesPerPixel)
 	{
 		pixels[i + 0] = color.Red();
 		pixels[i + 1] = color.Green();
@@ -25,9 +25,9 @@ void Lt::Graphics::PixelConverter::Fill(Lt::u8* pixels, const Lt::Graphics::Poin
 #endif
 }
 
-void Lt::Graphics::PixelConverter::RgbToBgr(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 channels)
+void Lt::Graphics::PixelConverter::RgbToBgr(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 bytesPerPixel)
 {
-	Lt::usize bytes = size.PosX() * size.PosY() * channels;
+	Lt::usize bytes = size.PosX() * size.PosY() * bytesPerPixel;
 
 	for (Lt::usize i = 0; i < bytes; i += 4)
 	{
@@ -37,9 +37,9 @@ void Lt::Graphics::PixelConverter::RgbToBgr(Lt::u8* pixels, const Lt::Graphics::
 	}
 }
 
-void Lt::Graphics::PixelConverter::BgrToRgb(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 channels)
+void Lt::Graphics::PixelConverter::BgrToRgb(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 bytesPerPixel)
 {
-	Lt::usize bytes = size.PosX() * size.PosY() * channels;
+	Lt::usize bytes = size.PosX() * size.PosY() * bytesPerPixel;
 
 	for (Lt::usize i = 0; i < bytes; i += 4)
 	{

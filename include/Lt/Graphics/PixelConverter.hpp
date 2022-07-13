@@ -11,9 +11,9 @@ namespace Lt
 		class PixelConverter
 		{
 		public:
-			void Fill(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 channels, const Lt::Graphics::Color& color);
-			void RgbToBgr(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 channels);
-			void BgrToRgb(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 channels);
+			void Fill(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 bytesPerPixel, const Lt::Graphics::Color& color);
+			void RgbToBgr(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 bytesPerPixel);
+			void BgrToRgb(Lt::u8* pixels, const Lt::Graphics::Point2u& size, const Lt::u8 bytesPerPixel);
 		private:
 		};
 	}

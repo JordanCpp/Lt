@@ -156,7 +156,7 @@ Lt::u8* Lt::Graphics::CpuRender::Pixels()
 	return _Canvas.Pixels();
 }
 
-Lt::u8 Lt::Graphics::CpuRender::Channels()
+Lt::u8 Lt::Graphics::CpuRender::BytesPerPixel()
 {
-	return _Canvas.Channels();
+	return _Canvas.BytesPerPixel();
 }
