@@ -17,6 +17,8 @@ void Lt::Graphics::Screenshoter::Shot(const char* path)
 	_PixelConverter.BgrToRgb(_Render->Pixels(), _Render->Size(), 4);
 #endif
 
+	stbi_flip_vertically_on_write(true);
+
 	stbi_write_png(path, (int)_Render->Size().PosX(), (int)_Render->Size().PosY(), 4, _Render->Pixels(), (int)_Render->Size().PosX() * 4);
 }
 
