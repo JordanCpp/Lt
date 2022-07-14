@@ -19,7 +19,7 @@ void TestGraphicsScreenshoter()
 	screenshoter.Shot();
 
 	LT_TEST_EQUAL(binaryFile.Exist(screenshoter.Path()) == true);
-	//LT_TEST_EQUAL(binaryFile.Delete(screenshoter.Path()) == true);
+	LT_TEST_EQUAL(binaryFile.Delete(screenshoter.Path()) == true);
 }
 
 int main()
