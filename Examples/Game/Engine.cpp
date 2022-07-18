@@ -1,7 +1,11 @@
 #include "Engine.hpp"
 #include <Lt/Core/Memory.hpp>
 
-Engine::Engine(const Lt::Graphics::Point2u size):
+Engine::Engine(const Lt::Graphics::Point2u size) :
+	_PathManager(""),
+	_GeneralAllocator(Lt::Allocators::Allocator::Mb * 16),
+	_ImageLoaderAllocator(Lt::Allocators::Allocator::Mb * 2, &_GeneralAllocator),
+	_ImageLoader(&_ErrorHandler, &_ImageLoaderAllocator),
 	_Window(&_ErrorHandler, Lt::Graphics::Point2u(0, 0), size, "Game"),
 	_Render(&_ErrorHandler, &_Window)
 {
