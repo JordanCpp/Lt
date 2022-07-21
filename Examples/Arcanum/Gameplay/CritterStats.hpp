@@ -14,6 +14,13 @@ namespace Arcanum
 			enum
 			{
 				Strength,
+				Constitution,
+				Dexterity,
+				Beauty,
+				Intelligence,
+				Willpower,
+				Perception,
+				Charisma,
 				Max
 			};
 			Lt::usize Value(Lt::usize index);

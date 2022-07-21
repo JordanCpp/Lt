@@ -9,6 +9,7 @@ add_library(ArcanumLibrary STATIC
 "Game/Location.cpp" 
 "Game/Tile.cpp" 
 "Game/CritterScript.cpp" 
+"Game/LocationScript.cpp" 
 
 "Managers/CritterManager.cpp" 
 
