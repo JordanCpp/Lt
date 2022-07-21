@@ -1,5 +1,5 @@
 #include <Lt/Core/TestEqual.hpp>
-#include "../Gameplay/CritterStats.hpp"
+#include "../../Gameplay/CritterStats.hpp"
 
 void TestCritterStatsInit()
 {

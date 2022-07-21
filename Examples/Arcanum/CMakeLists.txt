@@ -19,11 +19,10 @@ add_library(ArcanumLibrary STATIC
 
 "Painters/TilePainter.cpp")
 
+target_link_libraries(ArcanumLibrary LtCore LtGraphics LtEvents LtAllocators)
+
 add_executable(Arcanum "main.cpp" )
-target_link_libraries(Arcanum ArcanumLibrary LtCore LtGraphics LtEvents LtAllocators)
+target_link_libraries(Arcanum ArcanumLibrary)
 
-add_executable(StatValue "Tests/StatValue.cpp")
-target_link_libraries(StatValue ArcanumLibrary LtCore)
-
-add_executable(CritterStats "Tests/CritterStats.cpp")
-target_link_libraries(CritterStats ArcanumLibrary LtCore)
+add_subdirectory("Tests/Game")
+add_subdirectory("Tests/Gameplay")

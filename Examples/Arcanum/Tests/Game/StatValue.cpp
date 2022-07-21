@@ -1,5 +1,5 @@
 #include <Lt/Core/TestEqual.hpp>
-#include "../Gameplay/StatValue.hpp"
+#include "../../Gameplay/StatValue.hpp"
 
 void TestStatValueInit()
 {

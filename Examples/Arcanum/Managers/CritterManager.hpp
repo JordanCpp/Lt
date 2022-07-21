@@ -12,6 +12,7 @@ namespace Arcanum
 		{
 		public:
 			CritterManager(Lt::Allocators::Allocator* allocator);
+			Lt::Allocators::Allocator* Allocator();
 			Arcanum::Game::Critter* Get();
 		private:
 			Lt::Allocators::Allocator* _Allocator;
