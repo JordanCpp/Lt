@@ -11,13 +11,17 @@ namespace Arcanum
 		{
 		public:
 			Attribute();
-			Lt::usize Number();
-			Lt::usize Percent();
-			void Number(Lt::usize value);
-			void Percent(Lt::usize value);
+			Attribute(Lt::usize id, Lt::isize number = 0, Lt::isize percent = 0);
+			Lt::usize Id();
+			Lt::isize Number();
+			Lt::isize Percent();
+			void Id(Lt::usize value);
+			void Number(Lt::isize value);
+			void Percent(Lt::isize value);
 		private:
-			Lt::usize _Number;
-			Lt::usize _Percent;
+			Lt::usize _Id;
+			Lt::isize _Number;
+			Lt::isize _Percent;
 		};
 	}
 }

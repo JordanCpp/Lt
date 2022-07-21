@@ -15,7 +15,8 @@ add_library(ArcanumLibrary STATIC
 
 "Gameplay/StatValue.cpp" 
 "Gameplay/CritterStats.cpp"
-"Gameplay/Attribute.cpp" 
+"Gameplay/Attribute.cpp"
+"Gameplay/Perk.cpp" 
 
 "Scripts/Tester.cpp" 
 
