@@ -1,5 +1,5 @@
-#ifndef Lt_Game_Engine_hpp
-#define Lt_Game_Engine_hpp
+#ifndef Arcanum_Engine_hpp
+#define Arcanum_Engine_hpp
 
 #include <Lt/Graphics/Render.hpp>
 #include <Lt/Graphics/FpsCounter.hpp>
