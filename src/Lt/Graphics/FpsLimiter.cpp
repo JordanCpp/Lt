@@ -14,8 +14,8 @@ void Lt::Graphics::FpsLimiter::Mark()
 
 void Lt::Graphics::FpsLimiter::Throttle() const
 {
-	if (1000.0f / _Fps > Lt::Core::Ticks() - _Ticks)
+	if (1000 / _Fps > Lt::Core::Ticks() - _Ticks)
 	{
-		Lt::Core::Delay(1000.0f / _Fps - (Lt::Core::Ticks() - _Ticks));
+		Lt::Core::Delay(1000 / _Fps - (Lt::Core::Ticks() - _Ticks));
 	}
 }
