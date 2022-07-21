@@ -2,9 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 
 project(Arcanum)
 
-add_executable(Arcanum 
-"main.cpp" 
-
+add_library(ArcanumLibrary STATIC
 "Engine.cpp" 
 
 "Game/Critter.cpp" 
@@ -21,4 +19,11 @@ add_executable(Arcanum
 
 "Painters/TilePainter.cpp")
 
-target_link_libraries(Arcanum LtCore LtGraphics LtEvents LtAllocators)
+add_executable(Arcanum "main.cpp" )
+target_link_libraries(Arcanum ArcanumLibrary LtCore LtGraphics LtEvents LtAllocators)
+
+add_executable(StatValue "Tests/StatValue.cpp")
+target_link_libraries(StatValue ArcanumLibrary LtCore)
+
+add_executable(CritterStats "Tests/CritterStats.cpp")
+target_link_libraries(CritterStats ArcanumLibrary LtCore)

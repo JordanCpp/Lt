@@ -1,5 +1,12 @@
 #include "StatValue.hpp"
 
+Arcanum::Gameplay::StatValue::StatValue() :
+	_Value(0),
+	_Number(0),
+	_Percent(0)
+{
+}
+
 Lt::usize Arcanum::Gameplay::StatValue::Value()
 {
 	return _Value;

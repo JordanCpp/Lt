@@ -10,6 +10,7 @@ namespace Arcanum
 		class StatValue
 		{
 		public:
+			StatValue();
 			Lt::usize Value();
 			Lt::usize Number();
 			Lt::usize Percent();
