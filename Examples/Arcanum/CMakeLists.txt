@@ -14,7 +14,8 @@ add_library(ArcanumLibrary STATIC
 "Managers/CritterManager.cpp" 
 
 "Gameplay/StatValue.cpp" 
-"Gameplay/CritterStats.cpp" 
+"Gameplay/CritterStats.cpp"
+"Gameplay/Attribute.cpp" 
 
 "Scripts/Tester.cpp" 
 

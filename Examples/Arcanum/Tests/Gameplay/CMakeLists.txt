@@ -4,3 +4,6 @@ project(Gameplay)
 
 add_executable(CritterManager "CritterManager.cpp")
 target_link_libraries(CritterManager ArcanumLibrary)
+
+add_executable(Attribute "Attribute.cpp")
+target_link_libraries(Attribute ArcanumLibrary)
