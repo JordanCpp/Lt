@@ -3,6 +3,8 @@
 
 #include "CritterScript.hpp"
 #include "../Gameplay/CritterStats.hpp"
+#include <Lt/Containers/StaticVector.hpp>
+#include "../Gameplay/Perk.hpp"
 
 namespace Arcanum
 {
@@ -13,9 +15,14 @@ namespace Arcanum
 		class Critter
 		{
 		public:
+			enum
+			{
+				Perks = 8
+			};
 		private:
 			Arcanum::Game::CritterScript* _Script;
 			Arcanum::Gameplay::CritterStats _Stats;
+			Lt::Containers::StaticVector<Arcanum::Gameplay::Perk*, Arcanum::Game::Critter::Perks> _Perks;
 		};
 	}
 }
