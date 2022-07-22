@@ -8,6 +8,11 @@ endif()
 
 include_directories("include")
 
+add_library(LtSql STATIC
+"src/Lt/Sql/SQLite/sqlite3.c"
+"src/Lt/Sql/SQLite/DataBase.cpp"
+"src/Lt/Sql/SQLite/Statement.cpp")
+
 add_library(LtCore STATIC
 "src/Lt/Core/Assert.cpp"
 "src/Lt/Core/Chars.cpp"
@@ -96,5 +101,6 @@ add_subdirectory("Tests/Loaders")
 add_subdirectory("Tests/Input")
 add_subdirectory("Tests/Managers")
 add_subdirectory("Tests/Factories")
+add_subdirectory("Tests/Sql")
 
 add_subdirectory("Examples")
