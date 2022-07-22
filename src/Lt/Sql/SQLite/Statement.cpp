@@ -31,14 +31,14 @@ bool Lt::Sql::Statement::Next()
 
 const Lt::u8* Lt::Sql::Statement::Get(Lt::usize index)
 {
-	LT_ASSERT(index <= sqlite3_column_count(_stmt));
+	LT_ASSERT(index <= (Lt::usize)sqlite3_column_count(_stmt));
 
 	return sqlite3_column_text(_stmt, (int)index);
 }
 
 Lt::isize Lt::Sql::Statement::GetInt(Lt::usize index)
 {
-	LT_ASSERT(index <= sqlite3_column_count(_stmt));
+	LT_ASSERT(index <= (Lt::usize)sqlite3_column_count(_stmt));
 
 	return sqlite3_column_int(_stmt, (int)index);
 }
