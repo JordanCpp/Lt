@@ -12,6 +12,8 @@ namespace Lt
 		public:
 			Statement(Lt::Sql::DataBase* dataBase);
 			~Statement();
+			void Bind(const char * value);
+			void Bind(Lt::isize value);
 			bool Execute(const char* sql);
 			bool Next();
 			const Lt::u8* Get(Lt::usize index);
@@ -19,6 +21,7 @@ namespace Lt
 		private:
 			Lt::Sql::DataBase* _DataBase;
 			sqlite3_stmt* _stmt;
+			Lt::usize _Count;
 		};
 	}
 }

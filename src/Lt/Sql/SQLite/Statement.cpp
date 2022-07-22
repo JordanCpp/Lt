@@ -3,7 +3,8 @@
 
 Lt::Sql::Statement::Statement(Lt::Sql::DataBase* dataBase) :
 	_DataBase(dataBase),
-	_stmt(nullptr)
+	_stmt(nullptr),
+	_Count(0)
 {
 }
 
@@ -12,9 +13,23 @@ Lt::Sql::Statement::~Statement()
 	sqlite3_finalize(_stmt);
 }
 
+void Lt::Sql::Statement::Bind(const char* value)
+{
+	_Count++;
+
+	sqlite3_bind_text(_stmt, _Count, value, -1, 0);
+}
+
+void Lt::Sql::Statement::Bind(Lt::isize value)
+{
+	_Count++;
+
+	sqlite3_bind_int(_stmt, _Count, value);
+}
+
 bool Lt::Sql::Statement::Execute(const char* sql)
 {
-	if (sqlite3_prepare_v2(_DataBase->_db, sql, -1, &_stmt, NULL) != SQLITE_OK) 
+	if (sqlite3_prepare_v2(_DataBase->_db, sql, -1, &_stmt, 0) != SQLITE_OK) 
 	{
 		sqlite3_finalize(_stmt);
 
