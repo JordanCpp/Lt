@@ -17,14 +17,14 @@ void Lt::Sql::Statement::Bind(const char* value)
 {
 	_Count++;
 
-	sqlite3_bind_text(_stmt, _Count, value, -1, 0);
+	sqlite3_bind_text(_stmt, (int)_Count, value, -1, 0);
 }
 
 void Lt::Sql::Statement::Bind(Lt::isize value)
 {
 	_Count++;
 
-	sqlite3_bind_int(_stmt, _Count, value);
+	sqlite3_bind_int(_stmt, (int)_Count, (int)value);
 }
 
 bool Lt::Sql::Statement::Execute(const char* sql)
