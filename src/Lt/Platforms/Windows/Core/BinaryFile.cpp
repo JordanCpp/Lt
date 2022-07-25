@@ -3,7 +3,8 @@
 Lt::Core::Windows::BinaryFile::BinaryFile():
 	_File(nullptr),
 	_Bytes(0),
-	_Position(0)
+	_Position(0),
+	_IsOpen(false)
 {
 }
 
@@ -56,6 +57,7 @@ bool Lt::Core::Windows::BinaryFile::Open(const char* path, Lt::usize mode)
 {
 	_Bytes = 0;
 	_Position = 0;
+	_IsOpen = false;
 
 	if (mode == Lt::Core::Windows::BinaryFile::Mode::Reading)
 		_File = CreateFile(path, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
@@ -64,16 +66,18 @@ bool Lt::Core::Windows::BinaryFile::Open(const char* path, Lt::usize mode)
 	else if (mode == (Lt::Core::Windows::BinaryFile::Mode::Reading | Lt::Core::Windows::BinaryFile::Mode::Writing))
 		_File = CreateFile(path, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	else
-		return false;
+		return _IsOpen;
 
 	if (_File != INVALID_HANDLE_VALUE)
 	{
 		_Bytes = GetFileSize(_File, nullptr);
 
-		return true;
+		_IsOpen = true;
+
+		return _IsOpen;
 	}
 
-	return false;
+	return _IsOpen;
 }
 
 void Lt::Core::Windows::BinaryFile::Close()
@@ -81,9 +85,11 @@ void Lt::Core::Windows::BinaryFile::Close()
 	_Bytes = 0;
 	_Position = 0;
 
-	if (_File != INVALID_HANDLE_VALUE)
+	if (_File != INVALID_HANDLE_VALUE && _IsOpen)
 	{
 		CloseHandle(_File);
+
+		_IsOpen = false;
 	}
 }
 

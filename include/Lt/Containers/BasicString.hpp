@@ -44,7 +44,12 @@ namespace Lt
 				return _Content;
 			}
 
-			Lt::usize Length()
+			TYPE* Content()
+			{
+				return _Content;
+			}
+
+			Lt::usize Length() const
 			{
 				return _Position;
 			}
@@ -79,6 +84,14 @@ namespace Lt
 
 					p[_Position] = '\0';
 				}
+			}
+
+			void Resize(Lt::usize count)
+			{
+				Reserve(count);
+
+				_Position = count;
+				_Content[_Position] = '\0';
 			}
 
 			void Append(const TYPE& element)

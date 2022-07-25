@@ -11,7 +11,9 @@ include_directories("include")
 add_library(LtSql STATIC
 "src/Lt/Sql/SQLite/sqlite3.c"
 "src/Lt/Sql/SQLite/DataBase.cpp"
-"src/Lt/Sql/SQLite/Statement.cpp")
+"src/Lt/Sql/SQLite/Statement.cpp"
+"src/Lt/Sql/Query.cpp"
+"src/Lt/Sql/QueryLoader.cpp")
 
 add_library(LtCore STATIC
 "src/Lt/Core/Assert.cpp"

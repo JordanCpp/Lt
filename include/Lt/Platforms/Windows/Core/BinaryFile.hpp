@@ -35,6 +35,7 @@ namespace Lt
 				HANDLE _File;
 				Lt::usize _Bytes;
 				Lt::usize _Position;
+				bool _IsOpen;
 			};
 		}
 	}
