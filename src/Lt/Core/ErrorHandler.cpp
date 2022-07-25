@@ -27,6 +27,13 @@ void Lt::Core::ErrorHandler::Message(const char* description)
 	_Message.Assign(description);
 }
 
+void Lt::Core::ErrorHandler::Append(const char* description)
+{
+	_Error = true;
+
+	_Message.Append(description);
+}
+
 void Lt::Core::ErrorHandler::Reset()
 {
 	_Error = false;

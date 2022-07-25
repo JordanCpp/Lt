@@ -15,6 +15,7 @@ namespace Lt
 			bool Ok();
 			const char* Message() const;
 			void Message(const char* description);
+			void Append(const char* description);
 			void Reset();
 		private:
 			bool _Error;

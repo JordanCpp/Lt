@@ -3,14 +3,18 @@
 
 void TestSqlDataBaseInit()
 {
-	Lt::Sql::DataBase db;
+	Lt::Core::ErrorHandler errorHandler;
+
+	Lt::Sql::DataBase db(&errorHandler);
 
 	LT_TEST_EQUAL(db.Open("TestFiles/Test.db") == true);
 }
 
 void TestSqlStatementSelect()
 {
-	Lt::Sql::DataBase db;
+	Lt::Core::ErrorHandler errorHandler;
+
+	Lt::Sql::DataBase db(&errorHandler);
 
 	LT_TEST_EQUAL(db.Open("TestFiles/Test.db") == true);
 
@@ -29,7 +33,9 @@ void TestSqlStatementSelect()
 
 void TestSqlStatementSelectBindInt()
 {
-	Lt::Sql::DataBase db;
+	Lt::Core::ErrorHandler errorHandler;
+
+	Lt::Sql::DataBase db(&errorHandler);
 
 	LT_TEST_EQUAL(db.Open("TestFiles/Test.db") == true);
 
