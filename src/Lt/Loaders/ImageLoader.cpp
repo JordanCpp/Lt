@@ -32,6 +32,8 @@ void Lt::Loaders::ImageLoader::Clear()
 	_Allocator->Reset();
 	_ErrorHandler->Reset();
 	_Pixels = nullptr;
+	_Size = Lt::Graphics::Point2u(0, 0);
+	_BytesPerPixel = 0;
 }
 
 const Lt::Graphics::Point2u& Lt::Loaders::ImageLoader::Size()
